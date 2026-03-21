@@ -1,0 +1,24 @@
+\begin{definition}
+    Sea $(x_n)_{n\geq1}$ una sucesión de números reales. Decimos que $(x_n)$ es
+    equidistribuida módulo $1$ o equidistribuida en $\mathbb{T}$ si para cada
+    intervalo $(a,b) \subset \mathbb{T}$ se cumple que
+    \begin{align}
+        \label{def:equidistribucion}
+        \lim_{N\to\infty} \frac{A_N((a,b), x)}{N} = b-a
+    \end{align}
+    donde 
+    \[
+        A_N((a,b), x) = \card \left\{1\le n\le N : \partfrac{x_n} \in (a,b)\right\}
+    \]
+\end{definition}
+
+\begin{remark}
+    \label{obs:equidistribucion}
+    Si consideramos la función característica $\mathbf{1}_{(a,b)}$ en $\mathbb{T}$, entonces la
+    condición de equidistribución se puede reescribir como
+    \[
+        \lim_{N\to\infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) =
+        \int_\mathbb{T} \mathbf{1}_{(a,b)}(x)\ dx = 
+        b-a
+    \]
+\end{remark}

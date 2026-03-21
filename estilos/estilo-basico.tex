@@ -1,0 +1,143 @@
+% phd-estilo-basico.tex
+% aml! 2015-09-08. amaurandi@um.es
+% ------------------------------------------------
+
+%\documentclass[a4paper,12pt]{book}
+%\documentclass[11pt]{book}
+%\usepackage[paperwidth=17cm, paperheight=22.5cm, bottom=2.5cm, right=2.5cm]{geometry}
+\usepackage{amssymb,amsmath} %paquete para símbolo matemáticos
+%\usepackage{apacite} %para usar APA cite en bibligrafia tb modificar
+\usepackage[spanish, es-tabla, es-nodecimaldot]{babel}  % ponemos tabla en vez de cuadro, sep decimal el punto (Us- notation)
+
+%\usepackage{ucs}
+\usepackage[utf8]{inputenc} %Paquete para escribir acentos y otros símbolos directamente
+
+\usepackage{pdflscape}
+\usepackage{multirow, booktabs, caption,longtable}
+\usepackage{tikz}
+
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=0pt}
+\captionsetup[figure]{labelsep=period,labelfont=it,justification=justified,
+  singlelinecheck=false,font=doublespacing}
+
+\usepackage[figuresleft]{rotating}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[nottoc]{tocbibind}
+
+% Numeracion de los teoremas y demas con theorem
+\usepackage{theorem}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}	
+%\def\theequation{\thesection.\arabic{equation}}
+%\def\thetheo{\thesection.\arabic{theo}}
+\newenvironment{proof}{\ignorespaces\par\noindent\textit{Demostración.}\quad}{\hfill$\Box$\par}
+\newenvironment{resolve}{\ignorespaces\par\noindent\textit{Resolución.}\quad}{\hfill$\Box$\par}
+\newenvironment{notation}{\ignorespaces\par\noindent\textit{Notación.}}{\hfill\par}
+
+%\usepackage{showframe}
+\usepackage{enumitem}
+\usepackage{centernot}
+\usepackage{dsfont}
+\newcommand{\card}{\operatorname{Card}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\partfrac}[1]{\langle #1 \rangle}
+
+% Indentacion
+%\usepackage{indentfirst}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{3mm}
+
+
+%\usepackage[pdftex,
+%            pdfauthor={Your Name},
+%            pdftitle={The Title},
+%            pdfsubject={The Subject},
+%            pdfkeywords={Some Keywords},
+%            pdfproducer={Latex with hyperref, or other system},
+%            pdfcreator={pdflatex, or other tool}]{hyperref}
+
+\usepackage[
+			%paperwidth=17cm,     % como hago para que trome A4 (sin meterle los cms)???
+			%paperheight=23.5cm,
+			a4paper, 
+			inner=2cm, 
+			outer=2cm, 
+			top=2.5cm, 
+			bottom=2cm, 
+			%bindingoffset=1cm
+			]{geometry}
+
+\setlength{\captionmargin}{20pt}
+
+%\usepackage[table, xcdraw]{xcolor}
+
+% bloques verbarin coloreados segun estilo Rstudio para código R
+% ------------------------------------------------
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
+% ------------------------------------------------
+
+\usepackage{pdfpages} % insertar pdf en los anexos
+%\usepackage{cite} % para contraer referencias
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{placeins}  % para usar \FloatBarrier
+%\usepackage{minitoc}
+\usepackage{float}
+\usepackage{url}
+
+%\usepackage{hyperref}
+\usepackage{lipsum}
+%\usepackage{setspace}
+
+\usepackage[backend=biber]{biblatex}
+\usepackage{hyperref}
+%\usepackage{apacite} %para usar APA cite en bibligrafia tb modificar \bibliographystyle{apacite} en su ssitio 
+%\DefineBibliographyStrings{spanish}{ andothers = {et\addabbrvspace al\adddot}, and = {y}, }
+%\renewcommand{\BOthers}[1]{et al.\hbox{}}
+%\addto\captionsspanish{
+%   \renewcommand{\BOthers}[1]{et al.\hbox{}}
+%}
+
+\usepackage[normalem]{ulem} %para tachar frases
+
+%aml para solventar el tema de las citas intex.. 20220405
+%\usepackage[sort&compress,square,comma,authoryear]{natbib}
+
+
+% makes color citations
+%\usepackage[colorlinks=true,urlcolor=blue,citecolor=red,linkcolor=red,bookmarks=true]{hyperref}
+

@@ -1,0 +1,30 @@
+\begin{proposition}
+    Sea $(x_n)_{n\geq1}$ una sucesión equidistribuida módulo $1$
+    y sea $\alpha \in \mathbb{R}$. Entonces la sucesión
+    \[
+        y_n = x_n + \alpha
+    \]
+    también es equidistribuida módulo $1$.
+\end{proposition}
+
+\begin{proof}
+    Sea un intervalo $I \subseteq \mathbb{T}$, definimos $J = I - \alpha \mod 1$.
+    Para cada $n \in \mathbb{N}$, tenemos que
+    \[
+        \partfrac{y_n} \in I
+        \iff \partfrac{x_n + \alpha} \in I
+        \iff \partfrac{x_n} \in J
+    \]
+    luego
+    \[
+        A_N(I,y)=A_N(J,x)
+    \]
+
+    Como $(x_n)$ es equidistribuida módulo $1$ y la medida es invariante por traslaciones, se tiene
+    \[
+        \lim_{N\to\infty} \frac{A_N(I,y)}{N} =
+        \lim_{N\to\infty} \frac{A_N(J,x)}{N} =
+        |J|=|I|
+    \]
+    demostrando que $(y_n)$ es equidistribuida módulo $1$.
+\end{proof}

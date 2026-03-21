@@ -1,0 +1,72 @@
+\begin{theorem}
+    Sea $(x_n)$ una sucesión en $[0,1)$, entonces son equivalentes:
+    \begin{enumerate}
+        \item $(x_n)$ es equidistribuida en $[0,1)$.
+        \item Para toda función Riemann integrable $f$ en $\mathbb{T}$,
+              \[
+                  \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x)\ dx.
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    $1 \Longrightarrow 2$ \, Sea $(x_n)$ una sucesión equidistribuida módulo 1.
+    Por definición, para cada $(a,b) \subset \mathbb{T}$,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n)= \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx.
+    \]
+
+    Sea $f(x) = \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_{i})}(x)$ una combinación 
+    lineal de funciones características con la partición $P = \{0 = a_0 < a_1 < \ldots < a_k = 1\}$ 
+    Entonces,
+    \[
+        \frac{1}{N} \sum_{n=1}^N f(x_n) = 
+        \frac{1}{N} \sum_{n=1}^N \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_i)}(x_n) = 
+        \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
+    \]
+    como $(x_n)$ es equidistribuida, 
+    \begin{align*}
+        \lim_{N \to \infty} \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
+        &= \sum_{i=1}^k c_i \left(\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right) \\
+        &= \sum_{i=1}^k c_i \int_0^1 \mathbf{1}_{[a_{i-1}, a_i)}(x)\ dx \\
+        &= \int_0^1 \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_i)}(x)\ dx 
+        =\int_0^1 f(x)\ dx.
+    \end{align*}
+    
+    Ahora consideramos $f \in \mathcal{R}(\mathbb{T})$. Como es integrable Riemann, para todo $\varepsilon > 0$ 
+    existe una partición $P=\{0=a_0 < a_1 < \ldots < a_k=1\}$, y existen dos funciones $g,h$ de la forma
+    \[
+        g(x) = \sum_{i=1}^k m_i \mathbf{1}_{[a_{i-1}, a_i)}(x) \qquad h(x) = \sum_{i=1}^k M_i \mathbf{1}_{[a_{i-1}, a_i)}(x)
+    \]
+    con $m_i = \inf_{x \in [a_{i-1}, a_i)} f(x)$ y $M_i = \sup_{x \in [a_{i-1}, a_i)} f(x)$, tal que
+    \[
+        g(x) \leq f(x) \leq h(x) \qquad \int_0^1 h(x)\ dx - \int_0^1 g(x)\ dx \leq \varepsilon.
+    \]
+
+    Sea $S_N = \sum_{n=1}^N f(x_n)$, entonces,
+    \[
+        \frac{1}{N} \sum_{n=1}^N g(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N h(x_n)
+    \]
+    como $g$ y $h$ son combinaciones lineales de funciones características, al tomar límites,
+    \[
+        \int_0^1 f(x) \, dx - \varepsilon 
+        \leq \int_0^1 g(x) \, dx 
+        \leq \liminf_{N \to \infty} \frac{S_N}{N} 
+        \leq \limsup_{N \to \infty} \frac{S_N}{N} 
+        \leq \int_0^1 h(x) \, dx 
+        \leq \int_0^1 f(x) \, dx + \varepsilon
+    \]
+    como $\varepsilon > 0$ es arbitrario, se concluye que
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x) \, dx.
+    \]
+
+    $2 \Longrightarrow 1$ \, Sea un intervalo $(a,b) \subset \mathbb{T}$ y sea $f(x) = \mathbf{1}_{(a,b)}(x)$, 
+    como $f$ es Riemann integrable, entonces,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) = \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx = b-a
+    \]
+    lo que demuestra que $(x_n)$ es equidistribuida en $[0,1)$.
+
+
+\end{proof}

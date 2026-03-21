@@ -1,0 +1,51 @@
+\begin{example}
+    La secuencia dada por $x_n = \partfrac{a \log n}$ con $a \in \mathbb{R}$ no es equidistribuida. 
+\end{example}
+
+\begin{resolve}
+    Si $a = 0$, la secuencia es constante e igual a $0$, luego no es equidistribuida.
+    
+    Supongamos $a \neq 0$. Verificaremos que no se cumple el criterio de Weyl para $k=1$. Es decir,
+    \[
+        \frac{1}{N} \sum_{n=1}^N e^{2\pi i a \log n} \centernot{\longrightarrow} \, 0 \qquad \text{cuando} \ N \to \infty.
+    \]   
+    
+    Sea $f(x) = e^{2\pi i a \log x}$. Aplicando la fórmula de sumación de Euler,
+    \[
+        \sum_{n=1}^N e^{2\pi i \, a \log n}
+        = \int_1^N e^{2\pi i a \log x} \, dx 
+        + \frac{1}{2} \left(e^{2\pi i \, a \log N} + 1\right)
+        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx 
+    \]
+    
+    La segunda integral la podemos acotar usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$, 
+    $|e^{2\pi i a \log x}| = 1$ y por lo tanto
+    \[
+        \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx\right|
+        \leq \int_1^N \frac{1}{2} \, \frac{2\pi |a|}{x} \, dx
+        = \pi |a| \int_1^N \frac{1}{x} \, dx
+        = \pi |a| \log N
+    \]
+    Dividiendo por $N$, esta integral se anula cuando $N \to \infty$.
+
+    Asimismo, el término del centro se puede acotar por $1$ que dividido por $N$, tiende a $0$ cuando $N \to \infty$.
+       
+    Sin embargo, si calculamos la primera integral con el cambio de variable $u = \log x$, $x = e^u$ y $dx = e^u du$,
+    para $x = 1$, $u = 0$ y para $x = N$, $u = \log N$.
+    \[
+        \int_1^N e^{2\pi i a \log x} \, dx 
+        = \int_0^{\log N} e^{(2\pi i a + 1) u} \, du 
+        = \left[\frac{e^{(2\pi i a + 1) u}}{2\pi i a + 1}\right]_0^{\log N} 
+        = \frac{e^{(2\pi i a + 1) \log N} - 1}{2\pi i a + 1} 
+        = \frac{N e^{2\pi i a \log N} - 1}{2\pi i a + 1}
+    \]
+    Al dividir por $N$, obtenemos
+    \[
+        \frac{N e^{2\pi i a \log N} - 1}{N(2\pi i a + 1)}
+        = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}
+    \]
+    El segundo término tiende a $0$, mientras que el primero no converge cuando $a \neq 0$, 
+    ya que oscila sobre la circunferencia unidad.
+    
+    Por lo tanto, el criterio de Weyl no se cumple y la secuencia no es equidistribuida.
+\end{resolve}

@@ -1,0 +1,26 @@
+\begin{example}
+    Sea $(x_n)_{n\geq1}$ una sucesión en $\mathbb{T}$. Definimos $S((a,b),N) = \sum_{n=1}^N x_n \, \mathbf{1}_{(a,b)}(x_n)$
+    donde $(a,b) \subseteq \mathbb{T}$. Entonces, la sucesión $(x_n)$ es equidistribuida módulo $1$ si y solo si 
+    para todo intervalo $(a,b) \subseteq \mathbb{T}$
+    \[
+        \lim_{N \to \infty} \frac{S((a,b),N)}{N} = \frac{1}{2}(b^2-a^2)
+    \]
+\end{example}
+
+\begin{proof}
+    $\Longrightarrow$ \, Sea $(a,b) \subseteq \mathbb{T}$ y sea $f(x) = x \, \mathbf{1}_{(a,b)}(x)$.
+    
+    Como $f \in \mathcal{R}(\mathbb{T})$ y $(x_n)$ es equidistribuida,
+    \[
+        \lim_{N \to \infty} \frac{S((a,b),N)}{N} = 
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = 
+        \int_0^1 f(x)\ dx = \int_a^b x\ dx = \frac{1}{2}(b^2-a^2)
+    \]
+
+    $\Longleftarrow$ \, 
+    Vamos a probar que las CL de funciones $f(x)=x \, \mathbf{1}_{(a,b)}(x)$ son densas en $L^1(\mathbb{T})$.
+    Para esto, sea $f \in L^1(\mathbb{T})$ y sea $\varepsilon > 0$. Por la densidad de las funciones simples, existe una función simple $s(x) = \sum_{i=1}^m a_i \mathbf{1}_{A_i}(x)$ tal que $\|f-s\|_1 < \varepsilon/2$.
+    Dado que cada $A_i$ es medible, podemos aproximar cada $A_i$ por una unión finita de intervalos abiertos, es decir, existe una función $g(x) = \sum_{i=1}^m a_i \mathbf{1}_{B_i}(x)$ donde cada $B_i$ es una unión finita de intervalos abiertos tal que $\|s-g\|_1 < \varepsilon/2$.
+    Por lo tanto, $\|f-g\|_1 \leq \|f-s\|_1 + \|s-g\|_1 < \varepsilon$.
+    Finalmente, cada $B_i$ es una unión finita de intervalos abiertos, por lo que $g$ es una combinación lineal de funciones de la forma $x \, \mathbf{1}_{(a,b)}(x)$.      
+\end{proof}

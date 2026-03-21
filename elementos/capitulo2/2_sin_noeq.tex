@@ -1,0 +1,28 @@
+\begin{example}
+    La sucesión $\partfrac{\sin n}$ es densa en $[0,1)$ pero no es equidistribuida.
+\end{example} 
+
+\begin{resolve}
+    Como $\frac{n}{2\pi} \mod 1$ es equidistribuida en $[0,1)$, se deduce que $n \mod 2\pi$ 
+    es equidsitribuida en $[0,2\pi)$ y por tanto densa.
+
+    Ya que la funcion seno es continua y su imagen es $[-1,1]$, entonces $\sin n$ es densa en $[-1,1]$ 
+    Por lo tanto $\partfrac{\sin n}$ es densa en $[0,1)$.
+
+    Sin embargo, $\partfrac{\sin n}$ no es equidistribuida. Sabemos que $n$ es equidistribuida en $[0,2\pi)$.
+    Por la caracterización funcional de la equidistribución aplicada a la función $f(x) = e^{2\pi i \sin x}$, tenemos que
+    \[
+        \frac{1}{N} \sum_{n=1}^N e^{2\pi i \sin n} \longrightarrow \frac{1}{2\pi} \int_0^{2\pi} e^{2\pi i \sin x} dx \qquad \text{cuando } N \to \infty.
+    \]
+
+    Si calculamos esta integral, tenemos que
+    \[
+        \int_0^{2\pi} e^{2\pi i \sin x} dx = 2\pi J_0(2\pi) \neq 0.
+    \]
+
+    Si $\partfrac{\sin n}$ fuese equidistribuida, por el criterio de Weyl, debería cumplirse
+    \[
+        \forall \, k \in \mathbb{Z}\setminus\{0\}, \quad \frac{1}{N} \sum_{n=1}^N e^{2\pi i k \sin n} \longrightarrow 0 \qquad \text{cuando } N \to \infty,
+    \]
+    Pero para $k=1$ hemos visto que esta suma tiende a $J_0(2\pi) \neq 0$, lo que demuestra que $\partfrac{\sin n}$ no es equidistribuida.
+\end{resolve}

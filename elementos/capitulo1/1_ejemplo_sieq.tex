@@ -1,0 +1,97 @@
+\begin{example}
+    La siguiente sucesión es equidistribuida módulo $1$,
+    \[
+        0, \ 
+        0, \ \frac{1}{2}, \ 
+        0, \ \frac{1}{3}, \ \frac{2}{3}, \ 
+        0, \ \frac{1}{4}, \ \frac{2}{4}, \ \frac{3}{4}, \ 
+        0, \ \frac{1}{5}, \ \frac{2}{5}, \ \frac{3}{5}, \ \frac{4}{5}, \ 
+        0, \ \dots 
+    \]
+\end{example}
+
+\begin{resolve}
+    Para cada $k \in \mathbb{N}$, consideramos los conjuntos $A_k = \left\{\frac{i}{k} : i = 0, 1, 2, \dots, k-1 \right\}$.
+    La sucesión se puede escribir como la concatenación de estos conjuntos,
+    \[
+        A_1, \ A_2, \ A_3, \ A_4, \ A_5, \ \dots
+    \]
+    Sea $(a,b) \subset \mathbb{T}$ y sea $k$ fijo, estudiamos cuántos elementos de $A_k$ pertenecen a $(a,b)$.
+    \[
+        P_k = 
+        \card \left\{ \frac{i}{k} \in A_k : \frac{i}{k} \in (a,b) \right\} =
+        \card \left\{ \frac{i}{k} \in A_k : i \in (ka,kb)\right\}
+    \]
+    Contando el número de enteros en el intervalo $(ka,kb)$, obtenemos que 
+    \[
+        P_k = \floor{kb} - \floor{ka+1} + 1 = \floor{kb} - \floor{ka}
+    \]
+
+    Tomando la sucesión hasta el conjunto $A_M$, inclusive. El número de total de términos y la cantidad
+    de términos que están en el intervalo $(a,b)$ es
+    \[
+        T_M = \sum_{k=1}^M k = \frac{M(M+1)}{2} \qquad 
+        S_M = \sum_{k=1}^M P_k = \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right)
+    \]
+
+    Queremos comprobar que, contando por conjuntos, se cumple la definición de equidistribución, es decir,
+    \[
+        \left|\frac{S_M}{T_M} - (b-a)\right| \longrightarrow 0 \qquad \text{cuando } M \to \infty.
+    \]
+
+    Para ello, vamos a tratar de acotarlo,
+    \begin{align*}
+        \left| \frac{S_M}{T_M} - (b-a) \right| &=
+        \left| \frac{S_M - T_M(b-a)}{T_M} \right| =
+        \frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right) - \sum_{k=1}^M k(b-a) \right| \\ &=
+        \frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka} - kb + ka\right) \right| \leq
+        \frac{1}{T_M} \sum_{k=1}^M \left|\partfrac{ka} - \partfrac{kb}\right| 
+    \end{align*}
+
+    Como $\partfrac{x} \in [0,1)$ para cada $x \in \mathbb{R}$, 
+    \[
+        \sum_{k=1}^M \left|\partfrac{ka} - \partfrac{kb}\right| \leq
+        \sum_{k=1}^M 1 = M 
+    \]
+    
+    Por lo tanto, 
+    \[
+        \left| \frac{S_M}{T_M} - (b-a) \right| \leq
+        \frac{M}{T_M} = \frac{2}{M+1} \longrightarrow 0 \qquad \text{cuando } M \to \infty.
+    \]
+    
+    Esto demuestra que al contar por conjuntos, la sucesión es equidistribuida para $N = T_M$.
+    Faltaría comprobar que también lo es para cualquier $N$. 
+
+    Sea ahora $N$ tal que $T_M \leq N \leq T_{M+1}$,
+    \[
+        A_N((a,b), x) = S_M + R \qquad \text{con } 0 \leq R \leq P_{M+1}
+    \]
+    Adicionalmente, tenemos las siguientes desigualdades,
+    \[
+        S_M \leq S_M + R \leq S_{M+1} \qquad 
+        \frac{1}{T_{M+1}} \leq \frac{1}{N} \leq \frac{1}{T_M}
+    \]
+    Al multiplicarlas,
+    \[
+        \frac{S_M}{T_{M+1}} \leq \frac{S_M + R}{N} \leq \frac{S_{M+1}}{T_M}
+    \]
+    
+    Si $M \to \infty$, entonces $N \to \infty$, y al tomar límites, obtenemos 
+    \begin{align*}
+        \lim_{M \to \infty} \frac{T_M}{T_{M+1}} \, \frac{S_M}{T_M} \leq
+        \liminf_{N \to \infty} \frac{S_M + R}{N} &\leq
+        \limsup_{N \to \infty} \frac{S_M + R}{N} \leq
+        \lim_{M \to \infty} \frac{T_{M+1}}{T_M} \, \frac{S_{M+1}}{T_{M+1}}  \\
+        b-a \leq
+        \liminf_{N \to \infty} \frac{S_M + R}{N} &\leq
+        \limsup_{N \to \infty} \frac{S_M + R}{N} \leq
+        b-a
+    \end{align*}
+    Por lo tanto, el limite existe y 
+    \[
+        \lim_{N \to \infty} \frac{A_N((a,b), x)}{N} =
+        \lim_{N \to \infty} \frac{S_M + R}{N} = 
+        b-a
+    \]
+\end{resolve}

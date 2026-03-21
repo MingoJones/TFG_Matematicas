@@ -1,0 +1,85 @@
+\begin{lemma} 
+    \label{lem:lema_na}
+    Sea $f \in C(\mathbb{T})$ y sea $\alpha \notin \mathbb{Q}$. Entonces, 
+    \[
+        \frac{1}{N} \sum_{n=1}^{N} f(n\alpha) \longrightarrow \int_0^1 f(x)\ dx
+        \qquad \text{cuando } N \to \infty 
+    \] 
+\end{lemma}
+
+\begin{proof}
+    La prueba la vamos a dividir en 4 pasos.
+    
+    \textit{Paso 1. } Sea $f\equiv1$,
+    \[
+        \frac{1}{N} \sum_{n=1}^{N} f(n\alpha) = 1
+        \qquad
+        \int_0^1 f(x)\,dx = 1
+    \]
+
+    \textit{Paso 2. } Consideremos $f(x)=e^{2\pi i k x}$ con $k\in\mathbb{Z}$.
+    
+    Si $k=0$ estamos en el paso 1, por lo tanto, sea $k\neq 0$ y sea $r=e^{2\pi i k \alpha}$,
+    \[
+        \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha} =     
+        \frac{1}{N} \sum_{n=1}^{N} r^n = 
+        \frac{1}{N} \, \frac{r-r^{N+1}}{1-r}
+    \]
+    como $\alpha \notin \mathbb{Q}$, entonces $k\alpha \notin \mathbb{Z}$ y $r \neq 1$, 
+    luego $|1-r|>0$. Obteniendo la cota,
+    \[
+        \left|\frac{1}{N} \sum_{n=1}^{N} r^n\right| =
+        \frac{1}{N} \left|\frac{r-r^{N+1}}{1-r}\right| \leq
+        \frac{2}{N|1-r|}
+    \]
+    De este modo,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha} = 0 
+    \]
+
+    Por otro lado, calculando la integral,
+    \[
+        \int_0^1 e^{2\pi i k x}\,dx = 
+        \left[ \frac{e^{2\pi i k x}}{2\pi i k} \right]_0^1 =
+        \frac{e^{2\pi i k}-1}{2\pi i k} = 0
+    \]
+    obtenemos que se cumple el lema para las exponenciales complejas.
+
+    \textit{Paso 3. } Sea $P \in \mathcal{P}(\mathbb{T})$ un polinomio trigonométrico,
+    $P=\sum_{k=-M}^M c_k e^{2\pi i k x}$ con $c_k \in \mathbb{C}$ y $M \in \mathbb{N}$. 
+    Veamos que se cumple el lema para $P$,
+    \begin{align*}
+        \frac{1}{N} \sum_{n=1}^{N} P(n\alpha) 
+        =\frac{1}{N} \sum_{n=1}^{N} \sum_{k=-M}^M c_k e^{2\pi i k n \alpha} 
+        %&=\frac{1}{N} \sum_{k=-M}^M c_k \sum_{n=1}^{N} e^{2\pi i k n \alpha} \\
+        =\sum_{k=-M}^M c_k \cdot \left( \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha}\right)
+    \end{align*}
+    Por el paso 2, cada término de la suma converge a $\int_0^1 e^{2\pi i k x}\,dx$, luego
+    \begin{align*}
+        \lim_{N \to \infty} \sum_{k=-M}^M c_k \cdot \left( \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha}\right)    
+        &=\sum_{k=-M}^M c_k \cdot \left( \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha}\right) \\
+        &=\sum_{k=-M}^M c_k \cdot \int_0^1 e^{2\pi i k x}\,dx \\
+        &= \int_0^1 \sum_{k=-M}^M c_k e^{2\pi i k x}\,dx 
+        =\int_0^1 P(x)\,dx
+    \end{align*}
+    se cumple el lema para polinomios trigonométricos.
+
+    \textit{Paso 4. } Sea $\varepsilon > 0$, por el teorema de Weierstrass, % \cite{}
+    existe un polinomio trigonométrico $P$ tal que $\sup_{x \in \mathbb{T}} |f(x)-P(x)| \leq \varepsilon$.
+    
+    Por el paso 3, sabemos que para ese $\varepsilon > 0$, existe $N_0 \in \mathbb{N}$ tal que 
+    para todo $N \geq N_0$ se cumple que 
+    \[
+        \left|\frac{1}{N} \sum_{n=1}^{N} P(n\alpha) - \int_0^1 P(x)\,dx\right| \leq \varepsilon
+    \]
+    Por lo tanto, para $N \geq N_0$,
+    % No se si es mejor asi o ponerlo con A, B y C 
+    \begin{align*}
+        \left| \frac{1}{N} \sum_{n=1}^{N} f(n\alpha) - \int_0^1 f(x)\,dx \right|
+        &\leq \frac{1}{N} \sum_{n=1}^{N} |f(n\alpha) - P(n\alpha)| \\  
+        & \qquad\qquad +\left| \frac{1}{N} \sum_{n=1}^{N} P(n\alpha) - \int_0^1 P(x)\,dx \right| \\
+        & \qquad\qquad\qquad\qquad +\int_0^1 |f(x) - P(x)|\,dx   \\
+        &\leq 3\varepsilon
+    \end{align*}
+    Como $\varepsilon > 0$ es arbitrario, queda demostrado el lema.     
+\end{proof}

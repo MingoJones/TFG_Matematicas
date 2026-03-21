@@ -1,0 +1,41 @@
+\begin{example}
+    La sucesión $\partfrac{n^2\alpha}$ con $\alpha \notin \mathbb{Q}$ es equidistribuida en $[0,1)$.
+\end{example}
+
+\begin{resolve}
+    Sea $f(n)=n^2\alpha$ con $\alpha \notin \mathbb{Q}$, entonces
+    \[
+        f(n+h)-f(n)=n^2\alpha + 2nh\alpha + h^2\alpha - n^2\alpha = 2nh\alpha+h^2\alpha.
+    \]
+
+    Usando la estimación anterior, como para $h=0$ se tiene $e^{2\pi i 0}=1$, entonces
+    \[
+        \left|\sum_{n=1}^N e^{2\pi i  k n^2 \alpha}\right|^2 \leq 
+        4\,\frac{N^2}{H} + 4\,\frac{N}{H} \sum_{h=1}^{H-1} \left|\sum_{n=1}^{N-h} e^{2\pi i k (2nh\alpha+h^2\alpha)}\right|.
+    \]
+
+    Para cada $h \neq 0$, por el ejemplo \ref{ex:ax-b}, se tiene que $\partfrac{2nh\alpha+h^2\alpha}$ es equidistribuida en $[0,1)$.
+
+    Al dividir por $N^2$,
+    \[
+        \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i n^2 \alpha}\right|^2 \leq 
+        \frac{4}{H} + \frac{4}{N} \sum_{h=1}^{H-1} \frac{N-h}{N} \left|\frac{1}{N-h}\sum_{n=1}^{N-h} e^{2\pi i k(2nh\alpha+h^2\alpha)}\right|.
+    \]
+
+    Fijado $H$, por el criterio de Weyl, para cada $h \neq 0$ se tiene que
+    \[
+        \lim_{N\to\infty} \frac{1}{N-h}\sum_{n=1}^{N-h} e^{2\pi i k(2nh\alpha+h^2\alpha)} = 0.
+    \] 
+
+    Luego,
+    \[
+        \limsup_{N\to\infty} \left| \frac{1}{N} \sum_{n=1}^N e^{2\pi i k n^2 \alpha}\right|^2 \leq \frac{4}{H}.
+    \]  
+
+    Dado que es cierto para cada $H\in \mathbb{N}$, haciendo $H\to\infty$ se concluye que
+    \[
+        \lim_{N\to\infty} \left| \frac{1}{N} \sum_{n=1}^N e^{2\pi i k n^2 \alpha}\right|^2 = 0.
+    \]
+    
+    Por lo tanto, por el criterio de Weyl, la sucesión $\partfrac{n^2\alpha}$ es equidistribuida en $[0,1)$.
+\end{resolve}

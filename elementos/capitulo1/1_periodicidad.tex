@@ -1,0 +1,32 @@
+\begin{proposition}
+    Sea $\alpha \in \mathbb{R}$.
+    \begin{enumerate}
+        \item Si $\alpha \in \mathbb{Q}$, entonces la sucesión $(\partfrac{n\alpha})_{n\ge1}$ es periódica
+        y tiene un número finito de términos distintos.
+        \item Si $\alpha \notin \mathbb{Q}$, entonces la sucesión $(\partfrac{n\alpha})_{n\ge1}$ tiene
+        infinitos términos distintos.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \textit{1. \quad} Sea $\alpha = p/q$ con $p, q \in \mathbb{Z}$ y $q \neq 0$. Entonces,
+    \[
+        \partfrac{p/q}, \,
+        \partfrac{2p/q}, \,
+        \ldots, \,
+        \partfrac{(q-1)p/q}, \,
+        \partfrac{qp/q} = \partfrac{p} = 0 
+    \]
+    A partir de aquí, la sucesión se repite,
+    \[
+        \partfrac{(q+1)p/q} = \partfrac{1 + p/q} = \partfrac{p/q}.
+    \]
+    \textit{2. \quad} Sea $\alpha \notin \mathbb{Q}$ y supongamos que $\partfrac{n\alpha} = \partfrac{m\alpha}$ 
+    para ciertos $n, m \in \mathbb{N}$ con $n \neq m$. Tenemos que
+    \begin{align*}
+        \partfrac{n\alpha} = \partfrac{m\alpha}
+        &\iff n\alpha - \floor{n\alpha} = m\alpha - \floor{m\alpha} \\
+        &\iff (n-m)\alpha = \floor{n\alpha} - \floor{m\alpha} \in \mathbb{Z}
+    \end{align*}
+    lo que implicaría que $\alpha \in \mathbb{Q}$. Contradicción \#.
+\end{proof}

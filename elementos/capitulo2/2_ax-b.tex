@@ -1,0 +1,25 @@
+\begin{example} 
+    \label{ex:ax-b}
+    Sea $(x_n)_{n\geq1}$ una sucesión equidistribuida en $[0,1)$, sea $a\in \mathbb{Z}\setminus\{0\}$ y sea $b\in\mathbb{R}$.
+    Entonces la sucesión $\partfrac{ax_n+b}$ es equidistribuida en $[0,1)$.
+\end{example}
+
+\begin{resolve}
+    Definimos $y_n = \partfrac{ax_n+b}$. Para demostrar que $(y_n)$ es equidistribuida usamos el criterio de Weyl.
+    
+    Para cada $k \in \mathbb{Z}\setminus\{0\}$ se tiene
+    \[
+        \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k y_n} \right|
+        = \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k (ax_n + b)} \right|
+        = \left|\frac{1}{N}e^{2\pi i k b}\sum_{n=1}^N e^{2\pi i (ka) x_n} \right|
+        =\left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i (ka) x_n} \right|.
+    \]
+    
+    Dado que $ka \in \mathbb{Z}\setminus\{0\}$ y $(x_n)$ es equidistribuida, el criterio de Weyl nos dice que,
+    \[
+        \lim_{N\to\infty} \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k y_n} \right| =
+        \lim_{N\to\infty} \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i (ka) x_n} \right| = 0.
+    \]
+    
+    Por lo tanto $(y_n)$ es equidistribuida en $[0,1)$.
+\end{resolve}

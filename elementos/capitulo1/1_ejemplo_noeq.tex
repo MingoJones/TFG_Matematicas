@@ -1,0 +1,39 @@
+\begin{example}
+    Consideremos una sucesión de racionales $(r_n)_{n\geq1}$. Definimos la sucesión 
+    $(x_n)_{n\geq1}$ por
+    \[
+        x_n = 
+        \begin{cases} 
+            r_{n/2} & \text{si $n$ es par} \\ 
+            0 & \text{si $n$ es impar}
+        \end{cases} 
+    \]
+
+    Entonces $(x_n)$ no es equidistribuida módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Consideramos $[0,b) \subseteq \mathbb{T}$ con $b < 1/2$. Si la sucesión fuese
+    equidistribuida módulo $1$, debería cumplirse que
+    \[
+        \lim_{N\to\infty} \frac{A_N([0,b),x)}{N}  = b
+    \]
+
+    Sin embargo, para $N=2M$,
+    \[
+        A_{2M}([0,b),x) = M + R \qquad \text{donde } R = A_M([0,b),r) 
+    \]
+    Los índices impares de la sucesión $(x_n)$ son iguales a $0$ y contribuyen
+    con $M$ términos.
+    
+    Por consiguiente,
+    \[
+        \frac{A_{2M}([0,b),x)}{2M} = 
+        \frac{M+R}{2M} \geq  
+        \frac{M}{2M} = 
+        \frac{1}{2}
+    \] 
+
+    Debido a que $b < 1/2$, el límite anterior no puede ser igual a $b$ 
+    y por tanto $(x_n)$ no es equidistribuida módulo $1$.
+\end{resolve}

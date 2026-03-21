@@ -1,0 +1,45 @@
+    Mediante la fórmula de sumación de Euler (\ref{prop:SumacionEuler}), sea $f(x) = e^{2\pi i k g(x)}$ y sea $k \in \mathbb{Z} \setminus \{0\}$.
+    Veamos que condiciones debe cumplir $g$ para que se cumpla el criterio de Weyl.
+    \[
+        \sum_{n=1}^N e^{2\pi i k g(n)}
+        = \int_1^N e^{2\pi i k g(x)} \, dx 
+        + \frac{1}{2} \left(e^{2\pi i k g(N)} + e^{2\pi i k g(1)}\right)
+        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx
+    \]
+
+    La primera integral la calculamos usando integración por partes.
+    \begin{align*}
+        \int_1^N e^{2\pi i k g(x)} \, dx 
+        = \int_1^N \frac{\left(e^{2\pi i k g(x)}\right)'}{2\pi i k g'(x)} \, dx
+        &= \frac{1}{2 \pi i k} \int_1^N \frac{\left(e^{2\pi i k g(x)}\right)'}{g'(x)} \, dx \\
+        &= \frac{1}{2 \pi i k} \left(\left[\frac{e^{2\pi i k g(x)}}{    g'(x)}\right]_1^N + \int_1^N e^{2\pi i k g(x)} \left(\frac{1}{g'(x)}\right)' \, dx \right)
+    \end{align*}
+    Vamos a ver cada termino por separado.
+    \begin{align*}
+        \left|\frac{e^{2\pi i k g(N)}}{g'(N)} - \frac{e^{2\pi i k g(1)}}{g'(1)}\right|
+        &\leq \frac{1}{|g'(N)|} + \frac{1}{|g'(1)|} \\
+        \left|\int_1^N e^{2\pi i k g(x)}\left(\frac{1}{g'(x)}\right)' \, dx\right|
+        \leq \int_1^N \left|\left(\frac{1}{g'(x)}\right)' \right| \, dx 
+        &= \left|\frac{1}{g'(N)} - \frac{1}{g'(1)}\right|
+        \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(1)|}
+    \end{align*}
+    Por la monotonia de $g'$ podemos quitar el valor absoluto de la integral
+    Por lo tanto, sea $C_1$ una constante que amontone las cotas todo lo que no depende de $N$.
+    \[
+        \left|\frac{1}{N} \int_{1}^N e^{2\pi i k g(n)}\right| \leq \frac{C_1}{N \left|g'(x)\right|}
+    \]
+    Necesitamos que se cumpla la condicion $\lim_{x \to \infty} {x \left|g'(x)\right|} = \infty$
+
+    El termino central se puede acotar por $1$, no necesitamos nada especial para él.
+
+    La última integral se puede acotar usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$, $|e^{2\pi i k g(x)}| = 1$ y por lo tanto
+    \[
+        \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx\right|
+        \leq \int_1^N \frac{1}{2} \, 2\pi |k| |g'(x)| \, dx
+        = \pi |k| (g(N) - g(1))
+    \]
+    Aglutinando todo en otra constante $C_2$ que amontone las cotas todo lo que no depende de $N$,
+    \[
+        \left|\frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx\right| \leq C_2 \left|\frac{g(N)}{N}\right|
+    \]
+    Necesitamos que se cumpla la condición $\lim_{x \to \infty} \frac{g(x)}{x} = 0$.

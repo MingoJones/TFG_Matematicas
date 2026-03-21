@@ -1,0 +1,95 @@
+Durante años, el estudio de las sucesiones ha sido fundamental en la teoría de 
+números y en el análisis. Una de las sucesiones más relevantes es la sucesión formada
+por las partes fraccionarias de los múltiplos de un número real $\alpha$,
+\[
+  \partfrac{\alpha}, \, \partfrac{2\alpha}, \, \partfrac{3\alpha}, \, \ldots, \, \partfrac{n\alpha}, \, \ldots
+\]
+donde $\partfrac{x}$ es la parte fraccionaria de $x$. 
+
+El comportamiento de esta sucesión depende de $\alpha$. Si es racional, la 
+sucesión es periódica y toma un número finito de valores. Sin embargo, cuando 
+$\alpha$ es irracional, la sucesión deja de ser periódica y no se repite. 
+En este caso, surge la pregunta de cómo se distribuyen los valores. 
+
+En el siglo XIX, Kronecker demostró que si $\alpha$ es irracional, 
+entonces la sucesión es densa en el intervalo $[0,1)$. Más tarde, entre 1909 y
+1910, Bohl, Sierpiński y Weyl demostraron de manera independiente que esta 
+sucesión no solo es densa, sino que también es equidistribuida. Este último,
+Weyl, desarrolló una teoría general para el estudio de la distribución de 
+sucesiones en~$[0,1)$.
+
+En este capítulo, exploraremos los conceptos básicos para estudiar este tipo 
+de problemas y los usaremos para demostrar el resultado Weyl, la equidistribución
+de la sucesión $\partfrac{n\alpha}$ cuando $\alpha$ es un número irracional. 
+
+\section{Los números reales módulo 1}
+
+\input{elementos/capitulo1/1_partes_defs.tex}
+
+Ahora, en $\mathbb{R}$, consideramos la relación de equivalencia dada por $x \sim y$ 
+si y solo si $x - y \in \mathbb{Z}$. Es decir, dos números son congruentes
+módulo $\mathbb{Z}$ o módulo $1$ si difieren por un número entero. Lo indicamos con
+\[
+    x \equiv y \mod \mathbb{Z} \qquad \text{ o } \qquad x \equiv y \mod 1
+\]
+
+Cada clase de equivalencia tiene un representante único en el intervalo $[0,1)$ que es
+justamente la parte fraccionaria $\partfrac{x}$. Podemos pensar en el conjunto cociente 
+$\mathbb{R}/\mathbb{Z}$ como el intervalo $[0,1)$ al identificar sus extremos $0$ y $1$.
+Este espacio se denota por $\mathbb{T}$, el toro unidimensional o la circunferencia unitaria.
+
+A lo largo del trabajo, utilizaremos $\mathbb{T}$ para referirnos al intervalo $[0,1)$ 
+con la identificación de sus extremos. 
+
+\begin{remark}
+    Las funciones en $\mathbb{T}$ son funciones $f$ $1$-periódicas en $\mathbb{R}$. Es decir,
+    \[
+        f(x+1) = f(x) \quad \text{ para todo } x \in \mathbb{R}.
+    \]
+    Debido a esta periodicidad, tenemos que $f(x) = f(\partfrac{x})$ para todo $x \in \mathbb{R}$,
+    por lo que podemos pensar en $f$ como una función definida en $\mathbb{T}$.
+\end{remark}
+
+\section{Equidistribución de sucesiones}
+
+\input{elementos/capitulo1/1_equidistribucion.tex}
+
+Podemos pensar que, cuando una sucesión es equidistribuida módulo $1$, sus términos se distribuyen
+de manera equitativa a lo largo de $\mathbb{T}$. En particular, la proporción de términos que 
+pertenecen a un subintervalo es igual a la longitud de dicho intervalo.
+
+La siguiente proposición nos permite utilizar cualquier tipo de intervalo para
+verificar la equidistribución de una sucesión.
+
+\input{elementos/capitulo1/1_equidistribucion_equivalentes.tex}
+
+\input{elementos/capitulo1/1_quitar_terminos.tex}
+
+\input{elementos/capitulo1/1_secuencia_mas_const.tex}
+
+\input{elementos/capitulo1/1_ejemplo_noeq.tex}
+
+\input{elementos/capitulo1/1_ejemplo_sieq.tex}  
+
+\input{elementos/capitulo1/1_intercalar.tex}
+
+\section{La sucesión $n\alpha$}
+
+Como cierre a este capítulo, estudiaremos la sucesión $(n\alpha)_{n\geq1}$. 
+Analizaremos su comportamiento módulo $1$ en función del $\alpha$, distinguiendo si es
+racional o irracional. En particular, para el caso irracional demostraremos que es 
+equidistribuida módulo $1$.
+
+\input{elementos/capitulo1/1_periodicidad.tex}
+
+Consideramos ahora el caso en el que $\alpha \notin \mathbb{Q}$. En esta situación, 
+la sucesión $(n\alpha)_{n\geq1}$ es equidistribuida módulo $1$. Para demostrar
+este resultado, necesitamos el siguiente lema.
+
+\input{elementos/capitulo1/1_lema.tex}
+
+\input{elementos/capitulo1/1_teorema_na.tex}
+
+
+
+

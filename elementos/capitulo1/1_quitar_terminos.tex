@@ -1,0 +1,27 @@
+\begin{proposition}
+    Sea $(x_n)_{n\geq1}$ una sucesión equidistribuida módulo $1$.  Si eliminamos
+    un número finito de términos, la sucesión resultante sigue siendo equidistribuida módulo $1$.
+\end{proposition}
+
+\begin{proof}
+    Sin pérdida de generalidad, supongamos que eliminamos los primeros $M$ términos de la sucesión 
+    y definimos $y_n = x_{n+M}$ para cada $n \in \mathbb{N}$. 
+    
+    Sea $(a,b) \subset \mathbb{T}$,    
+    \[
+        A_N((a,b),y) = \card \left\{M+1 \leq n \leq N+M : \partfrac{x_n} \in (a,b)\right\}
+    \]
+    por lo que,
+    \[
+        A_N((a,b),y) = A_{N+M}((a,b),x) - A_M((a,b),x)
+    \]
+
+    Utilizando la equidistribución de $(x_n)$ y que $0 \leq A_M((a,b),x) \leq M$, obtenemos
+    \[
+        \lim_{N \to \infty} \frac{A_N((a,b),y)}{N} =
+        \lim_{N \to \infty}  \left(\frac{N+M}{N} \, \frac{A_{N+M}((a,b),x)}{N+M} - \frac{A_M((a,b),x)}{N} \right) =
+        b-a
+    \]
+    
+    Por tanto, la sucesión $(y_n)$ es equidistribuida módulo $1$.
+\end{proof}

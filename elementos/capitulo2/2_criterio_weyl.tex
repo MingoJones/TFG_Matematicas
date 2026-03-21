@@ -1,0 +1,20 @@
+\begin{theorem}
+    Sea $(x_n)$ una sucesión en $[0,1)$, entonces son equivalentes:
+    \begin{enumerate}
+        \item $(x_n)$ es equidistribuida en $[0,1)$.
+        \item Para todo $k \in \mathbb{Z} \setminus \{0\}$,
+              \[
+                  \frac{1}{N} \sum_{n=1}^N e^{2\pi i k x_n} \longrightarrow 0 \quad \text{cuando } N \to \infty.
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    $1 \Longrightarrow 2$ \, Sea $k \in \mathbb{Z} \setminus \{0\}$, como $(x_n)$ es equidistribuida aplicando
+    el teorema anterior a la función $f(x) = e^{2\pi i k x}$, entonces,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i k x_n} = \int_0^1 e^{2\pi i k x}\ dx = 0.
+    \]
+    $2 \Longrightarrow 1$ \, La hipótesis es el paso $2$ del Lema \ref{lem:lema_na}. Reproduciendo la prueba,
+    se concluye que $(x_n)$ es equidistribuida módulo $1$. 
+\end{proof}
