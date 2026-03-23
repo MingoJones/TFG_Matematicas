@@ -1,8 +1,8 @@
 \begin{theorem}
-    Sea $(x_n)$ una sucesión en $[0,1)$, entonces son equivalentes:
+    Sea $(x_n)_{n\geq1}$ una sucesión de números reales, entonces son equivalentes:
     \begin{enumerate}
-        \item $(x_n)$ es equidistribuida en $[0,1)$.
-        \item Para toda función Riemann integrable $f$ en $\mathbb{T}$,
+        \item $(x_n)$ es equidistribuida módulo $1$.
+        \item Para toda función $f\in \mathcal{R}(\mathbb{T})$, Riemann integrable, se cumple que
               \[
                   \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x)\ dx.
               \]
@@ -11,20 +11,18 @@
 
 \begin{proof}
     $1 \Longrightarrow 2$ \, Sea $(x_n)$ una sucesión equidistribuida módulo 1.
-    Por definición, para cada $(a,b) \subset \mathbb{T}$,
-    \[
-        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n)= \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx.
-    \]
+    
+    Consideremos la partición $0=a_0 < a_1 < \ldots < a_k=1$ de $\mathbb{T}$. Sea $f$ una función 
+    escalonada tal que $f(x) = \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_i)}(x)$ con $c_i \in \mathbb{R}$
+    para cada $i=1,\ldots,k$.
 
-    Sea $f(x) = \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_{i})}(x)$ una combinación 
-    lineal de funciones características con la partición $P = \{0 = a_0 < a_1 < \ldots < a_k = 1\}$ 
     Entonces,
     \[
         \frac{1}{N} \sum_{n=1}^N f(x_n) = 
         \frac{1}{N} \sum_{n=1}^N \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_i)}(x_n) = 
         \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
     \]
-    como $(x_n)$ es equidistribuida, 
+    como $(x_n)$ es equidistribuida, por la observación~\ref{obs:equidistribucion}, 
     \begin{align*}
         \lim_{N \to \infty} \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
         &= \sum_{i=1}^k c_i \left(\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right) \\
@@ -33,27 +31,30 @@
         =\int_0^1 f(x)\ dx.
     \end{align*}
     
-    Ahora consideramos $f \in \mathcal{R}(\mathbb{T})$. Como es integrable Riemann, para todo $\varepsilon > 0$ 
-    existe una partición $P=\{0=a_0 < a_1 < \ldots < a_k=1\}$, y existen dos funciones $g,h$ de la forma
+    Ahora, sea $f \in \mathcal{R}(\mathbb{T})$. Como $f$ es integrable Riemann, 
+    para todo $\varepsilon > 0$ existe una partición $P=\{0=a_0<\cdots<a_k=1\}$ tal que, 
+    si definimos
     \[
-        g(x) = \sum_{i=1}^k m_i \mathbf{1}_{[a_{i-1}, a_i)}(x) \qquad h(x) = \sum_{i=1}^k M_i \mathbf{1}_{[a_{i-1}, a_i)}(x)
+        L(x)=\sum_{i=1}^k m_i \mathbf{1}_{[a_{i-1},a_i)}(x) \qquad
+        U(x)=\sum_{i=1}^k M_i \mathbf{1}_{[a_{i-1},a_i)}(x)
     \]
-    con $m_i = \inf_{x \in [a_{i-1}, a_i)} f(x)$ y $M_i = \sup_{x \in [a_{i-1}, a_i)} f(x)$, tal que
+    donde $m_i=\inf_{x\in[a_{i-1},a_i)} f(x)$ y $M_i=\sup_{x\in[a_{i-1},a_i)} f(x)$
+    se tiene
     \[
-        g(x) \leq f(x) \leq h(x) \qquad \int_0^1 h(x)\ dx - \int_0^1 g(x)\ dx \leq \varepsilon.
+        L(x)\le f(x)\le U(x), \qquad \int_0^1 U(x) \, dx - \int_0^1 L(x) \, dx \leq \varepsilon.
     \]
 
-    Sea $S_N = \sum_{n=1}^N f(x_n)$, entonces,
+    Sea $S_N = \sum_{n=1}^N f(x_n)$, tenemos,
     \[
-        \frac{1}{N} \sum_{n=1}^N g(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N h(x_n)
+        \frac{1}{N} \sum_{n=1}^N L(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N U(x_n)
     \]
-    como $g$ y $h$ son combinaciones lineales de funciones características, al tomar límites,
+    como $L$ y $U$ son funciones escalonadas, al tomar límites,
     \[
         \int_0^1 f(x) \, dx - \varepsilon 
-        \leq \int_0^1 g(x) \, dx 
+        \leq \int_0^1 L(x) \, dx 
         \leq \liminf_{N \to \infty} \frac{S_N}{N} 
         \leq \limsup_{N \to \infty} \frac{S_N}{N} 
-        \leq \int_0^1 h(x) \, dx 
+        \leq \int_0^1 U(x) \, dx 
         \leq \int_0^1 f(x) \, dx + \varepsilon
     \]
     como $\varepsilon > 0$ es arbitrario, se concluye que
@@ -66,7 +67,17 @@
     \[
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) = \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx = b-a
     \]
-    lo que demuestra que $(x_n)$ es equidistribuida en $[0,1)$.
 
-
+    lo que demuestra que $(x_n)$ es equidistribuida módulo $1$.
 \end{proof}
+
+\begin{corollary}
+    Sea $(x_n)_{n\geq1}$ una sucesión de números reales, entonces son equivalentes:
+    \begin{enumerate}
+        \item $(x_n)$ es equidistribuida módulo $1$.
+        \item Para toda función $f\in C(\mathbb{T})$, se cumple que
+              \[
+                  \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x)\ dx.
+              \]
+    \end{enumerate}
+\end{corollary}

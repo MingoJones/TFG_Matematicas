@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  20 MAR 2026 12:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  23 MAR 2026 20:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,7 +1000,7 @@ LaTeX Info: Redefining \nameref on input line 20.
 \openout6 = `tfgMates.out'.
 
  (./elementos/resto/Z-portada.tex
-<pics/institucional/escudo-um-bn.png, id=71, 263.48438pt x 263.48438pt>
+<pics/institucional/escudo-um-bn.png, id=79, 263.48438pt x 263.48438pt>
 File: pics/institucional/escudo-um-bn.png Graphic file (type png)
 <use pics/institucional/escudo-um-bn.png>
 Package pdftex.def Info: pics/institucional/escudo-um-bn.png  used on input line 8.
@@ -1095,12 +1095,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.63 
       [2] (./elementos/capitulo1/1_equidistribucion_equivalentes.tex) (./elementos/capitulo1/1_quitar_terminos.tex) (./elementos/capitulo1/1_secuencia_mas_const.tex
-LaTeX Info: Redefining \. on input line 17.
-LaTeX Info: Redefining \% on input line 17.
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17     \]
+l.13     \[
             [3]) (./elementos/capitulo1/1_ejemplo_noeq.tex) (./elementos/capitulo1/1_ejemplo_sieq.tex
 LaTeX Info: Redefining \. on input line 18.
 LaTeX Info: Redefining \% on input line 18.
@@ -1130,7 +1130,7 @@ LaTeX Info: Redefining \% on input line 7.
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
  [8]) (./elementos/capitulo1/1_teorema_na.tex
-<pics/grafico_1_teorema_na.png, id=218, 1028.4021pt x 313.6518pt>
+<pics/grafico_1_teorema_na.png, id=236, 1028.4021pt x 313.6518pt>
 File: pics/grafico_1_teorema_na.png Graphic file (type png)
 <use pics/grafico_1_teorema_na.png>
 Package pdftex.def Info: pics/grafico_1_teorema_na.png  used on input line 22.
@@ -1144,26 +1144,29 @@ LaTeX Info: Redefining \% on input line 97.
 Cap\'{\i }tulo 2.
 (./elementos/capitulo2/capitulo2.tex (./elementos/capitulo2/2_caracterizacion_funcional.tex [11
 
-]) (./elementos/capitulo2/2_ejercicio14.tex
-LaTeX Info: Redefining \. on input line 18.
-LaTeX Info: Redefining \% on input line 18.
- [12]) (./elementos/capitulo2/2_criterio_weyl.tex) (./elementos/capitulo2/2_na.tex) (./elementos/capitulo2/2_ax-b.tex
-LaTeX Info: Redefining \. on input line 3.
-LaTeX Info: Redefining \% on input line 3.
- [13]) (./elementos/capitulo2/2_sin_noeq.tex
-LaTeX Info: Redefining \. on input line 28.
-LaTeX Info: Redefining \% on input line 28.
- [14]))
+]
+LaTeX Info: Redefining \. on input line 77.
+LaTeX Info: Redefining \% on input line 77.
+ [12]) (./elementos/capitulo2/2_ejercicio14.tex
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+ [13]) (./elementos/capitulo2/2_criterio_weyl.tex) (./elementos/capitulo2/2_na.tex
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+ [14]) (./elementos/capitulo2/2_ax-b.tex) (./elementos/capitulo2/2_sin_noeq.tex
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
+ [15]))
 LaTeX Info: Redefining \. on input line 100.
 LaTeX Info: Redefining \% on input line 100.
- [15]
+ [16]
 Cap\'{\i }tulo 3.
-(./elementos/capitulo3/capitulo3.tex (./elementos/capitulo3/3_formula_euler.tex) (./elementos/capitulo3/3_alogn.tex [16
+(./elementos/capitulo3/capitulo3.tex (./elementos/capitulo3/3_formula_euler.tex) (./elementos/capitulo3/3_alogn.tex [17
 
 ]) (./elementos/capitulo3/3_an_b.tex
 LaTeX Info: Redefining \. on input line 20.
 LaTeX Info: Redefining \% on input line 20.
- [17]
+ [18]
 Overfull \hbox (8.13141pt too wide) detected at line 29
 []
  []
@@ -1171,41 +1174,61 @@ Overfull \hbox (8.13141pt too wide) detected at line 29
 ) (./elementos/capitulo3/3_fejer_euler.tex
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- [18]))
+ [19]))
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
- [19]
+ [20]
 Cap\'{\i }tulo 4.
-(./elementos/capitulo4/capitulo4.tex (./elementos/capitulo4/4_vandercorput.tex [20
+(./elementos/capitulo4/capitulo4.tex (./elementos/capitulo4/4_vandercorput.tex [21
 
 ]
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
- [21]) (./elementos/capitulo4/4_n2a.tex
+ [22]) (./elementos/capitulo4/4_n2a.tex
 LaTeX Info: Redefining \. on input line 15.
 LaTeX Info: Redefining \% on input line 15.
- [22]) (./elementos/capitulo4/4_diferencias_weyl.tex
+ [23]) (./elementos/capitulo4/4_diferencias_weyl.tex
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
- [23]) (./elementos/capitulo4/4_polinomios_weyl.tex
+ [24]) (./elementos/capitulo4/4_polinomios_weyl.tex
 LaTeX Info: Redefining \. on input line 39.
 LaTeX Info: Redefining \% on input line 39.
- [24]) (./elementos/capitulo4/4_an_b.tex) (./elementos/capitulo4/4_fejer_diferencias.tex))
+ [25]) (./elementos/capitulo4/4_an_b.tex) (./elementos/capitulo4/4_fejer_diferencias.tex))
 LaTeX Info: Redefining \. on input line 106.
 LaTeX Info: Redefining \% on input line 106.
- [25]
+ [26]
 Cap\'{\i }tulo 5.
 
 LaTeX Warning: Empty bibliography on input line 120.
 
-[26
+[27
 
 ]
+Ap\'{e}ndice A.
+(./elementos/apendices/apendice1.tex (./elementos/apendices/auxiliar_ej14.tex [28
 
-Package caption Warning: Unused \captionsetup[table] on input line 21.
-See the caption package documentation for explanation.
+]
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+ [29]))
+LaTeX Info: Redefining \. on input line 133.
+LaTeX Info: Redefining \% on input line 133.
+ [30]
+Ap\'{e}ndice B.
+(./elementos/apendices/apendice2.tex (./elementos/tablas/tabla-ejemplo.tex
+Underfull \hbox (badness 7851) in paragraph at lines 15--15
+[]\OT1/cmr/m/n/12 Dise~no de ac-ti-vi-da-des
+ []
 
-[27] (build/tfgMates.aux
+[31
+
+]))
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
+ [32]
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+ [33] [34] (build/tfgMates.aux
 LaTeX Info: Redefining \sptext on input line 26.
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
@@ -1214,7 +1237,7 @@ LaTeX Info: Redefining \% on input line 26.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `tfgMates.out' has not changed.
-(rerunfilecheck)             Checksum: B0963E0D8ED2910A62018F1279EF041A;2823.
+(rerunfilecheck)             Checksum: E508A8669F3D0288B3CA310478F86D2F;3237.
 Package logreq Info: Writing requests to 'tfgMates.run.xml'.
 \openout1 = `tfgMates.run.xml'.
 
@@ -1224,18 +1247,18 @@ Package logreq Info: Writing requests to 'tfgMates.run.xml'.
 ### semi simple group (level 1) entered at line 87 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 33752 strings out of 478287
- 634811 string characters out of 5849289
- 1404814 words of memory out of 5000000
- 51173 multiletter control sequences out of 15000+600000
- 481378 words of font info for 73 fonts, out of 8000000 for 9000
+ 33812 strings out of 478287
+ 636040 string characters out of 5849289
+ 1405271 words of memory out of 5000000
+ 51201 multiletter control sequences out of 15000+600000
+ 481737 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,12n,92p,790b,2080s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/tfgMates.pdf (38 pages, 434614 bytes).
+ 89i,12n,92p,790b,2119s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on build/tfgMates.pdf (45 pages, 460730 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
- 100 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 116 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 

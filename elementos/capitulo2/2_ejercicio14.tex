@@ -1,26 +1,73 @@
 \begin{example}
-    Sea $(x_n)_{n\geq1}$ una sucesión en $\mathbb{T}$. Definimos $S((a,b),N) = \sum_{n=1}^N x_n \, \mathbf{1}_{(a,b)}(x_n)$
-    donde $(a,b) \subseteq \mathbb{T}$. Entonces, la sucesión $(x_n)$ es equidistribuida módulo $1$ si y solo si 
-    para todo intervalo $(a,b) \subseteq \mathbb{T}$
+    Sea $(x_n)_{n\geq1}$ una sucesión en $\mathbb{T}$. Definimos $S([a,b),N)$ como la suma de los
+    términos que caen en el intervalo $[a,b)$, es decir,
+    $S([a,b),N) = \sum_{n=1}^N x_n \, \mathbf{1}_{[a,b)}(x_n)$. Entonces, la sucesión $(x_n)$ es
+    equidistribuida módulo $1$ si y solo si para cada intervalo $[a,b) \subset \mathbb{T}$, 
+    se tiene que
     \[
-        \lim_{N \to \infty} \frac{S((a,b),N)}{N} = \frac{1}{2}(b^2-a^2)
+        \lim_{N \to \infty} \frac{S([a,b),N)}{N} = \frac{1}{2}(b^2-a^2)
     \]
 \end{example}
 
 \begin{proof}
-    $\Longrightarrow$ \, Sea $(a,b) \subseteq \mathbb{T}$ y sea $f(x) = x \, \mathbf{1}_{(a,b)}(x)$.
+    $\Longrightarrow$ \, Sea $[a,b) \subset \mathbb{T}$ y sea $f(x) = x \, \mathbf{1}_{[a,b)}(x)$.
     
     Como $f \in \mathcal{R}(\mathbb{T})$ y $(x_n)$ es equidistribuida,
     \[
-        \lim_{N \to \infty} \frac{S((a,b),N)}{N} = 
+        \lim_{N \to \infty} \frac{S([a,b),N)}{N} = 
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = 
         \int_0^1 f(x)\ dx = \int_a^b x\ dx = \frac{1}{2}(b^2-a^2)
     \]
 
-    $\Longleftarrow$ \, 
-    Vamos a probar que las CL de funciones $f(x)=x \, \mathbf{1}_{(a,b)}(x)$ son densas en $L^1(\mathbb{T})$.
-    Para esto, sea $f \in L^1(\mathbb{T})$ y sea $\varepsilon > 0$. Por la densidad de las funciones simples, existe una función simple $s(x) = \sum_{i=1}^m a_i \mathbf{1}_{A_i}(x)$ tal que $\|f-s\|_1 < \varepsilon/2$.
-    Dado que cada $A_i$ es medible, podemos aproximar cada $A_i$ por una unión finita de intervalos abiertos, es decir, existe una función $g(x) = \sum_{i=1}^m a_i \mathbf{1}_{B_i}(x)$ donde cada $B_i$ es una unión finita de intervalos abiertos tal que $\|s-g\|_1 < \varepsilon/2$.
-    Por lo tanto, $\|f-g\|_1 \leq \|f-s\|_1 + \|s-g\|_1 < \varepsilon$.
-    Finalmente, cada $B_i$ es una unión finita de intervalos abiertos, por lo que $g$ es una combinación lineal de funciones de la forma $x \, \mathbf{1}_{(a,b)}(x)$.      
+    $\Longleftarrow$ \, Sea $f(x) = \sum_{i=1}^k c_i x \,\mathbf{1}_{[a_{i-1}, a_{i})}(x)$ una  
+    funcion lineal a trozos, cada segmento es de la forma $y=kx$, y la partición 
+    $P = \{0 = a_0 < a_1 < \ldots < a_k = 1\}$ de $\mathbb{T}$. 
+    \[
+        \frac{1}{N} \sum_{n=1}^N f(x_n) = 
+        \frac{1}{N} \sum_{n=1}^N \sum_{i=1}^k c_i x_n \, \mathbf{1}_{[a_{i-1}, a_i)}(x_n) = 
+        \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N x_n \,\mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
+    \]
+    como cada término es de la forma $S([a,b),N)$, al tomar límites, 
+    \begin{align*}
+        \lim_{N \to \infty} \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N x_n \,\mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
+        &= \sum_{i=1}^k c_i \left(\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N x_n \,\mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right) \\
+        &= \sum_{i=1}^k c_i \int_0^1 x \,\mathbf{1}_{[a_{i-1}, a_i)}(x)\ dx \\
+        &= \int_0^1 \sum_{i=1}^k c_i x \,\mathbf{1}_{[a_{i-1}, a_i)}(x)\ dx 
+        =\int_0^1 f(x)\ dx.
+    \end{align*}
+
+    Dado $a>0$ y $f \in \mathcal{R}(\mathbb{T})$ tal que $f(x)=0$ para $x \in [0,a)$.
+    En virtud del teorema \ref{aux:14}, para cada $\varepsilon > 0$ existen funciones lineales 
+    a trozos $L,U$ tales que
+    \[
+        L(x) \leq f(x) \leq U(x) \qquad 
+        \int_0^1 U(x) \, dx - \int_0^1 L(x) \, dx \leq \varepsilon
+    \]
+
+    Luego si $S_N = \sum_{n=1}^N f(x_n)$, entonces,
+    \[
+        \frac{1}{N} \sum_{n=1}^N L(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N U(x_n)
+    \]
+    como $L$ y $U$ son funciones lineales a trozos de la forma anterior, al tomar límites,
+    \[
+        \int_0^1 f(x) \, dx - \varepsilon 
+        \leq \int_0^1 L(x) \, dx 
+        \leq \liminf_{N \to \infty} \frac{S_N}{N} 
+        \leq \limsup_{N \to \infty} \frac{S_N}{N} 
+        \leq \int_0^1 U(x) \, dx 
+        \leq \int_0^1 f(x) \, dx + \varepsilon
+    \]
+    como $\varepsilon > 0$ es arbitrario, se concluye que
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x) \, dx.
+    \]
+    cuando $f\in \mathcal{R}(\mathbb{T})$ y $f(x)=0$ para $x \in [0,a)$ con $a>0$.
+    
+    En particular, aplicando el resultado a $f(x) = \mathbf{1}_{(a,1)}(x)$, con $0<a<1$,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,1)}(x_n) = \int_0^1 \mathbf{1}_{(a,1)}(x)\ dx = 1-a
+    \]
+    lo que demuestra que $(x_n)$ es equidistribuida módulo $1$
+
+
 \end{proof}

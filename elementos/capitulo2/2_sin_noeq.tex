@@ -3,13 +3,7 @@
 \end{example} 
 
 \begin{resolve}
-    Como $\frac{n}{2\pi} \mod 1$ es equidistribuida en $[0,1)$, se deduce que $n \mod 2\pi$ 
-    es equidsitribuida en $[0,2\pi)$ y por tanto densa.
-
-    Ya que la funcion seno es continua y su imagen es $[-1,1]$, entonces $\sin n$ es densa en $[-1,1]$ 
-    Por lo tanto $\partfrac{\sin n}$ es densa en $[0,1)$.
-
-    Sin embargo, $\partfrac{\sin n}$ no es equidistribuida. Sabemos que $n$ es equidistribuida en $[0,2\pi)$.
+    Sabemos que $n$ es equidistribuida en $[0,2\pi)$.
     Por la caracterización funcional de la equidistribución aplicada a la función $f(x) = e^{2\pi i \sin x}$, tenemos que
     \[
         \frac{1}{N} \sum_{n=1}^N e^{2\pi i \sin n} \longrightarrow \frac{1}{2\pi} \int_0^{2\pi} e^{2\pi i \sin x} dx \qquad \text{cuando } N \to \infty.

@@ -1,0 +1,117 @@
+\begin{theorem}
+    \label{aux:14}
+    Sea $f \in \mathcal{R}(\mathbb{T})$ tal que $f(x)=0$ para $x \in [0,a)$ con $a>0$. 
+    
+    Dado $\varepsilon > 0$, existen funciones lineales a trozos $L,U$ tales que las extensiones
+    de sus segmentos de recta pasan por el origen $(y=kx)$, y 
+    \[
+        L(x) \leq f(x) \leq U(x) \qquad \int_0^1 U(x)\ dx - \int_0^1 L(x)\ dx \leq \varepsilon
+    \]
+\end{theorem}
+
+\begin{proof}
+    Separamos $\mathbb{T}\simeq[0,1)$ en dos partes, $[0,a)$ y $[a,1)$. 
+
+    Como en $[0,a)$, $f(x)=0$, definimos $L(x) = U(x) = 0$ para $x \in [0,a)$. 
+    Basta trabajar con $f$ en el intervalo $[a,1)$
+
+    Para el intervalo $[a,1)$, al ser $f$ Riemann integrable en $[a,1]$, para cada $\varepsilon > 0$ 
+    existe $\delta' > 0$ tal que para toda partición $P'=\{a=a_0 < a_1 < \ldots < a_k=1\}$ con 
+    $\max_{1 \leq i \leq k} (a_i - a_{i-1}) < \delta'$, si definimos
+    \[
+        u(x) = \sum_{i=1}^k M_i \mathbf{1}_{[a_{i-1}, a_i)}(x) \qquad 
+        l(x) = \sum_{i=1}^k m_i \mathbf{1}_{[a_{i-1}, a_i)}(x)
+    \]
+    con $m_i = \inf_{x \in [a_{i-1}, a_i)} f(x)$ y $M_i = \sup_{x \in [a_{i-1}, a_i)} f(x)$, entonces
+    \[
+        l(x) \leq f(x) \leq u(x) \qquad \int_a^1 u(x)\ dx - \int_a^1 l(x)\ dx < \varepsilon
+    \]
+
+    Definimos ahora funciones lineales a trozos $L$ y $U$ en $[a,1)$ de la siguiente forma. 
+    Para cada intervalo $[a_{i-1}, a_i)$, definimos 
+    \[
+        L(x) = \frac{m_i}{a_i} x \qquad U(x) = \frac{M_i}{a_{i-1}} x
+    \]
+
+    De este modo, para cada $x \in [a_{i-1}, a_i)$, se tiene que
+    \[
+        \frac{x}{a_i} \leq 1 \quad \text{y} \quad \frac{x}{a_{i-1}} \geq 1
+    \]
+    luego,
+    \[
+        L(x) \leq m_i \leq f(x) \leq M_i \leq U(x)
+    \]
+
+    Ahora calculemos las integrales de $L$ y $U$
+    \[
+        \int_{a}^1 U(x) \, dx = 
+        \sum_{i=1}^k \int_{a_{i-1}}^{a_i} \frac{M_i}{a_{i-1}} x \, dx =
+        \sum_{i=1}^k \left(\frac{M_i}{a_{i-1}}\frac{a_i^2-a_{i-1}^2}{2}\right) =
+        \sum_{i=1}^k \left(M_i(a_i-a_{i-1})\frac{(a_i+a_{i-1})}{2a_{i-1}}\right)
+    \]
+    \[
+        \int_{a}^1 L(x) \, dx = 
+        \sum_{i=1}^k \int_{a_{i-1}}^{a_i} \frac{m_i}{a_i} x \, dx =
+        \sum_{i=1}^k \left(\frac{m_i}{a_i}\frac{a_i^2-a_{i-1}^2}{2}\right) =
+        \sum_{i=1}^k \left(m_i(a_i-a_{i-1})\frac{(a_i+a_{i-1})}{2a_i}\right)
+    \]
+    y su diferencia,
+    \[
+        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx = 
+        \sum_{i=1}^k (a_i-a_{i-1})\frac{(a_i+a_{i-1})}{2}\left(\frac{M_i}{a_{i-1}} - \frac{m_i}{a_i}\right)
+    \]
+    Como $a_{i-1} < a_i$, se tiene que 
+    \[
+        \frac{M_i}{a_{i-1}} - \frac{m_i}{a_i} < 
+        \frac{M_i}{a_{i-1}} - \frac{m_i}{a_{i-1}} = 
+        \frac{M_i - m_i}{a_{i-1}}
+    \]
+    y por lo tanto,
+    \[
+        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx < 
+        \sum_{i=1}^k (M_i - m_i)(a_i-a_{i-1})\frac{(a_i+a_{i-1})}{2a_{i-1}}
+    \]
+    Ahora observamos que como $a_{i-1} \geq a$, 
+    \[
+        \frac{(a_i+a_{i-1})}{2a_{i-1}} = 
+        \frac{1}{2}\left(\frac{a_i}{a_{i-1}} + 1\right) =
+        \frac{1}{2}\left(\frac{a_i - a_{i-1}}{a_{i-1}} + 2\right) <
+        1+ \frac{a_i - a_{i-1}}{2a}
+    \]
+    Por lo tanto,
+    \[
+        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx < 
+        \sum_{i=1}^k (M_i - m_i)(a_i-a_{i-1}) + \sum_{i=1}^k \frac{M_i-m_i}{2a}(a_i-a_{i-1})^2
+    \]
+    
+    Como $f$ es acotada, existe $B > 0$ tal que $|f(x)| < B$ luego $M_i - m_i < 2B$ para
+    cada $i=1,\ldots,k$. Además, $\max_{1 \leq i \leq k} (a_i - a_{i-1}) < \delta'$, 
+    \begin{align*}        
+        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx 
+        &< \sum_{i=1}^k (M_i - m_i)(a_i-a_{i-1}) + \sum_{i=1}^k \delta' \frac{B}{a} (a_i-a_{i-1}) \\
+        &= \int_a^1 u(x)\ dx - \int_a^1 l(x)\ dx + \delta' \frac{B}{a} (1-a)
+    \end{align*}
+
+    Ahora sea $\delta > 0$ tal que $\delta < \delta'$ y cumpla $\delta \frac{B}{a} (1-a) < \varepsilon$ 
+    entonces si tomamos una partición $P$ con $\max_{1 \leq i \leq k} (a_i - a_{i-1}) < \delta$, tendriamos que
+    \[
+        \int_a^1 u(x) \, dx - \int_a^1 l(x) \, dx < \varepsilon
+        \quad \text{y} \quad 
+        \delta \frac{B}{a} (1-a) < \varepsilon
+    \]
+    entonces la diferencia de las integrales de $L$ y $U$ en $[a,1)$ se puede acotar por
+    \[
+        \int_{a}^1 U(x) \, dx - \int_{a}^1 L(x) \, dx < 
+        2\varepsilon  
+    \]
+     y por lo tanto,
+     \[
+        \int_0^1 U(x) \, dx - \int_0^1 L(x) \, dx = 
+        \int_a^1 U(x) \, dx - \int_a^1 L(x) \, dx < 2\varepsilon
+    \]
+    Como $\varepsilon > 0$ es arbitrario, se concluye que existen funciones lineales a trozos $L$ y $U$ 
+    como las anteriores, tales que
+    \[
+        L(x) \leq f(x) \leq U(x) \qquad \int_0^1 U(x)\ dx - \int_0^1 L(x)\ dx < \varepsilon
+    \]
+\end{proof}
