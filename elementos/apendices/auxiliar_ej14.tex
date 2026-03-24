@@ -27,8 +27,9 @@
         l(x) \leq f(x) \leq u(x) \qquad \int_a^1 u(x)\ dx - \int_a^1 l(x)\ dx < \varepsilon
     \]
 
-    Definimos ahora funciones lineales a trozos $L$ y $U$ en $[a,1)$ de la siguiente forma. 
-    Para cada intervalo $[a_{i-1}, a_i)$, definimos 
+    Fijado $\varepsilon > 0$, definimos funciones lineales a trozos $L$ y $U$ en $[a,1)$ de la siguiente forma. 
+    
+    Para cada intervalo $[a_{i-1}, a_i)$,  
     \[
         L(x) = \frac{m_i}{a_i} x \qquad U(x) = \frac{M_i}{a_{i-1}} x
     \]
@@ -57,7 +58,7 @@
     \]
     y su diferencia,
     \[
-        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx = 
+        \int_{a}^1 U(x) \, dx - \int_{a}^1 L(x) \, dx = 
         \sum_{i=1}^k (a_i-a_{i-1})\frac{(a_i+a_{i-1})}{2}\left(\frac{M_i}{a_{i-1}} - \frac{m_i}{a_i}\right)
     \]
     Como $a_{i-1} < a_i$, se tiene que 
@@ -68,7 +69,7 @@
     \]
     y por lo tanto,
     \[
-        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx < 
+        \int_{a}^1 U(x) \, dx - \int_{a}^1 L(x) \, dx < 
         \sum_{i=1}^k (M_i - m_i)(a_i-a_{i-1})\frac{(a_i+a_{i-1})}{2a_{i-1}}
     \]
     Ahora observamos que como $a_{i-1} \geq a$, 
@@ -80,24 +81,32 @@
     \]
     Por lo tanto,
     \[
-        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx < 
+        \int_{a}^1 U(x) \, dx - \int_{a}^1 L(x) \, dx < 
         \sum_{i=1}^k (M_i - m_i)(a_i-a_{i-1}) + \sum_{i=1}^k \frac{M_i-m_i}{2a}(a_i-a_{i-1})^2
     \]
     
     Como $f$ es acotada, existe $B > 0$ tal que $|f(x)| < B$ luego $M_i - m_i < 2B$ para
     cada $i=1,\ldots,k$. Además, $\max_{1 \leq i \leq k} (a_i - a_{i-1}) < \delta'$, 
-    \begin{align*}        
-        \int_{a}^1 h(x) \, dx - \int_{a}^1 g(x) \, dx 
-        &< \sum_{i=1}^k (M_i - m_i)(a_i-a_{i-1}) + \sum_{i=1}^k \delta' \frac{B}{a} (a_i-a_{i-1}) \\
-        &= \int_a^1 u(x)\ dx - \int_a^1 l(x)\ dx + \delta' \frac{B}{a} (1-a)
-    \end{align*}
+    \[
+        \sum_{i=1}^k \frac{M_i-m_i}{2a}(a_i-a_{i-1})^2 <
+        \sum_{i=1}^k \delta' \frac{B}{a}(a_i-a_{i-1})= 
+        \delta' \frac{B}{a} (1-a) =
+        \delta' K
+    \]
+    siendo $K = \frac{B}{a} (1-a)$ una constante que no depende de la partición. 
+    
+    Por lo tanto,
+    \[
+        \int_a^1 U(x) \, dx - \int_a^1 L(x) \, dx < 
+        \int_a^1 u(x)\,dx - \int_a^1 l(x)\,dx + \delta' K
+    \]
 
-    Ahora sea $\delta > 0$ tal que $\delta < \delta'$ y cumpla $\delta \frac{B}{a} (1-a) < \varepsilon$ 
+    Sea ahora $\delta > 0$ tal que $\delta < \delta'$ y que cumpla $\delta K < \varepsilon$ 
     entonces si tomamos una partición $P$ con $\max_{1 \leq i \leq k} (a_i - a_{i-1}) < \delta$, tendriamos que
     \[
         \int_a^1 u(x) \, dx - \int_a^1 l(x) \, dx < \varepsilon
         \quad \text{y} \quad 
-        \delta \frac{B}{a} (1-a) < \varepsilon
+        \delta K < \varepsilon
     \]
     entonces la diferencia de las integrales de $L$ y $U$ en $[a,1)$ se puede acotar por
     \[
