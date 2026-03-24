@@ -1,22 +1,33 @@
 \begin{example}
-    La sucesión $\partfrac{\sin n}$ es densa en $[0,1)$ pero no es equidistribuida.
+    La sucesión $(\sin n)_{n\geq1}$ no es equidistribuida módulo $1$.
 \end{example} 
 
 \begin{resolve}
-    Sabemos que $n$ es equidistribuida en $[0,2\pi)$.
-    Por la caracterización funcional de la equidistribución aplicada a la función $f(x) = e^{2\pi i \sin x}$, tenemos que
+    Observemos que, como $\frac{1}{2\pi}\notin \mathbb{Q}$, la sucesión 
+    $(\frac{n}{2\pi})$ es equidistribuida módulo $1$.
+
+    Sea $f(x)=e^{2\pi i \sin(2\pi x)}$, $f\in C(\mathbb{T})$.
+    Por el corolario \ref{carac:continua} tenemos que
     \[
-        \frac{1}{N} \sum_{n=1}^N e^{2\pi i \sin n} \longrightarrow \frac{1}{2\pi} \int_0^{2\pi} e^{2\pi i \sin x} dx \qquad \text{cuando } N \to \infty.
+        \lim_{N\to\infty} \frac{1}{N}\sum_{n=1}^N e^{2\pi i \sin n} = \int_0^1 e^{2\pi i \sin(2\pi x)} dx.
     \]
 
-    Si calculamos esta integral, tenemos que
-    \[
-        \int_0^{2\pi} e^{2\pi i \sin x} dx = 2\pi J_0(2\pi) \neq 0.
-    \]
+    El termino de la izquierda coincide con la suma del criterio de Weyl 
+    para $k=1$ aplicada a $(\sin n)$.
 
-    Si $\partfrac{\sin n}$ fuese equidistribuida, por el criterio de Weyl, debería cumplirse
+    Si $(\sin n)$ fuera equidistribuida módulo $1$, el criterio de Weyl 
+    implicaría que el limite es $0$.
+
+    Pero al calcular la integral con el cambio de variable $t=2\pi x$ 
+    obtenemos,
+    %No sabia como se calculaba la integral y al meterla en Wolfram me dio eso.
     \[
-        \forall \, k \in \mathbb{Z}\setminus\{0\}, \quad \frac{1}{N} \sum_{n=1}^N e^{2\pi i k \sin n} \longrightarrow 0 \qquad \text{cuando } N \to \infty,
+        \int_0^1 e^{2\pi i \sin(2\pi x)} \,dx = 
+        \frac{1}{2\pi} \int_0^{2\pi} e^{2\pi i \sin t} \,dt
+        = J_0(2\pi) \simeq 0,22
     \]
-    Pero para $k=1$ hemos visto que esta suma tiende a $J_0(2\pi) \neq 0$, lo que demuestra que $\partfrac{\sin n}$ no es equidistribuida.
+    donde $J_0$ es la función de Bessel de primera especie con $\alpha=0$. 
+    
+    Por lo tanto, el criterio de Weyl no se cumple para $k=1$, y $(\sin n)$
+    no es equidistribuida.
 \end{resolve}

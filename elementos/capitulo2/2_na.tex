@@ -1,15 +1,20 @@
 \begin{example}
-    La sucesión $\partfrac{n\alpha}$ con $\alpha \notin \mathbb{Q}$ es equidistribuida en $[0,1)$.
+    La sucesión $(n\alpha)_{n\geq1}$ con $\alpha \notin \mathbb{Q}$ es equidistribuida módulo $1$.
 \end{example}
 
 \begin{resolve}
-    Por el criterio de Weyl, sea $k \in \mathbb{Z}\setminus\{0\}$. Entonces,
+    Sea $k \in \mathbb{Z}\setminus\{0\}$,
     \[
         \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k n\alpha} \right| =
         \frac{1}{N} \left|\frac{e^{2\pi i k \alpha}(1-e^{2\pi i k N \alpha})}{1-e^{2\pi i k \alpha}} \right| \leq
         \frac{2}{N|e^{2\pi i k \alpha}-1|}
     \]
     Como $\alpha \notin \mathbb{Q}$, se tiene $k\alpha \notin \mathbb{Z}$ y por tanto $e^{2\pi i k \alpha} \neq 1$
-    Luego el límite es $0$ cuando $N \to \infty$.
+    
+    Al tomar el límite cuando $N \to \infty$ se concluye que
+    \[
+        \lim_{N \to \infty} \frac{1}{N}\sum_{n=1}^N e^{2\pi i k n\alpha} = 0
+    \]
+    y por el criterio de Weyl, la sucesión $(n\alpha)$ es equidistribuida módulo $1$.
 \end{resolve}
 

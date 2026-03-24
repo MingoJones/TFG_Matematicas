@@ -1,9 +1,9 @@
 \begin{theorem}
     \label{teo:criterio_weyl}
-    Sea $(x_n)$ una sucesión en $[0,1)$, entonces son equivalentes:
+    Sea $(x_n)_{n\geq1}$ una sucesión de números reales, entonces son equivalentes:
     \begin{enumerate}
-        \item $(x_n)$ es equidistribuida en $[0,1)$.
-        \item Para todo $k \in \mathbb{Z} \setminus \{0\}$,
+        \item $(x_n)$ es equidistribuida módulo $1$.
+        \item Para cada $k \in \mathbb{Z} \setminus \{0\}$,
               \[
                   \frac{1}{N} \sum_{n=1}^N e^{2\pi i k x_n} \longrightarrow 0 \quad \text{cuando } N \to \infty.
               \]
@@ -11,11 +11,53 @@
 \end{theorem}
 
 \begin{proof}
-    $1 \Longrightarrow 2$ \, Sea $k \in \mathbb{Z} \setminus \{0\}$, como $(x_n)$ es equidistribuida aplicando
-    el teorema anterior a la función $f(x) = e^{2\pi i k x}$, entonces,
+    $1 \Longrightarrow 2$ \, Sea $k \in \mathbb{Z} \setminus \{0\}$ y sea $f(x)=e^{2\pi i k x}$, 
+    $f \in C(\mathbb{T})$ y por el corolario \ref{carac:continua}, se cumple que
     \[
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i k x_n} = \int_0^1 e^{2\pi i k x}\ dx = 0.
     \]
-    $2 \Longrightarrow 1$ \, La hipótesis es el paso $2$ del Lema \ref{lem:lema_na}. Reproduciendo la prueba,
-    se concluye que $(x_n)$ es equidistribuida módulo $1$. 
+    
+    $2 \Longrightarrow 1$ \, La hipótesis es el paso $2$ del lema \ref{lem:lema_na}. 
+    Reproduciendo la prueba, se concluye que para cada función $f \in C(\mathbb{T})$
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x)\ dx
+    \]
+    y por el corolario \ref{carac:continua}, la sucesión $(x_n)$ es equidistribuida módulo $1$.
 \end{proof}
+
+    % Sea $P \in \mathcal{P}(\mathbb{T})$ un polinomio trigonométrico,
+    % $P=\sum_{k=-M}^M c_k e^{2\pi i k x}$ con $c_k \in \mathbb{C}$ y $M \in \mathbb{N}$. 
+    % \begin{align*}
+    %     \frac{1}{N} \sum_{n=1}^{N} P(n\alpha) 
+    %     =\frac{1}{N} \sum_{n=1}^{N} \sum_{k=-M}^M c_k e^{2\pi i k n \alpha} 
+    %     %&=\frac{1}{N} \sum_{k=-M}^M c_k \sum_{n=1}^{N} e^{2\pi i k n \alpha} \\
+    %     =\sum_{k=-M}^M c_k \cdot \left( \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha}\right)
+    % \end{align*}
+    % Cada término de la suma converge a $\int_0^1 e^{2\pi i k x}\,dx$, luego
+    % \begin{align*}
+    %     \lim_{N \to \infty} \sum_{k=-M}^M c_k \cdot \left( \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha}\right)    
+    %     &=\sum_{k=-M}^M c_k \cdot \left( \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} e^{2\pi i k n \alpha}\right) \\
+    %     &=\sum_{k=-M}^M c_k \cdot \int_0^1 e^{2\pi i k x}\,dx \\
+    %     &= \int_0^1 \sum_{k=-M}^M c_k e^{2\pi i k x}\,dx 
+    %     =\int_0^1 P(x)\,dx
+    % \end{align*}
+    % se cumple el lema para polinomios trigonométricos.
+
+    % \textit{Paso 4. } Sea $\varepsilon > 0$, por el teorema de Weierstrass, % \cite{}
+    % existe un polinomio trigonométrico $P$ tal que $\sup_{x \in \mathbb{T}} |f(x)-P(x)| \leq \varepsilon$.
+    
+    % Por el paso 3, sabemos que para ese $\varepsilon > 0$, existe $N_0 \in \mathbb{N}$ tal que 
+    % para todo $N \geq N_0$ se cumple que 
+    % \[
+    %     \left|\frac{1}{N} \sum_{n=1}^{N} P(n\alpha) - \int_0^1 P(x)\,dx\right| \leq \varepsilon
+    % \]
+    % Por lo tanto, para $N \geq N_0$,
+    % % No se si es mejor asi o ponerlo con A, B y C 
+    % \begin{align*}
+    %     \left| \frac{1}{N} \sum_{n=1}^{N} f(n\alpha) - \int_0^1 f(x)\,dx \right|
+    %     &\leq \frac{1}{N} \sum_{n=1}^{N} |f(n\alpha) - P(n\alpha)| \\  
+    %     & \qquad\qquad +\left| \frac{1}{N} \sum_{n=1}^{N} P(n\alpha) - \int_0^1 P(x)\,dx \right| \\
+    %     & \qquad\qquad\qquad\qquad +\int_0^1 |f(x) - P(x)|\,dx   \\
+    %     &\leq 3\varepsilon
+    % \end{align*}
+    % Como $\varepsilon > 0$ es arbitrario, queda demostrado el lema. 

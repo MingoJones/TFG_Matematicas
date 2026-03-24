@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'build/tfgMates.blg'
-[51] biber:340> INFO - === lun mar 23, 2026, 22:40:23
-[61] Biber.pm:418> INFO - Reading 'build/tfgMates.bcf'
-[104] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[113] bbl.pm:654> INFO - Writing 'build/tfgMates.bbl' with encoding 'UTF-8'
-[113] bbl.pm:757> INFO - Output to build/tfgMates.bbl
-[113] Biber.pm:130> WARN - The file 'build/tfgMates.bcf' does not contain any citations!
-[113] Biber.pm:132> INFO - WARNINGS: 1
+[45] biber:340> INFO - === mar mar 24, 2026, 16:12:28
+[55] Biber.pm:418> INFO - Reading 'build/tfgMates.bcf'
+[94] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[103] bbl.pm:654> INFO - Writing 'build/tfgMates.bbl' with encoding 'UTF-8'
+[104] bbl.pm:757> INFO - Output to build/tfgMates.bbl
+[104] Biber.pm:130> WARN - The file 'build/tfgMates.bcf' does not contain any citations!
+[104] Biber.pm:132> INFO - WARNINGS: 1
