@@ -1,15 +1,14 @@
 \begin{theorem}
-    Sea $g:[1,\infty) \to \mathbb{R}$ una función tal que $g' \in C([1,\infty))$ y $g,g'$ son monótonas
-    a partir de un cierto punto $x_0$. Si se cumplen las siguientes,
+    Sea $g:[1,\infty) \to \mathbb{R}$ una función tal que $g' \in C([1,\infty))$ y $g'$ es monótona
+    para $x \geq x_0$ para algún $x_0 \geq 1$. Si se cumplen las siguientes condiciones,
     \[
-        \lim_{x \to \infty} \frac{g(x)}{x} = 0
+        \lim_{x \to \infty} g'(x) = 0
         \qquad \text{y} \qquad
         \lim_{x \to \infty} {x \left|g'(x)\right|} = \infty 
     \]
     entonces la sucesión $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
-    
-    (Las condiciones estan mal hay que modificarlas porque comprobar la monotonia de $g,g'$ 
-    en todo $[1,\infty)$ es excesivamente fuerte y luego los ejemplos que aparecen no la cumplen)
+    % (Las condiciones estan mal hay que modificarlas porque comprobar la monotonia de $g,g'$ 
+    % en todo $[1,\infty)$ es excesivamente fuerte y luego los ejemplos que aparecen no la cumplen)
 \end{theorem}
 
 \begin{proof}
@@ -53,22 +52,40 @@
         \frac{1}{N |g'(N)|} + \frac{1}{N |g'(x_0)|} \longrightarrow 0 \qquad \text{cuando} \ N \to \infty
     \]
     
-    % Aqui hay problemas con g' 
-    En el segundo sumando, por la monotonía de $g'$ en $[x_0,N]$, 
-    la función $\left(\frac{1}{g'(x)}\right)$ es monotona y su derivada es de signo constante, 
-    supongamos que es positiva, entonces
-
-    (Aqui si $g'=0$  tengo un problema. $g'$ puede ser monotona y que pase por $0$ entonces $1/g'$ no esta definida
-    ni es monotona ni nada) 
-    (La hipotesis $\lim g'(x) = 0$ y monotona a partir de $x_0$ hace que no cruce el $0$.
-    y por lo tanto $1/g'$ es monotona.)
+    Para el segundo, tenemos
     \[
         \left|\int_{x_0}^N e^{2\pi i k g(x)}\left(\frac{1}{g'(x)}\right)' \, dx\right|
-        \leq \int_{x_0}^N \left(\frac{1}{g'(x)}\right)' \, dx =
-        \frac{1}{g'(N)} - \frac{1}{g'(x_0)} \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|}
+        \leq \int_{x_0}^N \left|\left(\frac{1}{g'(x)}\right)'\right| \, dx
     \]
+    % Aqui hay problemas con g' 
+    Como $g'(x)$ es monótona a partir de $x_0$ y $\lim_{x \to \infty} g'(x) = 0$, 
+    entonces $g'(x)$ no cambia de signo para $x \geq x_0$. Además, no puede ser que 
+    $g'(x) = 0$ para algún $x \geq x_0$, ya que entonces, por ser monótona, $g'(x) = 0$ 
+    a partir de ahí, lo que contradice la condición $\lim_{x \to \infty} x|g'(x)| = \infty$.
+    
+    Por lo tanto, $1/g'(x)$ es monótona para $x \geq x_0$, luego $(1/g'(x))'$ es de 
+    signo constante para $x \geq x_0$. 
+    \[
+        \int_{x_0}^N \left|\left(\frac{1}{g'(x)}\right)'\right| \, dx =
+        \left|\int_{x_0}^N \left(\frac{1}{g'(x)}\right)' \, dx\right| =
+        \left|\frac{1}{g'(N)} - \frac{1}{g'(x_0)} \right| \leq 
+        \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|}
+    \]
+    % (Aqui si $g'=0$  tengo un problema. $g'$ puede ser monotona y que pase por $0$ entonces $1/g'$ no esta definida
+    % ni es monotona ni nada) 
+    % (La hipotesis $\lim g'(x) = 0$ y monotona a partir de $x_0$ hace que no cruce el $0$.
+    % y por lo tanto $1/g'$ es monotona.)
+    % \[
+    %     \left|\int_{x_0}^N e^{2\pi i k g(x)}\left(\frac{1}{g'(x)}\right)' \, dx\right|
+    %     \leq \int_{x_0}^N \left(\frac{1}{g'(x)}\right)' \, dx =
+    %     \frac{1}{g'(N)} - \frac{1}{g'(x_0)} \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|}
+    % \]
     y al igual que antes, al dividir por $N$ se anula cuando $N \to \infty$.
 
+    Todo esto muestra que,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N e^{2\pi i k g(x)} \, dx = 0
+    \]
 
     El término central se acota por
     \[
@@ -83,17 +100,33 @@
         \leq \pi |k| \int_1^N  |g'(x)| \, dx
     \]
     % Aqui habria que transformar esto para ponerlo en funcion de g' para usar lim g' = 0
-    Como $g$ es monótona, $g'$ es de signo constante, supongamos que $g' \geq 0$, entonces
+    Como $\lim_{x \to \infty} g'(x) = 0$, entonces para cada $\varepsilon > 0$ 
+    existe $x_1 > 0$ tal que $|g'(x)| < \varepsilon$ para $x > x_1$. 
+
+    Sea $\varepsilon > 0$ fijo y sea $N > x_1$, como $g'(x)$ es continua para $x \geq 1$, entonces
+    es integrable en $[1,x_1]$, por lo que existe $M > 0$ tal que $\int_1^{x_1} |g'(x)| \, dx \leq M$.
+
+    Por lo tanto,
     \[
-       \int_1^N  |g'(x)| \, dx = 
-       g(N) - g(1) \leq
-       |g(N)| + |g(1)|
+        \int_1^N |g'(x)| \, dx = 
+        \int_1^{x_1} |g'(x)| \, dx + \int_{x_1}^N |g'(x)| \, dx \leq 
+        M + \varepsilon (N - x_1) \leq
+        M + N \varepsilon
     \]
-    Al dividir por $N$,
+    luego,
     \[
-        \frac{|g(N)|}{N} + \frac{|g(1)|}{N} \longrightarrow 0 \qquad \text{cuando} \ N \to \infty
+        \limsup_{N \to \infty} \frac{1}{N} \int_1^N |g'(x)| \, dx = \varepsilon
     \]
 
-    Todos los términos tienden a $0$ cuando $N \to \infty$, por lo tanto se cumple el 
+    Dado que $\varepsilon > 0$ es arbitrario, y que el integrando es positivo, se concluye que
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N |g'(x)| \, dx = 0
+    \]
+    y por lo tanto,
+    \[
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx = 0
+    \]
+
+    Todos los términos divididos por $N$ tienden a $0$ cuando $N \to \infty$, por lo tanto se cumple el 
     criterio de Weyl y la sucesión $(g(n))$ es equidistribuida módulo $1$.
 \end{proof}

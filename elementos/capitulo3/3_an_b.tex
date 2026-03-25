@@ -37,7 +37,7 @@
         &\leq \int_1^N x^{-\sigma} \, dx
         = \frac{N^{1-\sigma} - 1}{1-\sigma}
     \end{align*}
-    Ambos crecen del orden de $N^{1-\sigma}$, por lo que la primera integral es$O(N^{1-\sigma})$.
+    Ambos crecen del orden de $N^{1-\sigma}$, por lo que la primera integral es $O(N^{1-\sigma})$.
 
     El término central se acota por
     \[
@@ -61,8 +61,7 @@
     \]
     De este modo,
     \[
-        \frac{1}{N} \sum_{n=1}^N e^{2\pi i b n^\sigma} \longrightarrow 0 
-        \qquad \text{cuando} \ N \to \infty,
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i b n^\sigma} = 0
     \]
     y por tanto la sucesión $(an^\sigma)$ es equidistribuida módulo $1$.
 \end{resolve}
