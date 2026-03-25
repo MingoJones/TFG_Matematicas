@@ -1,0 +1,30 @@
+\begin{example}
+    Las sucesiones $(an^\sigma\log^\tau n)_{n\geq1}$ con $a \neq 0$, 
+    $\sigma \in (0,1)$ y $\tau \in \mathbb{R}$ son equidistribuidas módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Sea $g(x) = ax^\sigma\log^\tau (x)$ en $[1,\infty)$.
+    
+    La primera condición se cumple,
+    \[
+        \lim_{x \to \infty} \frac{ax^\sigma\log^\tau (x)}{x} = 
+        \lim_{x \to \infty} \frac{a\log^\tau (x)}{x^{1-\sigma}} = 0
+    \]
+    porque $\log^c (x) \ll x^d$ para cualquier $c \in \mathbb{R}$ y $d > 0$.
+    
+    Para la segunda condición, calculamos $g'(x)$,
+    \[
+        g'(x) = 
+        a \left(\sigma x^{\sigma-1} \log^\tau (x) + \tau x^{\sigma-1} \log^{\tau-1} (x)\right) =
+        a x^{\sigma-1} \log^{\tau-1} (x) \left(\sigma \log (x) + \tau\right)
+    \]
+    y por tanto
+    \[
+        \lim_{x \to \infty} x |a x^{\sigma-1} \log^{\tau-1} (x) \, \left(\sigma \log (x) + \tau\right)| =
+        \lim_{x \to \infty} |a| x^{\sigma} \log^{\tau-1} (x) \, \left(\sigma \log (x) + \tau\right) = \infty
+    \]
+
+    Justamente no son monotonas en todo $[1,\infty)$
+    Modificar el teorema de Fejer para que sea monotona a partir de cierto punto.
+\end{resolve}

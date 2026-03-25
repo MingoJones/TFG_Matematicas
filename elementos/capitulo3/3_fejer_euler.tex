@@ -1,5 +1,19 @@
-    Mediante la fórmula de sumación de Euler (\ref{prop:formula_euler}), sea $f(x) = e^{2\pi i k g(x)}$ y sea $k \in \mathbb{Z} \setminus \{0\}$.
-    Veamos que condiciones debe cumplir $g$ para que se cumpla el criterio de Weyl.
+\begin{theorem}
+    Sea $g:[1,\infty) \to \mathbb{R}$ una función tal que $g' \in C([1,\infty))$ y $g,g'$ son monótonas
+    a partir de un cierto punto $x_0$. Si se cumplen las siguientes,
+    \[
+        \lim_{x \to \infty} \frac{g(x)}{x} = 0
+        \qquad \text{y} \qquad
+        \lim_{x \to \infty} {x \left|g'(x)\right|} = \infty 
+    \]
+    entonces la sucesión $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
+    
+    (Las condiciones estan mal hay que modificarlas porque comprobar la monotonia de $g,g'$ 
+    en todo $[1,\infty)$ es excesivamente fuerte y luego los ejemplos que aparecen no la cumplen)
+\end{theorem}
+
+\begin{proof}
+    Sea $N > x_0$. Aplicando la fórmula (\ref{prop:formula_euler}) a la función $f(x) = e^{2\pi i k g(x)}$,
     \[
         \sum_{n=1}^N e^{2\pi i k g(n)}
         = \int_1^N e^{2\pi i k g(x)} \, dx 
@@ -7,39 +21,79 @@
         + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx
     \]
 
-    La primera integral la calculamos usando integración por partes.
-    \begin{align*}
-        \int_1^N e^{2\pi i k g(x)} \, dx 
-        = \int_1^N \frac{\left(e^{2\pi i k g(x)}\right)'}{2\pi i k g'(x)} \, dx
-        &= \frac{1}{2 \pi i k} \int_1^N \frac{\left(e^{2\pi i k g(x)}\right)'}{g'(x)} \, dx \\
-        &= \frac{1}{2 \pi i k} \left(\left[\frac{e^{2\pi i k g(x)}}{    g'(x)}\right]_1^N + \int_1^N e^{2\pi i k g(x)} \left(\frac{1}{g'(x)}\right)' \, dx \right)
-    \end{align*}
-    Vamos a ver cada termino por separado.
-    \begin{align*}
-        \left|\frac{e^{2\pi i k g(N)}}{g'(N)} - \frac{e^{2\pi i k g(1)}}{g'(1)}\right|
-        &\leq \frac{1}{|g'(N)|} + \frac{1}{|g'(1)|} \\
-        \left|\int_1^N e^{2\pi i k g(x)}\left(\frac{1}{g'(x)}\right)' \, dx\right|
-        \leq \int_1^N \left|\left(\frac{1}{g'(x)}\right)' \right| \, dx 
-        &= \left|\frac{1}{g'(N)} - \frac{1}{g'(1)}\right|
-        \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(1)|}
-    \end{align*}
-    Por la monotonia de $g'$ podemos quitar el valor absoluto de la integral
-    Por lo tanto, sea $C_1$ una constante que amontone las cotas todo lo que no depende de $N$.
+    La primera integral la separamos en los dos intervalos $[1,x_0]$ y $[x_0,N]$,
     \[
-        \left|\frac{1}{N} \int_{1}^N e^{2\pi i k g(n)}\right| \leq \frac{C_1}{N \left|g'(x)\right|}
+        \int_1^N e^{2\pi i k g(x)} \,dx = 
+        \int_1^{x_0} e^{2\pi i k g(x)} \, dx + 
+        \int_{x_0}^N e^{2\pi i k g(x)} \, dx
     \]
-    Necesitamos que se cumpla la condicion $\lim_{x \to \infty} {x \left|g'(x)\right|} = \infty$
+    % Aqui puedo salvar esta parte de la monotonia y solo necesitar que sea monotona en x>=x_0
+    El primer intervalo se acota por
+    \[
+        \left|\int_1^{x_0} e^{2\pi i k g(x)} \, dx\right| \leq x_0 - 1
+    \]
+    y al dividir por $N$, se anula cuando $N \to \infty$.
+    
+    Para el segundo, aplicamos integración por partes,
+    \begin{align*}
+        \int_{x_0}^N e^{2\pi i k g(x)} \, dx 
+        = \int_{x_0}^N \frac{\left(e^{2\pi i k g(x)}\right)'}{2\pi i k g'(x)} \, dx
+        &= \frac{1}{2 \pi i k} \int_{x_0}^N \frac{\left(e^{2\pi i k g(x)}\right)'}{g'(x)} \, dx \\
+        &= \frac{1}{2 \pi i k} \left(\left[\frac{e^{2\pi i k g(x)}}{g'(x)}\right]_{x_0}^N + 
+        \int_{x_0}^N e^{2\pi i k g(x)} \left(\frac{1}{g'(x)}\right)' \, dx \right)
+    \end{align*}
+    % El primer termino no tiene problema con la monotonia.
+    Vamos a acotar cada uno de los sumandos. En el primero,
+    \[
+        \left|\frac{e^{2\pi i k g(N)}}{g'(N)} - \frac{e^{2\pi i k g(x_0)}}{g'(x_0)}\right|
+        \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|} 
+    \]
+    Dividiendo por $N$, 
+    \[
+        \frac{1}{N |g'(N)|} + \frac{1}{N |g'(x_0)|} \longrightarrow 0 \qquad \text{cuando} \ N \to \infty
+    \]
+    
+    % Aqui hay problemas con g' 
+    En el segundo sumando, por la monotonía de $g'$ en $[x_0,N]$, 
+    la función $\left(\frac{1}{g'(x)}\right)$ es monotona y su derivada es de signo constante, 
+    supongamos que es positiva, entonces
 
-    El termino central se puede acotar por $1$, no necesitamos nada especial para él.
+    (Aqui si $g'=0$  tengo un problema. $g'$ puede ser monotona y que pase por $0$ entonces $1/g'$ no esta definida
+    ni es monotona ni nada) 
+    (La hipotesis $\lim g'(x) = 0$ y monotona a partir de $x_0$ hace que no cruce el $0$.
+    y por lo tanto $1/g'$ es monotona.)
+    \[
+        \left|\int_{x_0}^N e^{2\pi i k g(x)}\left(\frac{1}{g'(x)}\right)' \, dx\right|
+        \leq \int_{x_0}^N \left(\frac{1}{g'(x)}\right)' \, dx =
+        \frac{1}{g'(N)} - \frac{1}{g'(x_0)} \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|}
+    \]
+    y al igual que antes, al dividir por $N$ se anula cuando $N \to \infty$.
 
-    La última integral se puede acotar usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$, $|e^{2\pi i k g(x)}| = 1$ y por lo tanto
+
+    El término central se acota por
+    \[
+        \left|\frac{1}{2} \left(e^{2\pi i k g(N)} + e^{2\pi i k g(1)}\right)\right| \leq 1
+    \]
+    por lo que, tras dividir por $N$, támbien tiende a $0$.
+
+    Por último, la segunda integral, usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$
+    y que $|e^{2\pi i k g(x)}| = 1$, se tiene
     \[
         \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx\right|
-        \leq \int_1^N \frac{1}{2} \, 2\pi |k| |g'(x)| \, dx
-        = \pi |k| (g(N) - g(1))
+        \leq \pi |k| \int_1^N  |g'(x)| \, dx
     \]
-    Aglutinando todo en otra constante $C_2$ que amontone las cotas todo lo que no depende de $N$,
+    % Aqui habria que transformar esto para ponerlo en funcion de g' para usar lim g' = 0
+    Como $g$ es monótona, $g'$ es de signo constante, supongamos que $g' \geq 0$, entonces
     \[
-        \left|\frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx\right| \leq C_2 \left|\frac{g(N)}{N}\right|
+       \int_1^N  |g'(x)| \, dx = 
+       g(N) - g(1) \leq
+       |g(N)| + |g(1)|
     \]
-    Necesitamos que se cumpla la condición $\lim_{x \to \infty} \frac{g(x)}{x} = 0$.
+    Al dividir por $N$,
+    \[
+        \frac{|g(N)|}{N} + \frac{|g(1)|}{N} \longrightarrow 0 \qquad \text{cuando} \ N \to \infty
+    \]
+
+    Todos los términos tienden a $0$ cuando $N \to \infty$, por lo tanto se cumple el 
+    criterio de Weyl y la sucesión $(g(n))$ es equidistribuida módulo $1$.
+\end{proof}

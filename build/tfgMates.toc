@@ -10,12 +10,12 @@
 \contentsline {section}{\numberline {2.2}El criterio de Weyl}{14}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Material y métodos}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Teorema de Féjer}{17}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Estimación de las sumas de Weyl}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Teorema de las diferencias de Weyl}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Teorema de Féjer mejorado}{26}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{27}{chapter.5}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estimación de las sumas de Weyl}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Teorema de las diferencias de Weyl}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Teorema de Féjer mejorado}{28}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.5}%
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Resultados Auxiliares}{28}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Esto será otro apéndice}{31}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {A}Resultados Auxiliares}{30}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Esto será otro apéndice}{33}{appendix.Alph2}%
 \vspace {2em}

@@ -1,51 +1,61 @@
 \begin{example}
-    La secuencia dada por $x_n = \partfrac{a \log n}$ con $a \in \mathbb{R}$ no es equidistribuida. 
+    La sucesión $(a\log n)_{n\geq1}$ con $a \in \mathbb{R}$ no es equidistribuida módulo $1$.
 \end{example}
 
 \begin{resolve}
-    Si $a = 0$, la secuencia es constante e igual a $0$, luego no es equidistribuida.
+    Si $a = 0$, la secuencia es constante e igual a $0$, por lo que no es equidistribuida.
     
-    Supongamos $a \neq 0$. Verificaremos que no se cumple el criterio de Weyl para $k=1$. Es decir,
+    Supongamos que $a \neq 0$. Verificaremos que no se cumple el criterio de Weyl para $k=1$. 
+    Es decir,
     \[
-        \frac{1}{N} \sum_{n=1}^N e^{2\pi i a \log n} \centernot{\longrightarrow} \, 0 \qquad \text{cuando} \ N \to \infty.
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i a \log n} \neq 0
     \]   
     
-    Sea $f(x) = e^{2\pi i a \log x}$. Aplicando la fórmula de sumación de Euler,
+    Sea $f(x) = e^{2\pi i a \log x}$. Aplicando la fórmula (\ref{prop:formula_euler})
     \[
-        \sum_{n=1}^N e^{2\pi i \, a \log n}
-        = \int_1^N e^{2\pi i a \log x} \, dx 
-        + \frac{1}{2} \left(e^{2\pi i \, a \log N} + 1\right)
-        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx 
+        \sum_{n=1}^N e^{2\pi i \, a \log n} =
+        \int_1^N e^{2\pi i a \log x} \, dx +
+        \frac{1}{2} \left(e^{2\pi i \, a \log N} + 1\right) +
+        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \frac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx 
     \]
     
-    La segunda integral la podemos acotar usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$, 
-    $|e^{2\pi i a \log x}| = 1$ y por lo tanto
-    \[
-        \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx\right|
-        \leq \int_1^N \frac{1}{2} \, \frac{2\pi |a|}{x} \, dx
-        = \pi |a| \int_1^N \frac{1}{x} \, dx
-        = \pi |a| \log N
-    \]
-    Dividiendo por $N$, esta integral se anula cuando $N \to \infty$.
-
-    Asimismo, el término del centro se puede acotar por $1$ que dividido por $N$, tiende a $0$ cuando $N \to \infty$.
-       
-    Sin embargo, si calculamos la primera integral con el cambio de variable $u = \log x$, $x = e^u$ y $dx = e^u du$,
-    para $x = 1$, $u = 0$ y para $x = N$, $u = \log N$.
-    \[
+    Calculamos la primera integral mediante el cambio de variable $u = \log x$,
+    $x = e^u$ y $dx = e^u du$. Cuando $x = 1$, $u = 0$ y cuando $x = N$, $u = \log N$.
+    \begin{align*}
         \int_1^N e^{2\pi i a \log x} \, dx 
         = \int_0^{\log N} e^{(2\pi i a + 1) u} \, du 
-        = \left[\frac{e^{(2\pi i a + 1) u}}{2\pi i a + 1}\right]_0^{\log N} 
-        = \frac{e^{(2\pi i a + 1) \log N} - 1}{2\pi i a + 1} 
+        &= \left[\frac{e^{(2\pi i a + 1) u}}{2\pi i a + 1}\right]_0^{\log N} \\ 
+        &= \frac{e^{(2\pi i a + 1) \log N} - 1}{2\pi i a + 1} 
         = \frac{N e^{2\pi i a \log N} - 1}{2\pi i a + 1}
-    \]
-    Al dividir por $N$, obtenemos
+    \end{align*}
+        
+    Dividiendo por $N$, 
     \[
         \frac{N e^{2\pi i a \log N} - 1}{N(2\pi i a + 1)}
         = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}
     \]
-    El segundo término tiende a $0$, mientras que el primero no converge cuando $a \neq 0$, 
-    ya que oscila sobre la circunferencia unidad.
-    
-    Por lo tanto, el criterio de Weyl no se cumple y la secuencia no es equidistribuida.
+
+    Cuando $N \to \infty$, el segundo término se anula, mientras que el primero 
+    no converge, ya que oscila sobre la circunferencia unidad.
+
+    El término central se puede acotar
+    \[
+        \left|\frac{1}{2} \left(e^{2\pi i a \log N} + 1\right)\right| \leq 1
+    \]
+    por lo que, tras dividir por $N$, támbien tiende a $0$.
+
+    Para la segunda integral, usamos que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$ y que $|e^{2\pi i a \log x}| = 1$,
+    \[
+        \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx\right|
+        \leq \pi |a| \int_1^N \frac{1}{x} \, dx
+        = \pi |a| \log N
+    \]
+    En consecuencia,
+    \[
+        \frac{1}{N} \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx\right|
+        \longrightarrow 0 \qquad \text{cuando} \ N \to \infty
+    \]
+
+    Como la primera integral no tiende a $0$, no se verifica el criterio de Weyl para $k=1$.
+    Por tanto, la sucesión $(a\log n)$ no es equidistribuida módulo $1$.   
 \end{resolve}

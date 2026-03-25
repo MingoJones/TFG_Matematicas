@@ -1,17 +1,19 @@
 \begin{example}
-    La secuencia $x_n = \partfrac{a n^\sigma}$ con $a \in \mathbb{R} \setminus \{0\}$ y $\sigma \in (0,1)$ es equidistribuida. 
+    La sucesión $(an^\sigma)_{n\geq1}$ con $a \in \mathbb{R}$, $a \neq 0$ y 
+    $\sigma \in (0,1)$ es equidistribuida módulo $1$.
 \end{example}
 
 \begin{resolve}    
-    Comprobaremos que se cumple el criterio de Weyl. 
+    Para demostrarlo utilizaremos el criterio de Weyl. 
 
-    Sea $b = ak$, como $a \neq 0$ y $k \neq 0$, entonces $b \neq 0$. Solo tenemos que verificar que
+    Sea $k \in \mathbb{Z}\setminus\{0\}$, como $a \neq 0$, entonces $b = ak \neq 0$. 
+    Basta comprobar que 
     \[
         \frac{1}{N} \sum_{n=1}^N e^{2\pi i b n^\sigma} \longrightarrow 0 
         \qquad \text{cuando} \ N \to \infty.
     \]
 
-    Sea $f(x) = e^{2\pi i b x^\sigma}$. Aplicando la fórmula de sumación de Euler,
+    Aplicando la fórmula (\ref{prop:formula_euler}) a la función $f(x) = e^{2\pi i b x^\sigma}$,
     \[
         \sum_{n=1}^N e^{2\pi i \, b n^\sigma}
         = \int_1^N e^{2\pi i b x^\sigma} \, dx 
@@ -19,41 +21,49 @@
         + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx 
     \]
 
-    La segunda integral la podemos acotar usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$, 
-    $|e^{2\pi i b x^\sigma}| = 1$ y por lo tanto
-    \begin{align*}
-        \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx\right|
-        \leq \int_1^N \frac{1}{2} \, 2\pi |b| \sigma x^{\sigma-1} \, dx
-        = \pi |b| \int_1^N \sigma x^{\sigma-1} \, dx  
-        = \pi |b| (N^\sigma - 1)
-    \end{align*}
-    La integral crece como $N^\sigma$ y por lo tanto es del orden de $O(N^\sigma)$.
-
-    El término del centro se puede acotar por $1$ por lo que es $O(1)$.
-
-    Por último, calculamos el orden de la primera integral usando integración por partes.
+    Calculamos la primera integral usando integración por partes,
     \begin{align*}
         \int_1^N e^{2\pi i b x^\sigma} \, dx 
         = \int_1^N \frac{\left(e^{2\pi i b x^\sigma}\right)'}{2\pi i b \sigma x^{\sigma-1}} \, dx
         &= \frac{1}{2 \pi i b \sigma} \int_1^N \left(e^{2\pi i b x^\sigma}\right)'x^{1-\sigma} \, dx \\
         &= \frac{1}{2 \pi i b \sigma} \left(\left[e^{2\pi i b x^\sigma}x^{1-\sigma}\right]_1^N + (1-\sigma) \int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx \right)
     \end{align*}  
-    Vamos a tratar de acotar cada uno de los terminos anteriores.
+    
+    Acotando cada uno de los términos anteriores,
     \begin{align*}
-        \left| \left[e^{2\pi i b x^\sigma}x^{1-\sigma}\right]_1^N\right|
-        &\leq \left|e^{2\pi i b N^\sigma}N^{1-\sigma}\right| + \left|e^{2\pi i b}\right| 
-        = N^{1-\sigma} + 1 \\
+        \left| e^{2\pi i b N^\sigma}N^{1-\sigma} - e^{2\pi i b}\right|
+        &\leq N^{1-\sigma} + 1 \\
         \left|\int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx\right|
         &\leq \int_1^N x^{-\sigma} \, dx
-        = \left[\frac{x^{1-\sigma}}{1-\sigma}\right]_1^N
         = \frac{N^{1-\sigma} - 1}{1-\sigma}
-     \end{align*}
-    Ambos términos crecen como $N^{1-\sigma}$ y por lo tanto la primera integral es del orden de $O(N^{1-\sigma})$.
+    \end{align*}
+    Ambos crecen del orden de $N^{1-\sigma}$, por lo que la primera integral es$O(N^{1-\sigma})$.
 
-    Reuniendo las cotas anteriores y teniendo en cuenta que $\sigma \in (0,1)$, $\max\{\sigma, 1-\sigma\} < 1$, se tiene que
+    El término central se acota por
     \[
-        \sum_{n=1}^N e^{2\pi i \, b n^\sigma} = O(N^{1-\sigma}) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N)
+        \left|\frac{1}{2} \left(e^{2\pi i b N^\sigma} + e^{2\pi i b}\right)\right| \leq 1
     \]
-    Dividiendo por $N$, se obtiene la convergencia a $0$ cuando $N \to \infty$ y por lo tanto se cumple el criterio de Weyl, lo que implica que la secuencia es equidistribuida.
+    luego es $O(1)$.
+
+    Para la segunda integral, usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$,
+    y que $|e^{2\pi i b x^\sigma}| = 1$, se tiene
+    \[
+        \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx\right|
+        \leq \pi |b| \int_1^N \sigma x^{\sigma-1} \, dx  
+        = \pi |b| (N^\sigma - 1)
+    \]
+    por lo que esta integral es $O(N^\sigma)$.
+    
+    Reuniendo las estimaciones anteriores, y teniendo en cuenta que 
+    $\sigma \in (0,1)$, se obtiene
+    \[
+        \sum_{n=1}^N e^{2\pi i \, b n^\sigma} = O(N^{1-\sigma}) + O(1) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N)
+    \]
+    De este modo,
+    \[
+        \frac{1}{N} \sum_{n=1}^N e^{2\pi i b n^\sigma} \longrightarrow 0 
+        \qquad \text{cuando} \ N \to \infty,
+    \]
+    y por tanto la sucesión $(an^\sigma)$ es equidistribuida módulo $1$.
 \end{resolve}
 

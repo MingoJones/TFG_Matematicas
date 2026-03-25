@@ -1,27 +1,38 @@
-\begin{proposition}
-    \label{prop:formula_euler}
-    Sea $N \in \mathbb{N}$ y sea $f:[1,N] \to \mathbb{C}$ una función tal que $f' \in C([1,N])$. Entonces se cumple, 
-    \[
-        \sum_{n=1}^N f(n) = \int_1^N f(x) \, dx + \frac{f(1)+f(N)}{2} + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx
-    \]
+\begin{proposition}[Fórmula de sumación de Euler]
+    Sea $N \in \mathbb{N}$ y sea $f:[1,N] \to \mathbb{C}$ una función tal que $f' \in C([1,N])$. 
+    Entonces se cumple la siguiente igualdad:
+    \begin{align}
+        \label{prop:formula_euler}
+        \sum_{n=1}^N f(n) = 
+        \int_1^N f(x) \, dx + 
+        \frac{f(1)+f(N)}{2} + 
+        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx
+    \end{align}
 \end{proposition}
 
 \begin{proof}
-    Primero dividamos el intervalo $[1,N]$ en los subintervalos $[n,n+1]$ para $n=1,2,\ldots,N-1$. Entonces, para cada $n$ se tiene que
+    Dividimos el intervalo $[1,N]$ en subintervalos $[n,n+1]$ con $n=1,\ldots,N-1$. 
+    
+    Para cada intervalo $[n,n+1]$ se tiene que $\partfrac{x} = x - n$, 
+    al integrar por partes,
     \begin{align*} 
-        \int_n^{n+1} \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx 
-        &= \left[\left(\partfrac{x} - \frac{1}{2}\right) \, f(x)\right]_n^{n+1} - \int_n^{n+1} 1 \cdot f(x) \, dx \\
+        \int_n^{n+1} \left(\partfrac{x} - \frac{1}{2}\right) f'(x) \, dx 
+        &= \left[\left(\partfrac{x} - \frac{1}{2}\right) f(x) \right]_n^{n+1} - \int_n^{n+1} f(x) \, dx \\
         &= \frac{1}{2} \, f(n+1) + \frac{1}{2} \, f(n) - \int_n^{n+1} f(x) \, dx
     \end{align*}
-    Por lo tanto, sumando para $n=1,2,\ldots,N-1$ tenemos que
-    \begin{align*}
-        \sum_{n=1}^{N-1} \int_n^{n+1} \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx
-        &= \sum_{n=1}^{N-1} \left(\frac{1}{2} \, f(n+1) + \frac{1}{2} \, f(n)\right) - \sum_{n=1}^{N-1} \int_n^{n+1} f(x) \, dx \\
-        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx
-        &=\sum_{n=1}^N f(n) - \frac{1}{2} \, f(N) - \frac{1}{2} \, f(1) - \int_1^N f(x) \, dx
-    \end{align*}
-    y reordenando los términos se obtine la fórmula de sumación de Euler
+
+    Sumando sobre $n=1,2,\ldots,N-1$,
     \[
-        \sum_{n=1}^N f(n) \,=\, \int_1^N f(x) \, dx + \frac{f(1)+f(N)}{2} + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx
+        \sum_{n=1}^{N-1} \int_n^{n+1} \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx =
+        \sum_{n=1}^{N-1} \left(\frac{1}{2} \, f(n+1) + \frac{1}{2} \, f(n)\right) -
+        \sum_{n=1}^{N-1} \int_n^{n+1} f(x) \, dx \\
     \]
+    luego,
+    \[
+        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx =
+        \sum_{n=1}^N f(n) - \frac{1}{2} \, f(N) - \frac{1}{2} \, f(1) - 
+        \int_1^N f(x) \, dx
+    \]
+    
+    Reordenando los términos se obtiene la igualdad deseada.
 \end{proof}
