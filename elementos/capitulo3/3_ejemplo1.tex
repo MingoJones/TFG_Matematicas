@@ -1,0 +1,23 @@
+\begin{example}
+    Las sucesiones $(an^\sigma\log^\tau n)_{n\geq2}$ con $a \neq 0$, 
+    $\sigma \in (0,1)$ y $\tau \in \mathbb{R}$ son equidistribuidas módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Sea $x_n = an^\sigma\log^\tau n$ para cada $n \geq 2$. Definimos $g(x) = a(x+1)^\sigma\log^\tau (x+1)$,
+    entonces $g(n) = x_{n+1}$ para cada $n \geq 1$, y su derivada es 
+    \[
+        g'(x) = a (x+1)^{\sigma-1} \log^{\tau-1}(x+1) \left(\sigma \log(x+1) + \tau\right)
+    \]
+    esta es continua en $[1,\infty)$ por ser composición de continuas y como $\sigma \in (0,1)$, 
+    \[
+        \lim_{x \to \infty} g'(x) = 0
+        \qquad \text{y} \qquad
+        \lim_{x \to \infty} x |g'(x)| = \infty
+    \]
+
+    Monotonia, estudiar como hacerlo.
+
+    Por el teorema \ref{teo:fejer_euler}, $(g(n))$ es equidistribuida módulo $1$ y 
+    por lo tanto, $(x_n)$ también lo es.
+\end{resolve}

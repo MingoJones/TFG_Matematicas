@@ -1,0 +1,25 @@
+\begin{example}
+    Las sucesiones $(a\log^\tau n)_{n\geq1}$ con $a \neq 0$ y $\tau > 1$ son equidistribuidas módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Sea $g(x) = a\log^\tau (x)$ entonces su derivada es
+    \[
+        g'(x) = \frac{a \tau \log^{\tau-1}(x)}{x}
+    \]
+    como $\tau > 1$, es continua en $[1,\infty)$ por ser composición de continuas. Además, 
+    \[
+        \lim_{x \to \infty} g'(x) = 0
+        \qquad \text{y} \qquad
+        \lim_{x \to \infty} x |g'(x)| = \infty
+    \]
+
+    Para ver la monotonía de $g'(x)$, calculamos su derivada,
+    \[
+        g''(x) = a \tau \frac{\log^{\tau-2}(x)}{x^2} \left((\tau - 1) - \log(x)\right)
+    \]
+    Obtenemos que $g''(x)=0$ en $x = e^{\tau - 1}$, por lo que, para $x > e^{\tau - 1}$ tendremos que
+    $g''(x)$ es de signo constante. Luego $g'(x)$ es monótona a partir de $x_0 = e^{\tau - 1}$.
+
+    Por el teorema \ref{teo:fejer_euler}, la sucesión $(a\log^\tau (n))$ es equidistribuida módulo $1$.
+\end{resolve}

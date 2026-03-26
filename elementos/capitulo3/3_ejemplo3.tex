@@ -1,0 +1,28 @@
+\begin{example}
+    Las sucesiones $(an\log^\tau n)_{n\geq2}$ con $a \neq 0$ y $\tau < 0$ son equidistribuidas módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Sea $x_n = an\log^\tau n$ para cada $n \geq 2$. Definimos $g(x) = a(x+1)\log^\tau (x+1)$,
+    entonces $g(n) = x_{n+1}$ para cada $n \geq 1$, y su derivada es 
+    \[
+        g'(x) = a \log^{\tau}(x+1) + a \tau \log^{\tau-1}(x+1)
+    \]
+    que es continua en $[1,\infty)$ por ser composición de continuas y como $\tau < 0$, 
+    \[
+        \lim_{x \to \infty} g'(x) = 0
+        \qquad \text{y} \qquad
+        \lim_{x \to \infty} x |g'(x)| = \infty
+    \]
+
+    Para comprobar la monotonía de $g'(x)$, calculamos su derivada,
+    \[
+        g''(x) = a \tau \frac{\log^{\tau-2}(x+1)}{x+1} \left(\log(x+1) + \tau - 1\right)
+    \]
+    Como $g''(x)=0$ en $x = e^{1-\tau} - 1$, entonces para $x \geq e^{1-\tau} - 1$ 
+    tenemos que $g''(x)$ es de signo constante. Entonces $g'(x)$ es monótona para a 
+    partir de $x_0 = e^{1-\tau} - 1$.
+
+    Por el teorema \ref{teo:fejer_euler}, $(g(n))$ es equidistribuida módulo $1$ y 
+    por lo tanto, $(x_n)$ también lo es.
+\end{resolve}
