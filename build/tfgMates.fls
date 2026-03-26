@@ -1498,6 +1498,10 @@ INPUT ./elementos/apendices/apendice1.tex
 INPUT ./elementos/apendices/apendice1.tex
 INPUT ./elementos/apendices/apendice1.tex
 INPUT ./elementos/apendices/apendice1.tex
+INPUT ./elementos/apendices/equivalentes.tex
+INPUT elementos/apendices/equivalentes.tex
+INPUT ./elementos/apendices/equivalentes.tex
+INPUT elementos/apendices/equivalentes.tex
 INPUT ./elementos/apendices/auxiliar_ej14.tex
 INPUT elementos/apendices/auxiliar_ej14.tex
 INPUT ./elementos/apendices/auxiliar_ej14.tex
@@ -1506,14 +1510,6 @@ INPUT ./elementos/apendices/apendice2.tex
 INPUT ./elementos/apendices/apendice2.tex
 INPUT ./elementos/apendices/apendice2.tex
 INPUT ./elementos/apendices/apendice2.tex
-INPUT ./elementos/tablas/tabla-ejemplo.tex
-INPUT ./elementos/tablas/tabla-ejemplo.tex
-INPUT ./elementos/tablas/tabla-ejemplo.tex
-INPUT elementos/tablas/tabla-ejemplo.tex
-INPUT ./elementos/tablas/tabla-ejemplo.tex
-INPUT ./elementos/tablas/tabla-ejemplo.tex
-INPUT elementos/tablas/tabla-ejemplo.tex
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT build/tfgMates.aux
 INPUT build/tfgMates.out
 INPUT build/tfgMates.out
@@ -1521,7 +1517,6 @@ INPUT build/tfgMates.run.xml
 OUTPUT build/tfgMates.run.xml
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

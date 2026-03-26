@@ -1,0 +1,175 @@
+\begin{proposition}
+    \label{def:equivalentes}
+    Sea $(x_n)_{n\geq1}$ una sucesión de números reales.
+    Las siguientes afirmaciones son equivalentes:
+    \begin{enumerate}
+        \item $(x_n)$ es equidistribuida módulo $1$.
+
+        \item La igualdad (\ref{def:equidistribucion}) se cumple
+        para todo intervalo $(a,b)\subseteq \mathbb{T}$.
+
+        \item La igualdad (\ref{def:equidistribucion}) se cumple
+        para todo intervalo $[a,b], \,[a,b), \,(a,b] \subseteq \mathbb{T}$.
+
+        \item La igualdad (\ref{def:equidistribucion}) se cumple
+        para todo intervalo $[0,b)\subseteq \mathbb{T}$.
+
+        \item La igualdad (\ref{def:equidistribucion}) se cumple
+        para todo intervalo $(a,1)\subseteq \mathbb{T}$.
+
+        \item La igualdad (\ref{def:equidistribucion}) se cumple
+        para todo intervalo $(a,b)$ con $a,b\in D$, donde $D \subseteq \mathbb{T}$ es un conjunto denso.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    $1 \Longrightarrow 2$ \, Supongamos que $(x_n)$ es equidistribuida módulo $1$,
+    es decir, que (\ref{def:equidistribucion}) se cumple para todo intervalo
+    $(a,b) \subset \mathbb{T}$.
+
+    Basta probar que también se cumple para intervalos que contienen los extremos.
+
+    \textit{Caso $(0,b)$}: \, Sea $\varepsilon > 0$, entonces
+    \[
+        A_N((\varepsilon, b), x) \leq A_N((0,b), x) 
+        \quad \text{y} \quad 
+        A_N((0,b), x) + A_N((b, 1-\varepsilon), x) \leq N
+    \]
+    Dividiendo por $N$ y tomando el límite cuando $N \to \infty$, 
+    \[
+        b-\varepsilon \leq 
+        \liminf_{N \to \infty} \frac{A_N((0,b), x)}{N} \leq
+        \limsup_{N \to \infty} \frac{A_N((0,b), x)}{N} \leq 
+        1 - (1-b-\varepsilon) = 
+        b + \varepsilon
+    \]
+    Como $\varepsilon > 0$ es arbitrario, se deduce que el límite existe y es igual a $b$.
+    
+    \textit{Caso $(a,1)$}: \, Sea $\varepsilon > 0$, entonces
+    \[
+        A_N((a, 1-\varepsilon), x) \leq A_N((a,1), x) 
+        \quad \text{y} \quad 
+        A_N((\varepsilon,a), x) + A_N((a, 1), x) \leq N
+    \]
+    Dividiendo por $N$ y tomando el límite cuando $N \to \infty$, 
+    \[
+        1-a-\varepsilon \leq 
+        \liminf_{N \to \infty} \frac{A_N((a,1), x)}{N} \leq
+        \limsup_{N \to \infty} \frac{A_N((a,1), x)}{N} \leq 
+        1 - (a-\varepsilon) = 
+        1- a + \varepsilon
+    \]
+    Como $\varepsilon > 0$ es arbitrario, se deduce que el límite existe y es igual a $1-a$.
+
+    $2 \Longrightarrow 1$ \, Es obvio.
+
+    $2 \Longrightarrow 3$ \, Veamos que para $0\leq c \leq 1$ se tiene que
+    \[
+        \lim_{N \to \infty} \frac{\card \left\{1\leq n \leq N :\partfrac{x_n}=c\right\}}{N} = 0
+    \]
+    Sea $\varepsilon > 0$, si $c \in (0,1)$, entonces
+    \[
+        0 \leq 
+        \limsup_{N \to \infty} \frac{\card \left\{1\leq n \leq N :\partfrac{x_n}=c\right\}}{N} \leq
+        \lim_{N \to \infty} \frac{A_N((c-\varepsilon, c+\varepsilon), x)}{N} = 2\varepsilon
+    \]
+    como $\varepsilon > 0$ es arbitrario, el límite existe y es igual a $0$.
+    
+    Sea $\varepsilon > 0$, si $c = 0$, entonces
+    \[
+        0 \leq 
+        \card \left\{1\leq n \leq N :\partfrac{x_n}=0\right\} +
+        A_N((\varepsilon, 1), x) \leq
+        N
+    \]
+    luego
+    \[
+        0 \leq 
+        \limsup_{N \to \infty} \frac{\card \left\{1\leq n \leq N :\partfrac{x_n}=0\right\}}{N} \leq
+        1 - (1-\varepsilon) = 
+        \varepsilon
+    \]
+    como $\varepsilon > 0$ es arbitrario, el límite existe y es igual a $0$.
+
+    Sea $\varepsilon > 0$, si $c = 1$, entonces
+    \[
+        0 \leq 
+        \card \left\{1\leq n \leq N :\partfrac{x_n}=1\right\} +
+        A_N((0, 1-\varepsilon), x) \leq
+        N
+    \]
+    luego
+    \[
+        0 \leq 
+        \limsup_{N \to \infty} \frac{\card \left\{1\leq n \leq N :\partfrac{x_n}=1\right\}}{N} \leq
+        1 - (1-\varepsilon) = 
+        \varepsilon
+    \]  
+    como $\varepsilon > 0$ es arbitrario, el límite existe y es igual a $0$.
+
+    Por lo tanto, para los conjuntos unipuntuales tenemos que su limite es $0$.
+    Como los intervalos $[a,b], \,[a,b), \,(a,b]$ se descomponen de la forma
+    \[
+        [a,b] = (a,b) \cup \{a\} \cup \{b\} \quad
+        [a,b) = (a,b) \cup \{a\} \quad
+        (a,b] = (a,b) \cup \{b\}
+    \]
+    entonces la igualdad (\ref{def:equidistribucion}) se cumple para estos intervalos.
+    
+    $3 \Longrightarrow 2$ \, Usando el mismo argumento para cada uno de los tipos de intervalos
+    se puede demostrar que para $0 \leq c \leq 1$,
+    \[
+        \lim_{N \to \infty} \frac{\card \left\{1\leq n \leq N :\partfrac{x_n}=c\right\}}{N} = 0
+    \]
+    y teniendo en cuenta la descomposición se obtiene la igualdad para intervalos de la forma $(a,b)$.
+
+    De hecho, los diferentes intervalos $[a,b], \,[a,b), \,(a,b]$ son equivalentes entre sí, 
+    es decir, que si la igualdad (\ref{def:equidistribucion}) se cumple para un tipo de 
+    intervalo entonces se cumple para los otros tipos.
+    
+    $3 \Longrightarrow 4$ \, Es obvio.
+
+    $4 \Longrightarrow 3$ \, Sea $[a,b)$ fijo, como $[a,b) = [0,b) \setminus [0,a)$ entonces 
+    \[
+        \lim_{N \to \infty} \frac{A_N([a,b), x)}{N} = 
+        \lim_{N \to \infty} \left(\frac{A_N([0,b), x)}{N} - \frac{A_N([0,a), x)}{N}\right) = 
+        b - a
+    \]
+    como es cierto para todo $[a,b)$, entonces también es cierto para todo $[a,b], \,(a,b]$.
+
+    $2 \Longrightarrow 5$ \, Es obvio.
+
+    $5 \Longrightarrow 3$ \, Sea $(a,b]$ fijo, como $(a,b]=(a,1) \setminus (b,1)$, entonces
+    \[
+        \lim_{N \to \infty} \frac{A_N((a,b], x)}{N} = 
+        \lim_{N \to \infty} \left(\frac{A_N((a,1), x)}{N} - \frac{A_N((b,1), x)}{N}\right) = 
+        b - a
+    \]
+    como es cierto para todo $(a,b]$, entonces también es cierto para todo $[a,b], \,[a,b)$.
+    
+    $2 \Longrightarrow 6$ \, Es obvio.
+
+    $6 \Longrightarrow 1$ \, Sea $(a,b)$ fijo y sea $\varepsilon > 0$. Por densidad de $D$,
+    existen $\alpha, \beta \in D$ tales que $a-\varepsilon < \alpha < a$ y $b < \beta < b+\varepsilon$.
+    Entonces
+    \[
+        \limsup_{N \to \infty} \frac{A_N((a,b), x)}{N} \leq
+        \lim_{N \to \infty} \frac{A_N((\alpha,\beta), x)}{N} = 
+        \beta - \alpha <
+        b - a + 2\varepsilon
+    \]
+    como $\varepsilon > 0$ es arbitrario, se deduce que 
+    \[
+        \limsup_{N \to \infty} \frac{A_N((a,b), x)}{N} \leq b - a
+    \]
+    De forma análoga, se obtiene que 
+    \[
+        \liminf_{N \to \infty} \frac{A_N((a,b), x)}{N} \geq b - a
+    \]
+    En consecuencia, 
+    \[
+        \lim_{N \to \infty} \frac{A_N((a,b), x)}{N} = b - a
+    \]
+
+    Por lo tanto, todas las afirmaciones son equivalentes entre sí.
+\end{proof}
