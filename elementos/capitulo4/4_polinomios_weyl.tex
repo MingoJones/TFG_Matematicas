@@ -1,21 +1,22 @@
 \begin{theorem}
     \label{teo:polinomios_weyl}
     Sea $p(x)=c_m x^m + c_{m-1} x^{m-1} + \cdots + c_1 x + c_0$ un polinomio con coeficientes reales. 
-    Si al menos uno de $c_j \notin \mathbb{Q}$ con $j>0$, entonces la sucesión $\partfrac{p(n)}$ 
-    es equidistribuida en $[0,1)$.
+    Si al menos uno de $c_j \notin \mathbb{Q}$ con $j>0$, entonces la sucesión $(p(n))$ 
+    es equidistribuida módulo $1$.
 \end{theorem}
 
 \begin{proof}
-    Lo primero que haremos será comprobar el caso especial en el que $c_1 \notin \mathbb{Q}$ y los
-    demás coeficientes son racionales.
+    Lo primero que haremos será comprobar el caso especial en el que $c_1 \notin \mathbb{Q}$ 
+    y los demás coeficientes son racionales.
     Sea
     \[
         p(x) = P(x) + c_1x + c_0,
     \]
     con $P(x) = c_m x^m + c_{m-1} x^{m-1} + \cdots + c_2 x^2$.
 
-    Como $c_2,...,c_m \in \mathbb{Q}$ se pueden escribir como $c_j = p_j/q_j$ con $p_j,q_j \in \mathbb{Z}$ y $q_j > 0$.
-    Sea $D = \operatorname{mcm}(q_2,...,q_m)$ entonces los coeficientes se pueden escribir como
+    Como $c_2,...,c_m \in \mathbb{Q}$ se pueden escribir como $c_j = p_j/q_j$ con 
+    $p_j,q_j \in \mathbb{Z}$ y $q_j > 0$. Sea $D = \operatorname{mcm}(q_2,...,q_m)$ 
+    entonces los coeficientes se pueden escribir como
     \[
         c_j = \frac{a_j}{D} \quad \text{con } a_j \in \mathbb{Z} \text{ para cada } j=2,...,m.
     \]
@@ -36,27 +37,30 @@
         P(Dk+d)-P(d) 
         &= \sum_{j=2}^m \sum_{l=1}^j c_j \binom{j}{l} d^{j-l} (Dk)^l \\
         &= \sum_{j=2}^m \sum_{l=1}^j \frac{a_j}{D} \binom{j}{l} d^{j-l} (Dk)^l \\
-        &= \sum_{j=2}^m \sum_{l=1}^j a_j \binom{j}{l} d^{j-l} D^{l-1} k^l.
+        &= \sum_{j=2}^m \sum_{l=1}^j a_j \binom{j}{l} d^{j-l} D^{l-1} k^l \in \mathbb{Z}
     \end{align*}
 
     Es decir, $P(Dk+d)$ y $P(d)$ difieren en un número entero, por lo que
     \[
-        \partfrac{P(Dk+d)} = \partfrac{P(d)}.
+        \partfrac{P(Dk+d)} = \partfrac{P(d)} 
+        \quad \text{y en consecuencia} \quad
+        e^{2\pi i k P(Dk+d)} = e^{2\pi i k P(d)}
     \]
 
-    Vamos a comprobar que la sucesión $\partfrac{p(n)}$ es equidistribuida en $[0,1)$ en este
-    caso especial con el criterio de Weyl. 
+    Vamos a comprobar que en este caso especial la sucesión $(p(n))$ es equidistribuida
+    módulo $1$ con el criterio de Weyl. 
 
     Sea $N$, entonces $N=DM+R$ con $0 \leq R < D$. Para cada $n=1,...,DM$ tenemos que $n=Dk+d$ con $k\in \{0,...,M-1\}$ y $d \in \{1,...,D\}$, entonces
     \begin{align*}
         \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right|
         &= \left|\frac{1}{N}\sum_{d=1}^D \sum_{k=0}^{M-1} e^{2\pi i k(P(Dk+d) + c_1 Dk + c_0)} + \frac{1}{N}\sum_{n=DM+1}^N e^{2\pi i k p(n)} \right| \\
-        &\leq \left|\frac{1}{N}\sum_{d=1}^D e^{2\pi i k(P(d)+c_0)} \sum_{k=0}^{M-1} e^{2\pi i k (c_1 Dk)}\right| + \frac{D}{N} \\
-        &= \left|\frac{D}{N}\sum_{k=0}^{M-1} e^{2\pi i c_1 D k}\right| + \frac{D}{N}.
+        &\leq \left|\frac{1}{DM+R}\sum_{d=1}^D e^{2\pi i k(P(d)+c_0)} \sum_{k=0}^{M-1} e^{2\pi i k (c_1 Dk)}\right| + \frac{D}{DM+R} \\
+        &\leq \left|\frac{D}{DM}\sum_{k=0}^{M-1} e^{2\pi i c_1 D k}\right| + \frac{D}{DM}.
     \end{align*}
 
     Al tomar el límite cuando $N \to \infty$ se tiene que
     \[
-        \lim_{N \to \infty} \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right| \leq \lim_{M \to \infty} \left|\frac{D}{DM} \sum_{k=0}^{M-1} e^{2\pi i c_1 D k}\right| = 0,
+        \lim_{N \to \infty} \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right| \leq 
+        \lim_{M \to \infty} \left|\frac{1}{M} \sum_{k=0}^{M-1} e^{2\pi i c_1 D k}\right| + \frac{1}{M}= 0,
     \]
 \end{proof}
