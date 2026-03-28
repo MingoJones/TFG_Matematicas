@@ -26,7 +26,7 @@
         \int_1^N e^{2\pi i b x^\sigma} \, dx 
         = \int_1^N \frac{\left(e^{2\pi i b x^\sigma}\right)'}{2\pi i b \sigma x^{\sigma-1}} \, dx
         &= \frac{1}{2 \pi i b \sigma} \int_1^N \left(e^{2\pi i b x^\sigma}\right)'x^{1-\sigma} \, dx \\
-        &= \frac{1}{2 \pi i b \sigma} \left(\left[e^{2\pi i b x^\sigma}x^{1-\sigma}\right]_1^N + (1-\sigma) \int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx \right)
+        &= \frac{1}{2 \pi i b \sigma} \left(\left[e^{2\pi i b x^\sigma}x^{1-\sigma}\right]_1^N - (1-\sigma) \int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx \right)
     \end{align*}  
     
     Acotando cada uno de los términos anteriores,

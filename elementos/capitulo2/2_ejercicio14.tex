@@ -1,17 +1,17 @@
 \begin{example}
-    Sea $(x_n)_{n\geq1}$ una sucesión en $\mathbb{T}$. Definimos $S([a,b),N)$ como la suma de los
-    términos que caen en el intervalo $[a,b)$, es decir, $S([a,b),N) = \sum_{n=1}^N x_n \, \mathbf{1}_{[a,b)}(x_n)$. 
-    Entonces, la sucesión $(x_n)$ es equidistribuida módulo $1$ si y solo si para cada intervalo 
-    $[a,b) \subset \mathbb{T}$, se tiene que
+    Sea $(x_n)_{n\geq1}$ una sucesión de números reales en $\mathbb{T}$. Para un intervalo 
+    $[a,b) \subseteq \mathbb{T}$, definimos $S([a,b),N) = \sum_{n=1}^N x_n \, \mathbf{1}_{[a,b)}(x_n)$,
+    es decir, la suma de los términos de la sucesión que caen dentro del intervalo $[a,b)$. Entonces, 
+    la sucesión $(x_n)$ es equidistribuida módulo $1$ si y sólo si para cada intervalo $[a,b) \subseteq \mathbb{T}$,
     \[
         \lim_{N \to \infty} \frac{S([a,b),N)}{N} = \frac{1}{2}(b^2-a^2)
     \]
 \end{example}
 
 \begin{proof}
-    $\Longrightarrow$ \, Sea $[a,b) \subset \mathbb{T}$ y sea $f(x) = x \, \mathbf{1}_{[a,b)}(x)$.
+    $\Longrightarrow$ \, Sea $[a,b) \subseteq \mathbb{T}$ con $0 \leq a < b\leq 1$ y sea $f(x) = x \, \mathbf{1}_{[a,b)}(x)$.
     
-    Como $f \in \mathcal{R}(\mathbb{T})$ y $(x_n)$ es equidistribuida,
+    Como $(x_n)$ es equidistribuida y $f \in \mathcal{R}(\mathbb{T})$,
     \[
         \lim_{N \to \infty} \frac{S([a,b),N)}{N} = 
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = 
@@ -66,5 +66,5 @@
     \[
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,1)}(x_n) = \int_0^1 \mathbf{1}_{(a,1)}(x)\ dx = 1-a
     \]
-    lo que demuestra que $(x_n)$ es equidistribuida módulo $1$
+    lo que demuestra, por la proposición \ref{prop:equivalentes}, que $(x_n)$ es equidistribuida módulo $1$
 \end{proof}

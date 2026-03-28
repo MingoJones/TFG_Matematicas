@@ -16,7 +16,18 @@
         \lim_{x \to \infty} x |g'(x)| = \infty
     \]
 
-    Monotonia, estudiar como hacerlo.
+    Para la monotonía, calculamos la segunda derivada de $g$:
+    \[
+        g''(x) = a (x+1)^{\sigma-2} \log^{\tau-2}(x+1) \left( \sigma(\sigma-1)\log^2(x+1) + \tau(2\sigma-1)\log(x+1) + \tau(\tau-1) \right)
+    \]
+    El término $(x+1)^{\sigma-2} \log^{\tau-2}(x+1)$ es positivo para cada $x \geq 1$.
+    Por otra parte,
+    \[
+        \lim_{x \to \infty} \left( \sigma(\sigma-1)\log^2(x+1) + \tau(2\sigma-1)\log(x+1) + \tau(\tau-1) \right) = -\infty
+    \]
+    ya que $\sigma<1$. Por tanto, existe $x_0 \geq 1$ tal que este término es negativo
+    para todo $x \geq x_0$, y en consecuencia $g''(x)$ tiene signo constante para $x \geq x_0$.
+    Esto implica que $g'(x)$ es monótona para $x \geq x_0$.
 
     Por el teorema \ref{teo:fejer_euler}, $(g(n))$ es equidistribuida módulo $1$ y 
     por lo tanto, $(x_n)$ también lo es.

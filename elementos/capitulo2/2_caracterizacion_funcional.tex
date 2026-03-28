@@ -63,12 +63,11 @@
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x) \, dx.
     \]
 
-    $2 \Longrightarrow 1$ \, Sea un intervalo $(a,b) \subset \mathbb{T}$ y sea $f(x) = \mathbf{1}_{(a,b)}(x)$, 
-    como $f$ es Riemann integrable, entonces,
+    $2 \Longrightarrow 1$ \, Sea un intervalo $(a,b) \subset \mathbb{T}$ con $0<a<b<1$ y sea $f(x) = \mathbf{1}_{(a,b)}(x)$, 
+    dado que $f$ es Riemann integrable,
     \[
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) = \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx = b-a
     \]
-
     lo que demuestra que $(x_n)$ es equidistribuida módulo $1$.
 \end{proof}
 
@@ -83,3 +82,9 @@
               \]
     \end{enumerate}
 \end{corollary}
+
+\begin{proof}
+    $1 \Longrightarrow 2$ \, Es inmediato por el teorema~\ref{carac:riemann} ya que $C(\mathbb{T}) \subset \mathcal{R}(\mathbb{T})$.
+
+    $2 \Longrightarrow 1$ \, La demostración es análoga a la del teorema \ref{teo:teorema_na}.
+\end{proof}

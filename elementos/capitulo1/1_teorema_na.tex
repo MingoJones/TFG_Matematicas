@@ -5,7 +5,8 @@
 
 \begin{proof} La demostración se basa en la observación~\ref{obs:equidistribucion}.
 
-    Sea $(a,b) \in \mathbb{T}$, sea $\varepsilon > 0$ y sean $f_\varepsilon^-, f_\varepsilon^+ \in C(\mathbb{T})$
+    Sea $(a,b) \subset \mathbb{T}$ con $0 < a < b < 1$, sea $\varepsilon > 0$ que cumpla que
+    $\varepsilon < \frac{1}{2} \min\{a, 1-b, b-a\}$ y sean $f_\varepsilon^-, f_\varepsilon^+ \in C(\mathbb{T})$
     funciones tales que 
     \[
        0 \leq 
@@ -32,7 +33,7 @@
         \frac{1}{N} \sum_{n=1}^N f_\varepsilon^+(n\alpha)
     \]
     
-    Por el lema anterior, se tiene que,
+    Tomando límites cuando $N \to \infty$, por el lema anterior, se tiene que
     \[
         b-a-2\varepsilon \leq
         \int_0^1 f_\varepsilon^-(x)\ dx \leq
