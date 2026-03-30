@@ -16,5 +16,130 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{bugeaud-2012}{book}{}
+      \name{author}{1}{}{%
+        {{hash=cd22e3027cd6424562af542c88036f6e}{%
+           family={Bugeaud},
+           familyi={B\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{cd22e3027cd6424562af542c88036f6e}
+      \strng{fullhash}{cd22e3027cd6424562af542c88036f6e}
+      \strng{bibnamehash}{cd22e3027cd6424562af542c88036f6e}
+      \strng{authorbibnamehash}{cd22e3027cd6424562af542c88036f6e}
+      \strng{authornamehash}{cd22e3027cd6424562af542c88036f6e}
+      \strng{authorfullhash}{cd22e3027cd6424562af542c88036f6e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{5}
+      \field{month}{7}
+      \field{title}{Distribution Modulo One and Diophantine Approximation}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{grafakos-2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d75ea9c673adff92b3c4257d2a70a85b}{%
+           family={Grafakos},
+           familyi={G\bibinitperiod},
+           given={Loukas},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d75ea9c673adff92b3c4257d2a70a85b}
+      \strng{fullhash}{d75ea9c673adff92b3c4257d2a70a85b}
+      \strng{bibnamehash}{d75ea9c673adff92b3c4257d2a70a85b}
+      \strng{authorbibnamehash}{d75ea9c673adff92b3c4257d2a70a85b}
+      \strng{authornamehash}{d75ea9c673adff92b3c4257d2a70a85b}
+      \strng{authorfullhash}{d75ea9c673adff92b3c4257d2a70a85b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{month}{11}
+      \field{title}{Classical Fourier Analysis}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{kuipers-1974}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e4f02634355bfa5d13a938ef7186d00d}{%
+           family={Kuipers},
+           familyi={K\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e6a906e10e702599bf8ddd1d74d30a77}{%
+           family={Niederreiter},
+           familyi={N\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{33c6380ef1b146756dbecd8247162b19}
+      \strng{fullhash}{33c6380ef1b146756dbecd8247162b19}
+      \strng{bibnamehash}{33c6380ef1b146756dbecd8247162b19}
+      \strng{authorbibnamehash}{33c6380ef1b146756dbecd8247162b19}
+      \strng{authornamehash}{33c6380ef1b146756dbecd8247162b19}
+      \strng{authorfullhash}{33c6380ef1b146756dbecd8247162b19}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{1}
+      \field{title}{Uniform distribution of sequences}
+      \field{year}{1974}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{stein-2003}{book}{}
+      \name{author}{2}{}{%
+        {{hash=1e432a4cd42a48f08962229276035a77}{%
+           family={Stein},
+           familyi={S\bibinitperiod},
+           given={Elias\bibnamedelimb M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=11a7d9a61c9004104829d3ea6835494f}{%
+           family={Shakarchi},
+           familyi={S\bibinitperiod},
+           given={Rami},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{b35e88a256824c1766e1ada15efaa66c}
+      \strng{fullhash}{b35e88a256824c1766e1ada15efaa66c}
+      \strng{bibnamehash}{b35e88a256824c1766e1ada15efaa66c}
+      \strng{authorbibnamehash}{b35e88a256824c1766e1ada15efaa66c}
+      \strng{authornamehash}{b35e88a256824c1766e1ada15efaa66c}
+      \strng{authorfullhash}{b35e88a256824c1766e1ada15efaa66c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{month}{4}
+      \field{subtitle}{An Introduction}
+      \field{title}{Fourier Analysis}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
