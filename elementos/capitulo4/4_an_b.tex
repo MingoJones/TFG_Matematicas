@@ -1,0 +1,31 @@
+\begin{example}
+    Sea $a \neq 0$ y sea $\sigma > 0$ tal que $\sigma \notin \mathbb{Z}$.
+    Entonces, la sucesión $(an^\sigma)$ es equidistribuida módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Sea $g(x) = a x^\sigma$ y sea $k = \floor{\sigma}+1$. Su derivada $k$-ésima es 
+    \[
+        g^{(k)}(x) = a \sigma (\sigma - 1) \cdots (\sigma - k + 1) x^{\sigma - k}
+    \]
+    Además, $\sigma-k < 0$ por lo que
+    \[
+        \lim_{x \to \infty} g^{(k)}(x) = 0
+    \]
+
+    Para el otro límite observemos que $\sigma-k+1 = \sigma - \floor{\sigma} > 0$
+    \[
+        \lim_{x \to \infty} x \left|g^{(k)}(x)\right| = 
+        \lim_{x \to \infty} \left|a \sigma (\sigma - 1) \cdots (\sigma - k + 1)x^{\sigma-k+1} \right| = \infty
+    \]
+    Para comprobar la monotonía de $g^{(k)}(x)$, calculamos su derivada,
+    \[
+        g^{(k+1)}(x) = a \sigma (\sigma - 1) \cdots (\sigma - k) x^{\sigma - k - 1}
+    \]
+    Como $x^{\sigma-k-1}$ es positivo para todo $x\geq1$, entonces $g^{(k+1)}(x)$ 
+    es de signo constante para todo $x \geq 1$, lo que implica que $g^{(k)}(x)$ es 
+    monótona a partir de $x_0 = 1$.
+    
+    Se cumplen las condiciones del teorema \ref{teo:fejer_cap4}, entonces 
+    $(an^\sigma)$ es equidistribuida módulo $1$.
+\end{resolve}

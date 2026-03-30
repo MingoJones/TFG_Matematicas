@@ -1,7 +1,7 @@
 Creo que la demostracion es correcta, no estoy seguro
 \begin{theorem}
     \label{teo:fejer_euler}
-    Sea $g:[1,\infty) \to \mathbb{R}$ una función derivable tal que $g' \in C([1,\infty))$ y $g'$ 
+    Sea $g:[1,\infty) \to \mathbb{R}$ una función derivable tal que $g' \in C([1,\infty))$ y $g'(x)$ 
     es monótona para $x \geq x_0$ para algún $x_0 \geq 1$. Si se cumplen las siguientes condiciones,
     \begin{align}
         \label{hipo:fejer_euler}
@@ -14,14 +14,13 @@ Creo que la demostracion es correcta, no estoy seguro
 
 \begin{proof}
     Sea $N > x_0$ y sea $k \in \mathbb{Z}\setminus\{0\}$. 
-    Aplicando la fórmula (\ref{prop:formula_euler}) a la función $f(x) = e^{2\pi i k g(x)}$,
+    Aplicando la fórmula (\ref{prop:formula_euler}) a $f(x) = e^{2\pi i k g(x)}$,
     \[
         \sum_{n=1}^N e^{2\pi i k g(n)}
         = \int_1^N e^{2\pi i k g(x)} \, dx 
         + \frac{1}{2} \left(e^{2\pi i k g(N)} + e^{2\pi i k g(1)}\right)
         + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx
     \]
-
     La primera integral la separamos en los dos intervalos $[1,x_0]$ y $[x_0,N]$,
     \[
         \int_1^N e^{2\pi i k g(x)} \,dx = 

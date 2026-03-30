@@ -1,7 +1,7 @@
 \begin{theorem}
     \label{teo:polinomios_weyl}
-    Sea $p(x)=c_m x^m + c_{m-1} x^{m-1} + \cdots + c_1 x + c_0$ un polinomio con coeficientes reales. 
-    Si al menos uno de $c_j \notin \mathbb{Q}$ con $j>0$, entonces la sucesión $(p(n))$ 
+    Sea $p(x)=c_m x^m + c_{m-1} x^{m-1} + \dots + c_1 x + c_0$ un polinomio con coeficientes 
+    reales. Si al menos uno de $c_j \notin \mathbb{Q}$ con $j>0$, entonces la sucesión $(p(n))$ 
     es equidistribuida módulo $1$.
 \end{theorem}
 
@@ -10,57 +10,95 @@
     y los demás coeficientes son racionales.
     Sea
     \[
-        p(x) = P(x) + c_1x + c_0,
+        p(x) = P(x) + c_1x + c_0
     \]
-    con $P(x) = c_m x^m + c_{m-1} x^{m-1} + \cdots + c_2 x^2$.
+    con $P(x) = c_m x^m + c_{m-1} x^{m-1} + \dots + c_2 x^2$.
 
-    Como $c_2,...,c_m \in \mathbb{Q}$ se pueden escribir como $c_j = p_j/q_j$ con 
-    $p_j,q_j \in \mathbb{Z}$ y $q_j > 0$. Sea $D = \operatorname{mcm}(q_2,...,q_m)$ 
-    entonces los coeficientes se pueden escribir como
+    Como $c_2,\dots,c_m \in \mathbb{Q}$ se pueden escribir de la forma $c_j = p_j/q_j$ con 
+    $p_j,q_j \in \mathbb{Z}$ y $q_j > 0$ para $j=~2,\dots,m$. 
+    Sea $D = \operatorname{mcm}(q_2,\dots,q_m)$ entonces
     \[
-        c_j = \frac{a_j}{D} \quad \text{con } a_j \in \mathbb{Z} \text{ para cada } j=2,...,m.
-    \]
-
-    Sea un $n\geq1$, entonces $n=Dk+d$ con $k \geq 0$ y $d \in \{1,...,D\}$.
-    Al comparar $P(Dk+d)$ con $P(d)$ se tiene que
-    \[
-        P(Dk+d)-P(d)= \sum_{j=2}^m c_j ((Dk+d)^j - d^j).
-    \]
-    
-    Para cada $j=2,...,m$, desarrollando el binomio, se tiene
-    \[
-        (Dk+d)^j - d^j = \sum_{l=1}^j \binom{j}{l} d^{j-l} (Dk)^l .
+        c_j = \frac{a_j}{D} \quad \text{con } a_j \in \mathbb{Z} \text{ para cada } j=2,\dots,m
     \]
 
+    Sea un $n\geq1$, podemos expresarlo como $n=Dl+d$ con $l \geq 0$ y $1 \leq d \leq D$.
+    Si comparamos $P(Dl+d)$ con $P(d)$ se tiene que
+    \[
+        P(Dl+d)-P(d)= \sum_{j=2}^m c_j ((Dl+d)^j - d^j)
+    \]
+    Para cada $j=2,...,m$, desarrollando el binomio,
+    \[
+        (Dl+d)^j - d^j = \sum_{i=1}^j \binom{j}{i} d^{j-i} (Dl)^i
+    \]
     Por lo tanto,
     \begin{align*}
-        P(Dk+d)-P(d) 
-        &= \sum_{j=2}^m \sum_{l=1}^j c_j \binom{j}{l} d^{j-l} (Dk)^l \\
-        &= \sum_{j=2}^m \sum_{l=1}^j \frac{a_j}{D} \binom{j}{l} d^{j-l} (Dk)^l \\
-        &= \sum_{j=2}^m \sum_{l=1}^j a_j \binom{j}{l} d^{j-l} D^{l-1} k^l \in \mathbb{Z}
+        P(Dl+d)-P(d) 
+        &= \sum_{j=2}^m \sum_{i=1}^j c_j \binom{j}{i} d^{j-i} (Dl)^i \\
+        &= \sum_{j=2}^m \sum_{i=1}^j \frac{a_j}{D} \binom{j}{i} d^{j-i} (Dl)^i \\
+        &= \sum_{j=2}^m \sum_{i=1}^j a_j \binom{j}{i} d^{j-i} D^{i-1} l^i \in \mathbb{Z}
     \end{align*}
-
-    Es decir, $P(Dk+d)$ y $P(d)$ difieren en un número entero, por lo que
+    Es decir, $P(Dl+d)$ y $P(d)$ difieren en un número entero, por lo que
     \[
-        \partfrac{P(Dk+d)} = \partfrac{P(d)} 
+        \partfrac{P(Dl+d)} = \partfrac{P(d)} 
         \quad \text{y en consecuencia} \quad
-        e^{2\pi i k P(Dk+d)} = e^{2\pi i k P(d)}
+        e^{2\pi i P(Dl+d)} = e^{2\pi i P(d)}
     \]
 
-    Vamos a comprobar que en este caso especial la sucesión $(p(n))$ es equidistribuida
-    módulo $1$ con el criterio de Weyl. 
+    Comprobaremos que para el caso $c_1 \notin \mathbb{Q}$ la sucesión 
+    $(p(n))$ es equidistribuida módulo $1$ 
 
-    Sea $N$, entonces $N=DM+R$ con $0 \leq R < D$. Para cada $n=1,...,DM$ tenemos que $n=Dk+d$ con $k\in \{0,...,M-1\}$ y $d \in \{1,...,D\}$, entonces
+    Por el criterio de Weyl, sea $k \in \mathbb{Z}\setminus\{0\}$, sea $N \geq 1$, 
+    entonces $N=DL+R$ con $L \geq 0$ y $1 \leq R \leq D$. Para cada $n=1,2,\dots,DL$
+    lo expresamos como $n= Dl + d$ con $0 \leq l \leq L-1$ y $1 \leq d \leq D$. Entonces
     \begin{align*}
         \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right|
-        &= \left|\frac{1}{N}\sum_{d=1}^D \sum_{k=0}^{M-1} e^{2\pi i k(P(Dk+d) + c_1 Dk + c_0)} + \frac{1}{N}\sum_{n=DM+1}^N e^{2\pi i k p(n)} \right| \\
-        &\leq \left|\frac{1}{DM+R}\sum_{d=1}^D e^{2\pi i k(P(d)+c_0)} \sum_{k=0}^{M-1} e^{2\pi i k (c_1 Dk)}\right| + \frac{D}{DM+R} \\
-        &\leq \left|\frac{D}{DM}\sum_{k=0}^{M-1} e^{2\pi i c_1 D k}\right| + \frac{D}{DM}.
+        &= \left|\frac{1}{N}\sum_{d=1}^D \sum_{l=0}^{L-1} e^{2\pi i k(P(Dl+d) + c_1 Dl + c_0)} + \frac{1}{N}\sum_{n=DL+1}^N e^{2\pi i k p(n)} \right| \\
+        &\leq \left|\frac{1}{N}\sum_{d=1}^D e^{2\pi i k(P(d) + c_0)} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{1}{N}\sum_{n=DL+1}^N \left|e^{2\pi i k p(n)}\right| \\
+        &\leq \left|\frac{D}{N} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{D}{N}
     \end{align*}
+    Como $N=DL+R$ con $1 \leq R \leq D$, entonces $\frac{D}{N} \leq \frac{D}{DL} = \frac{1}{L}$, por lo que
+    \[
+        \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right| \leq 
+        \left|\frac{1}{L} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{1}{L}
+    \]
 
-    Al tomar el límite cuando $N \to \infty$ se tiene que
+    Dado que $c_1 \notin \mathbb{Q}$, entonces $(c_1 Dl)$ es equidistribuida módulo $1$.
+    Al tomar el límite cuando $N \to \infty$, y por lo tanto $L \to \infty$, obtenemos
     \[
         \lim_{N \to \infty} \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right| \leq 
-        \lim_{M \to \infty} \left|\frac{1}{M} \sum_{k=0}^{M-1} e^{2\pi i c_1 D k}\right| + \frac{1}{M}= 0,
+        \lim_{L \to \infty} \left|\frac{1}{L} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \lim_{L \to \infty} \frac{1}{L} = 0
     \]
+    Por lo tanto, por el criterio de Weyl, la sucesión $(p(n))$ es equidistribuida módulo $1$ 
+    cuando $c_1 \notin \mathbb{Q}$ y los demás coeficientes son racionales.
+
+    Para el caso general, sea $p(x)=c_m x^m + c_{m-1} x^{m-1} + \dots + c_1 x + c_0$,
+    sea $s = \max\{j \geq 1 : c_j \notin \mathbb{Q}\}$, es decir, $s$ es el grado
+    del coeficiente irracional de mayor grado.
+
+    Queremos demostrar que si $s\geq1$ entonces la sucesión $(p(n))$ es equidistribuida módulo $1$.
+    Por~inducción sobre $s$. Para $s=1$ el resultado es cierto porque lo hemos demostrado antes.
+    Supongamos que el resultado es cierto para $s-1$ y comprobemos el caso $s$.
+
+    Para cada $h=1,2,\dots,$ definimos la función $p_h(x) = p(x+h) - p(x)$. De esta forma, 
+    \[
+        p_h(x) = \sum_{j=1}^m c_j ((x+h)^j - x^j)
+    \]
+    Desarrollando el binomio para cada $j=1,...,m$,
+    \[
+        (x+h)^j - x^j = \sum_{i=1}^j \binom{j}{i} x^{j-i} h^i
+    \]
+    Bajamos un grado a cada término, entonces
+    \[
+        p_h(x) = 
+        \sum_{j=1}^m \sum_{i=1}^j c_j \binom{j}{i} x^{j-i} h^i =
+        \sum_{j=0}^{m-1} \alpha_j x^j
+    \]
+    Los coeficientes $\alpha^{m-1}, \dots, \alpha^{s} \in \mathbb{Q}$, porque son combinaciones 
+    lineales los términos $c_m, \dots, c_{s+1}$. Sin embargo, el coeficiente de $\alpha_{s-1}$ 
+    en su combinación contiene a $c_s\notin \mathbb{Q}$, por lo que $\alpha_{s-1} \notin \mathbb{Q}$. 
+    Por la hipótesis de inducción, la sucesión $(p_h(n))$ es equidistribuida módulo $1$.
+    
+    Por el teorema \ref{teo:diferencias_weyl}, tenemos que la sucesión $(p(n))$ es 
+    equidistribuida módulo $1$ para $s\geq1$. Esto~demuestra que si existe un coeficiente irracional 
+    que no sea el término independiente, entonces la sucesión $(p(n))$ es equidistribuida módulo $1$.
 \end{proof}

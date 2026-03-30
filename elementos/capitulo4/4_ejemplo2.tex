@@ -1,0 +1,39 @@
+\begin{example}
+    Sea $k\in \mathbb{Z}$ tal que $k\geq1$, sea $a \neq 0$ y sea $\tau < 0$. 
+    Entonces, la sucesión $(an^k\log^\tau n)_{n\geq2}$ es equidistribuida módulo $1$.
+\end{example}
+
+\begin{resolve}
+    Sea $x_n = an^k\log^\tau n$ para cada $n \geq 2$. Definimos $g(x) = a(x+1)^k\log^\tau (x+1)$
+    en~$[1,\infty)$, entonces $g(n) = x_{n+1}$ para cada $n \geq 1$.
+
+    La derivada $k$-ésima de $g(x)$ es
+    \[
+        g^{(k)}(x) = a \log^{\tau-k}(x+1)\left(P(\log(x+1))\right)
+    \]
+    donde $P$ es un polinomio de grado $k$ con coeficiente principal $k!$.
+
+    Debido a que $\tau < 0$, entonces 
+    \[
+        \lim_{x \to \infty} g^{(k)}(x) = 0
+        \qquad \text{y} \qquad
+        \lim_{x \to \infty} x \left|g^{(k)}(x)\right| = \infty
+    \]
+
+    Para comprobar la monotonía de $g^{(k)}$, calculamos su derivada,
+    \[
+        g^{(k+1)}(x) = a \,\frac{\log^{\tau-k-1}(x+1)}{(x+1)}\left(Q(\log(x+1))\right)
+    \]
+    donde $Q$ es un polinomio de grado $k+1$ con coeficiente principal $\tau k!$.
+
+    Dado que $\frac{\log^{\tau-k-1}(x+1)}{(x+1)} > 0$ para cada $x \geq 1$ y como $\tau k! < 0$,
+    \[
+        \lim_{x \to \infty} Q(x) = -\infty
+    \] 
+    entonces existe $x_0 \geq 1$ tal que $Q(\log(x+1)) < 0$ para cada $x \geq x_0$. 
+    En consecuencia, $g^{(k+1)}(x)$ es de signo constante para cada $x \geq x_0$, y 
+    por tanto, $g^{(k)}(x)$ es monótona para cada $x \geq x_0$.
+
+    Por el teorema \ref{teo:fejer_cap4}, $(g(n))$ es equidistribuida módulo $1$ y 
+    por lo tanto, $(x_n)$ también lo es.
+\end{resolve}

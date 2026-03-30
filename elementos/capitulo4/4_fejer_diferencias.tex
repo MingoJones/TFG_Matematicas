@@ -1,0 +1,90 @@
+\begin{theorem}
+    \label{teo:fejer_cap4}
+    Sea $k\in \mathbb{Z}$, $k \geq 1$, y sea $g:[1,\infty) \to \mathbb{R}$ una función
+    $k$-veces derivable tal que $g^{(k)}\in C([1,\infty))$ y $g^{(k)}(x)$ es monótona
+    para $x \geq x_0$ para algún $x_0 \geq 1$. Si se cumplen las siguientes condiciones,
+    \begin{align}
+        \label{hipo:fejer_cap4}
+        \lim_{x \to \infty} g^{(k)}(x) = 0
+        \qquad \text{y} \qquad
+        \lim_{x \to \infty} {x \left|g^{(k)}(x)\right|} = \infty 
+    \end{align}
+    entonces la sucesión $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
+\end{theorem}
+
+\begin{proof}
+    Procedemos por inducción sobre $k$. Para $k=1$, el resultado es el teorema \ref{teo:fejer_euler}.
+
+    Supongamos que el resultado es cierto para $k-1$ y sea $g$ una función que cumple
+    las hipótesis del teorema para $k$.
+
+    Para cada $h=1,2,\dots,$ definimos la función $f_h(x) = g(x+h) - g(x)$. De esta forma, 
+    $f_h$ es $k-1$-veces derivable y es continua en $[1,\infty)$ porque lo es $g^{(k)}$.
+    \[
+        f_h^{(k-1)}(x) = g^{(k-1)}(x+h) - g^{(k-1)}(x)
+    \]
+    
+    Comprobemos que $f_h^{(k-1)}(x)$ es monótona para $x \geq x_0$. Para esto, basta con 
+    mostrar que su derivada es de signo constante,
+    \[
+        f_h^{(k)}(x) = g^{(k)}(x+h) - g^{(k)}(x)
+    \]
+    como $g^{(k)}(x)$ es monótona para $x \geq x_0$, entonces $g^{(k)}(x+h) - g^{(k)}(x)$ 
+    es de signo constante. En~consecuencia, $f_h^{(k-1)}(x)$ es monótona para $x \geq x_0$.
+
+    Para verificar el primer límite, expresamos $f_h^{(k-1)}(x)$ de la siguiente manera, 
+    \[
+        f_h^{(k-1)}(x) = \int_x^{x+h} g^{(k)}(t) \, dt
+    \]
+    Como $\lim_{x \to \infty} g^{(k)}(x) = 0$, para cada $\varepsilon > 0$ existe $x_1 > 0$
+    tal que $\left|g^{(k)}(t)\right| < \frac{\varepsilon}{h}$ para todo $t \geq x_1$. 
+    
+    Sea $x \geq x_1$, entonces para todo $t \in (x,x+h)$ se tiene $t \geq x_1$,
+    \[
+        \left|f_h^{(k-1)}(x)\right| = 
+        \left|\int_x^{x+h} g^{(k)}(t) \, dt\right| \leq 
+        \int_x^{x+h} |g^{(k)}(t)| \, dt < 
+        \int_x^{x+h} \frac{\varepsilon}{h} \, dt = \varepsilon
+    \]
+    como $\varepsilon > 0$ es arbitrario, se concluye que 
+    \[
+        \lim_{x \to \infty} f_h^{(k-1)}(x) = 0
+    \]
+    
+    Para la segunda condición, como $g^{(k)}(x)$ es monótona para $x \geq x_0$ y 
+    $\lim_{x \to \infty} g^{(k)}(x) = 0$, entonces $g^{(k)}(x)$ es de signo constante 
+    para $x \geq x_0$. 
+    
+    Sea $x \geq x_0$.
+    \[
+        \left|f_h^{(k-1)}(x)\right| = 
+        \left|\int_x^{x+h} g^{(k)}(t) \, dt\right| = 
+        \int_x^{x+h} \left|g^{(k)}(t)\right| \, dt 
+    \]
+    Además, $\left|g^{(k)}(x)\right|$ también es monótona para $x \geq x_0$ y como
+    $\lim_{x \to \infty} \left|g^{(k)}(x)\right| = 0$, en concreto, es decreciente.
+    
+    Por lo tanto, para $t \in (x,x+h)$ se tiene $\left|g^{(k)}(t)\right| \geq \left|g^{(k)}(x+h)\right|$,
+    entonces
+    \[
+        \left|f_h^{(k-1)}(x)\right| \geq \int_x^{x+h} \left|g^{(k)}(x+h)\right| \, dt = h \left|g^{(k)}(x+h)\right|
+    \]
+    En consecuencia,
+    \[
+        \lim_{x \to \infty} x \left|f_h^{(k-1)}(x)\right| \geq 
+        \lim_{x \to \infty} xh \left|g^{(k)}(x+h)\right|
+    \]
+    usando las hipotesis \ref{hipo:fejer_cap4} tenemos
+    \[
+        \lim_{x \to \infty} xh \left|g^{(k)}(x+h)\right| = 
+        \lim_{x \to \infty} h  \left(\frac{x}{x+h}\right) \left(x+h\right)\left|g^{(k)}(x+h)\right| = \infty
+    \]
+    Por consiguiente,
+    \[
+        \lim_{x \to \infty} x\left|f_h^{(k-1)}(x)\right| = \infty
+    \]
+    
+    Hemos demostrado que $f_h$ cumple las hipótesis del teorema para $k-1$, luego la sucesión
+    $(f_h(n))$ es equidistribuida módulo $1$ para cada $h=1,2,\dots$. Por el teorema 
+    \ref{teo:diferencias_weyl}, la sucesión $(g(n))$ es equidistribuida módulo $1$.
+\end{proof}

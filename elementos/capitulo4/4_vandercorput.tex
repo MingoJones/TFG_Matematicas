@@ -62,26 +62,26 @@
         2(N+H-1) \operatorname{Re}\left(\sum_{p=2}^{N+H} \sum_{1 \leq k < s \leq H} u_{p-k} \overline{u_{p-s}}\right)
     \end{align*}
 
-    Estudiamos sumatorio del segundo término. Hacemos el cambio de variable $n = p-s$, 
-    como $p=2,\dots,N+H$ y $s=2,\dots,H$ entonces $n=0,\dots,N$. Además, como la suma es 
-    finita podemos cambiar el orden de los sumatorios,
+    Estudiamos sumatorio del segundo término. Hacemos el cambio de variable $n = p-s$,
+    notando que $u_n = 0$ salvo para $n=1,\dots,N$. Además, como la suma es finita podemos
+    cambiar el orden de los sumatorios,
     \[
         \sum_{p=2}^{N+H} \sum_{1 \leq k < s \leq H} u_{p-k} \overline{u_{p-s}} =
-        \sum_{1 \leq k < s \leq H} \sum_{n=0}^{N} u_{n+s-k} \overline{u_n}
+        \sum_{1 \leq k < s \leq H} \sum_{n=1}^{N} u_{n+s-k} \overline{u_n}
     \]
     Sea $k$ fijo, hacemos el cambio de variable $h = s-k$. Como $k < s$ entonces 
     $s = k+1, \dots, H$ y $h = 1, \dots, H-k$. Obtenemos,
     \[
-        \sum_{1 \leq k < s \leq H} \sum_{n=0}^{N} u_{n+s-k} \overline{u_n} =
-        \sum_{k=1}^{H-1} \sum_{h=1}^{H-k} \sum_{n=0}^{N} u_{n+h} \overline{u_n}
+        \sum_{1 \leq k < s \leq H} \sum_{n=1}^{N} u_{n+s-k} \overline{u_n} =
+        \sum_{k=1}^{H-1} \sum_{h=1}^{H-k} \sum_{n=1}^{N} u_{n+h} \overline{u_n}
     \]
     Sabemos que $1 \leq h \leq H-k$ entonces $2 \leq h+k \leq H$ y $1 \leq k \leq H-h$,
     \begin{align*}
-        \sum_{k=1}^{H-1} \sum_{h=1}^{H-k} \sum_{n=0}^{N} u_{n+h} \overline{u_n}  
-        &=\sum_{k=1}^{H-1} \sum_{h=1}^{H-1} \mathbf{1}_{[2,H]}(h+k) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right) \\
-        &=\sum_{h=1}^{H-1} \sum_{k=1}^{H-1} \mathbf{1}_{[2,H]}(h+k) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right) \\
-        &=\sum_{h=1}^{H-1} \sum_{k=1}^{H-h} \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right) \\
-        &=\sum_{h=1}^{H-1} (H-h) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right)
+        \sum_{k=1}^{H-1} \sum_{h=1}^{H-k} \sum_{n=1}^{N} u_{n+h} \overline{u_n}  
+        &=\sum_{k=1}^{H-1} \sum_{h=1}^{H-1} \mathbf{1}_{[2,H]}(h+k) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right) \\
+        &=\sum_{h=1}^{H-1} \sum_{k=1}^{H-1} \mathbf{1}_{[2,H]}(h+k) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right) \\
+        &=\sum_{h=1}^{H-1} \sum_{k=1}^{H-h} \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right) \\
+        &=\sum_{h=1}^{H-1} (H-h) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right)
      \end{align*}
 
      La cota que teníamos la podemos simplificar como,
@@ -91,9 +91,9 @@
         &\leq 2(N+H-1) \operatorname{Re}\left(\sum_{h=0}^{H-1} (H-h) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right)\right) 
     \end{align*}
 
-    Tomando las acotaciones $N+H-1 \leq 2N$, $H-h \leq H$ y $\operatorname{Re}(z) \leq |z|$ 
-    para todo $z \in \mathbb{C}$. Además, teniendo en cuenta que $u_n = 0$ para $n > N$ y 
-    para $n \leq 0$, se obtiene,
+    Considerando las siguientes cotaciones $N+H-1 \leq 2N$, $H-h \leq H$ y 
+    $\operatorname{Re}(z) \leq |z|$ para todo $z \in \mathbb{C}$ y teniendo en cuenta
+    que $u_n=0$ salvo para $n=1,\dots,N$ obtenemos,
     \[
         H^2 \left| \sum_{n=1}^{N} u_n \right|^2 \leq
         4N H \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} u_{n+h} \overline{u_n} \right|

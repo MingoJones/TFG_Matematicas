@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  28 MAR 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  30 MAR 2026 21:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1170,71 +1170,83 @@ LaTeX Info: Redefining \% on input line 2.
 LaTeX Info: Redefining \. on input line 61.
 LaTeX Info: Redefining \% on input line 61.
  [19]) (./elementos/capitulo3/3_fejer_euler.tex
-LaTeX Info: Redefining \. on input line 45.
-LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
  [20]
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
- [21]) (./elementos/capitulo3/3_ejemplo1.tex
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
- [22]) (./elementos/capitulo3/3_ejemplo2.tex) (./elementos/capitulo3/3_ejemplo3.tex
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
- [23]))
+LaTeX Info: Redefining \. on input line 107.
+LaTeX Info: Redefining \% on input line 107.
+ [21]) (./elementos/capitulo3/3_ejemplo1.tex) (./elementos/capitulo3/3_ejemplo2.tex
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+ [22]) (./elementos/capitulo3/3_ejemplo3.tex))
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
- [24]
+ [23]
 Cap\'{\i }tulo 4.
-(./elementos/capitulo4/capitulo4.tex (./elementos/capitulo4/4_vandercorput.tex [25
+(./elementos/capitulo4/capitulo4.tex (./elementos/capitulo4/4_vandercorput.tex [24
 
 ]
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
- [26]) (./elementos/capitulo4/4_n2a.tex
+ [25]) (./elementos/capitulo4/4_n2a.tex
 LaTeX Info: Redefining \. on input line 18.
 LaTeX Info: Redefining \% on input line 18.
- [27]) (./elementos/capitulo4/4_diferencias_weyl.tex
+ [26]) (./elementos/capitulo4/4_diferencias_weyl.tex
 LaTeX Info: Redefining \. on input line 21.
 LaTeX Info: Redefining \% on input line 21.
- [28]) (./elementos/capitulo4/4_polinomios_weyl.tex
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
- [29]) (./elementos/capitulo4/4_an_b.tex) (./elementos/capitulo4/4_fejer_diferencias.tex))
+ [27]) (./elementos/capitulo4/4_polinomios_weyl.tex
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+ [28]
+LaTeX Info: Redefining \. on input line 77.
+LaTeX Info: Redefining \% on input line 77.
+ [29]) (./elementos/capitulo4/4_fejer_diferencias.tex
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+ [30]
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+ [31]) (./elementos/capitulo4/4_an_b.tex) (./elementos/capitulo4/4_ejemplo1.tex
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+ [32]) (./elementos/capitulo4/4_ejemplo2.tex
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
+ [33]))
 
 LaTeX Warning: Empty bibliography on input line 118.
 
 LaTeX Info: Redefining \. on input line 128.
 LaTeX Info: Redefining \% on input line 128.
-[30]
+[34]
 Ap\'{e}ndice A.
-(./elementos/apendices/apendice1.tex (./elementos/apendices/equivalentes.tex [31
+(./elementos/apendices/apendice1.tex (./elementos/apendices/equivalentes.tex [35
 
 ]
 LaTeX Info: Redefining \. on input line 123.
 LaTeX Info: Redefining \% on input line 123.
- [32]) (./elementos/apendices/auxiliar_ej14.tex
+ [36]) (./elementos/apendices/auxiliar_ej14.tex
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
- [33]
+ [37]
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
- [34]
+ [38]
 LaTeX Info: Redefining \. on input line 115.
 LaTeX Info: Redefining \% on input line 115.
- [35]))
+ [39]))
 LaTeX Info: Redefining \. on input line 131.
 LaTeX Info: Redefining \% on input line 131.
- [36]
+ [40]
 Ap\'{e}ndice B.
-(./elementos/apendices/apendice2.tex) [37
+(./elementos/apendices/apendice2.tex) [41
 
 ]
 
 Package caption Warning: Unused \captionsetup[table] on input line 21.
 See the caption package documentation for explanation.
 
-[38] (build/tfgMates.aux
+[42] (build/tfgMates.aux
 LaTeX Info: Redefining \sptext on input line 26.
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
@@ -1253,18 +1265,18 @@ Package logreq Info: Writing requests to 'tfgMates.run.xml'.
 ### semi simple group (level 1) entered at line 87 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 33848 strings out of 478287
- 636797 string characters out of 5849289
- 1404596 words of memory out of 5000000
- 51216 multiletter control sequences out of 15000+600000
+ 33871 strings out of 478287
+ 637274 string characters out of 5849289
+ 1407709 words of memory out of 5000000
+ 51224 multiletter control sequences out of 15000+600000
  481378 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,12n,92p,790b,2087s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,12n,92p,790b,2089s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/tfgMates.pdf (49 pages, 466674 bytes).
+Output written on build/tfgMates.pdf (53 pages, 481337 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 432 compressed objects within 5 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 458 compressed objects within 5 object streams
+ 139 named destinations out of 1000 (max. 500000)
  159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

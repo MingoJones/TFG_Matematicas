@@ -10,11 +10,11 @@
 \contentsline {section}{\numberline {2.2}El criterio de Weyl}{14}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Cap 3}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Teorema de Féjer}{17}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Cap 4}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Estimación de las sumas de Weyl}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Teorema de las diferencias de Weyl}{27}{section.4.2}%
+\contentsline {chapter}{\numberline {4}Cap 4}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estimación de las sumas de Weyl}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Teorema de las diferencias de Weyl}{26}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Teorema de Féjer mejorado}{30}{section.4.3}%
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Resultados Auxiliares}{31}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Apéndice B}{37}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {A}Resultados Auxiliares}{35}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Apéndice B}{41}{appendix.Alph2}%
 \vspace {2em}
