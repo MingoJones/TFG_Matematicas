@@ -47,34 +47,6 @@
       \field{dateera}{ce}
       \true{nocite}
     \endentry
-    \entry{grafakos-2014}{book}{}
-      \name{author}{1}{}{%
-        {{hash=d75ea9c673adff92b3c4257d2a70a85b}{%
-           family={Grafakos},
-           familyi={G\bibinitperiod},
-           given={Loukas},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{d75ea9c673adff92b3c4257d2a70a85b}
-      \strng{fullhash}{d75ea9c673adff92b3c4257d2a70a85b}
-      \strng{bibnamehash}{d75ea9c673adff92b3c4257d2a70a85b}
-      \strng{authorbibnamehash}{d75ea9c673adff92b3c4257d2a70a85b}
-      \strng{authornamehash}{d75ea9c673adff92b3c4257d2a70a85b}
-      \strng{authorfullhash}{d75ea9c673adff92b3c4257d2a70a85b}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{19}
-      \field{month}{11}
-      \field{title}{Classical Fourier Analysis}
-      \field{year}{2014}
-      \field{dateera}{ce}
-      \true{nocite}
-    \endentry
     \entry{kuipers-1974}{book}{}
       \name{author}{2}{}{%
         {{hash=e4f02634355bfa5d13a938ef7186d00d}{%
@@ -102,6 +74,40 @@
       \field{month}{1}
       \field{title}{Uniform distribution of sequences}
       \field{year}{1974}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{polya-1997}{book}{}
+      \name{author}{2}{}{%
+        {{hash=c6bab844d80dcf3ef4b79a4c63b733b6}{%
+           family={Polya},
+           familyi={P\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f1fb21ce4942f0de527966af57375df1}{%
+           family={Szegö},
+           familyi={S\bibinitperiod},
+           given={Gabor},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{73793d965c7317625c8a211c6c9ca691}
+      \strng{fullhash}{73793d965c7317625c8a211c6c9ca691}
+      \strng{bibnamehash}{73793d965c7317625c8a211c6c9ca691}
+      \strng{authorbibnamehash}{73793d965c7317625c8a211c6c9ca691}
+      \strng{authornamehash}{73793d965c7317625c8a211c6c9ca691}
+      \strng{authorfullhash}{73793d965c7317625c8a211c6c9ca691}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{month}{12}
+      \field{subtitle}{Series. Integral Calculus. Theory of Functions}
+      \field{title}{Problems and Theorems in Analysis I}
+      \field{year}{1997}
       \field{dateera}{ce}
       \true{nocite}
     \endentry

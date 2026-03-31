@@ -1334,10 +1334,6 @@ INPUT build/tfgMates.lof
 INPUT build/tfgMates.lof
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 OUTPUT build/tfgMates.lof
-INPUT build/tfgMates.lot
-INPUT build/tfgMates.lot
-INPUT build/tfgMates.lot
-OUTPUT build/tfgMates.lot
 INPUT ./elementos/capitulo1/capitulo1.tex
 INPUT ./elementos/capitulo1/capitulo1.tex
 INPUT ./elementos/capitulo1/capitulo1.tex

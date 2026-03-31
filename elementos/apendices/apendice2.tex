@@ -1,0 +1,52 @@
+\begin{definition}
+    Se define un polinomio trigonométrico como una función $P:\mathbb{T} \to \mathbb{C}$ de la forma
+    \[
+        P(x) = \sum_{k=-M}^M c_k e^{2\pi i k x}
+    \]
+    con $c_k \in \mathbb{C}$ y $M \in \mathbb{N}$.
+\end{definition}
+
+\begin{theorem}[Teorema de Aproximación de Weierstrass]
+    Sea $f: \mathbb{T} \to \mathbb{C}$ continua y sea $\varepsilon>0$, entonces
+    existe un polinomio trigonométrico $P$ tal que
+    \[
+        \sup_{x\in \mathbb{T}} \left|f(x)-P(x)\right| \leq \varepsilon
+    \]
+\end{theorem}
+
+\begin{definition}
+    La función de Bessel de orden $v \in \mathbb{Z}$, denotada por $J_v(x)$, se
+    define como el $v$-ésimo coeficiente de Fourier de la funcion $e^{ix\sin(\theta)}$, es decir,
+    \[
+        J_v(x) = \frac{1}{2\pi} \int_{0}^{2\pi} e^{ix\sin(\theta)} e^{-iv\theta} d\theta
+    \]
+\end{definition}
+Esta función la utilizamos en el ejemplo \ref{ex:sin_noeq}, con los valores $v=0$ y $x=2\pi$.
+
+% \begin{theorem}
+%     Sea $f:[a,b] \to \mathbb{R}$ acotada. $f$ es Riemann integrable si y solo si
+%     para cada $\varepsilon > 0$ existe $\delta > 0$ tal que para cada particion $P$ de $[a,b]$ con $|P| < \delta$ se cumple que
+%     \[
+%         U(f,P) - L(f,P) < \varepsilon
+%     \]
+%     donde $U(f,P)$ y $L(f,P)$ son las sumas superior e inferior de Riemann respectivamente.
+% \end{theorem}
+
+% Todo esto lo podria tratar manualmente creo.
+% \begin{proposition}
+%     La medida de Lebesgue es invarianta por traslaciones, es decir, $x+A$ es medible Lebesgue
+%     y 
+%     \[
+%         m(x+A)=m(A)
+%     \]
+%     para todo $A$ medible y todo $x\in \mathbb{R}$.
+% \end{proposition}
+
+% En nuestro caso que trabajamos en $\mathbb{T} \simeq \mathbb{R}/\mathbb{Z}$ por la medida de Haar
+% \[
+%     m(x+A)=m(A)
+% \]
+% para todo $A$ medible y todo $x\in \mathbb{T}$
+
+
+
