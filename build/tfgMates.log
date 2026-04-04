@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  31 MAR 2026 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  5 APR 2026 00:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1081,18 +1081,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.63 
       [2] (./elementos/capitulo1/1_equidistribucion_equivalentes.tex) (./elementos/capitulo1/1_quitar_terminos.tex) (./elementos/capitulo1/1_secuencia_mas_const.tex
-LaTeX Info: Redefining \. on input line 18.
-LaTeX Info: Redefining \% on input line 18.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.18     \]
+l.14     \]
             [3]) (./elementos/capitulo1/1_ejemplo_noeq.tex) (./elementos/capitulo1/1_ejemplo_sieq.tex
-LaTeX Info: Redefining \. on input line 19.
-LaTeX Info: Redefining \% on input line 19.
+LaTeX Info: Redefining \. on input line 17.
+LaTeX Info: Redefining \% on input line 17.
  [4]
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
+LaTeX Info: Redefining \. on input line 65.
+LaTeX Info: Redefining \% on input line 65.
  [5]) (./elementos/capitulo1/1_intercalar.tex
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
@@ -1116,7 +1116,7 @@ LaTeX Info: Redefining \% on input line 7.
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
  [8]) (./elementos/capitulo1/1_teorema_na.tex
-<pics/grafico_1_teorema_na.png, id=217, 1028.4021pt x 313.6518pt>
+<pics/grafico_1_teorema_na.png, id=218, 1028.4021pt x 313.6518pt>
 File: pics/grafico_1_teorema_na.png Graphic file (type png)
 <use pics/grafico_1_teorema_na.png>
 Package pdftex.def Info: pics/grafico_1_teorema_na.png  used on input line 23.
@@ -1131,107 +1131,113 @@ Cap\'{\i }tulo 2.
 (./elementos/capitulo2/capitulo2.tex (./elementos/capitulo2/2_caracterizacion_funcional.tex [11
 
 ]
-LaTeX Info: Redefining \. on input line 78.
-LaTeX Info: Redefining \% on input line 78.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
  [12]) (./elementos/capitulo2/2_ejercicio14.tex
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
- [13]) (./elementos/capitulo2/2_criterio_weyl.tex
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
- [14]) (./elementos/capitulo2/2_na.tex) (./elementos/capitulo2/2_ax-b.tex
-LaTeX Info: Redefining \. on input line 19.
-LaTeX Info: Redefining \% on input line 19.
- [15]) (./elementos/capitulo2/2_sin_noeq.tex))
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+ [13])
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
+ [14] (./elementos/capitulo2/2_criterio_weyl.tex) (./elementos/capitulo2/2_na.tex
+LaTeX Info: Redefining \. on input line 17.
+LaTeX Info: Redefining \% on input line 17.
+ [15]) (./elementos/capitulo2/2_ax-b.tex) (./elementos/capitulo2/2_sin_noeq.tex
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
+ [16]))
 LaTeX Info: Redefining \. on input line 100.
 LaTeX Info: Redefining \% on input line 100.
- [16]
+ [17]
 Cap\'{\i }tulo 3.
-(./elementos/capitulo3/capitulo3.tex (./elementos/capitulo3/3_formula_euler.tex) (./elementos/capitulo3/3_alogn.tex [17
+(./elementos/capitulo3/capitulo3.tex (./elementos/capitulo3/3_formula_euler.tex [18
 
-]) (./elementos/capitulo3/3_an_b.tex
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
- [18]
-LaTeX Info: Redefining \. on input line 61.
-LaTeX Info: Redefining \% on input line 61.
- [19]) (./elementos/capitulo3/3_fejer_euler.tex
-LaTeX Info: Redefining \. on input line 49.
-LaTeX Info: Redefining \% on input line 49.
- [20]
-LaTeX Info: Redefining \. on input line 106.
-LaTeX Info: Redefining \% on input line 106.
- [21]) (./elementos/capitulo3/3_ejemplo1.tex) (./elementos/capitulo3/3_ejemplo2.tex
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
- [22]) (./elementos/capitulo3/3_ejemplo3.tex))
+]) (./elementos/capitulo3/3_alogn.tex
+LaTeX Info: Redefining \. on input line 56.
+LaTeX Info: Redefining \% on input line 56.
+ [19]) (./elementos/capitulo3/3_an_b.tex
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
+ [20]) (./elementos/capitulo3/3_fejer_euler.tex
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
+ [21]
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+ [22]) (./elementos/capitulo3/3_ejemplo1.tex
+LaTeX Info: Redefining \. on input line 27.
+LaTeX Info: Redefining \% on input line 27.
+ [23]) (./elementos/capitulo3/3_ejemplo2.tex) (./elementos/capitulo3/3_ejemplo3.tex
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+ [24]))
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
- [23]
+ [25]
 Cap\'{\i }tulo 4.
-(./elementos/capitulo4/capitulo4.tex (./elementos/capitulo4/4_vandercorput.tex [24
+(./elementos/capitulo4/capitulo4.tex (./elementos/capitulo4/4_vandercorput.tex [26
 
 ]
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
- [25]) (./elementos/capitulo4/4_n2a.tex
-LaTeX Info: Redefining \. on input line 18.
-LaTeX Info: Redefining \% on input line 18.
- [26]) (./elementos/capitulo4/4_diferencias_weyl.tex
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
- [27]) (./elementos/capitulo4/4_polinomios_weyl.tex
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
- [28]
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
- [29]) (./elementos/capitulo4/4_fejer_diferencias.tex
-LaTeX Info: Redefining \. on input line 18.
-LaTeX Info: Redefining \% on input line 18.
+ [27]) (./elementos/capitulo4/4_n2a.tex
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ [28]) (./elementos/capitulo4/4_diferencias_weyl.tex
+LaTeX Info: Redefining \. on input line 15.
+LaTeX Info: Redefining \% on input line 15.
+ [29]) (./elementos/capitulo4/4_polinomios_weyl.tex
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
  [30]
-LaTeX Info: Redefining \. on input line 71.
-LaTeX Info: Redefining \% on input line 71.
- [31]) (./elementos/capitulo4/4_an_b.tex) (./elementos/capitulo4/4_ejemplo1.tex
-LaTeX Info: Redefining \. on input line 9.
-LaTeX Info: Redefining \% on input line 9.
- [32]) (./elementos/capitulo4/4_ejemplo2.tex
-LaTeX Info: Redefining \. on input line 26.
-LaTeX Info: Redefining \% on input line 26.
- [33]))
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+ [31])
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+ [32] (./elementos/capitulo4/4_fejer_diferencias.tex
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+ [33]) (./elementos/capitulo4/4_an_b.tex
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+ [34]) (./elementos/capitulo4/4_ejemplo1.tex) (./elementos/capitulo4/4_ejemplo2.tex
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
+ [35]))
 LaTeX Info: Redefining \. on input line 119.
 LaTeX Info: Redefining \% on input line 119.
- [34] [35
+ [36] [37
 
 ]
 Ap\'{e}ndice A.
-(./elementos/apendices/apendice1.tex (./elementos/apendices/equivalentes.tex [36
+(./elementos/apendices/apendice1.tex (./elementos/apendices/equivalentes.tex [38
 
 ]
 LaTeX Info: Redefining \. on input line 123.
 LaTeX Info: Redefining \% on input line 123.
- [37]) (./elementos/apendices/auxiliar_ej14.tex
+ [39]) (./elementos/apendices/auxiliar_ej14.tex
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
- [38]
+ [40]
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
- [39]
+ [41]
 LaTeX Info: Redefining \. on input line 115.
 LaTeX Info: Redefining \% on input line 115.
- [40]))
+ [42]))
 LaTeX Info: Redefining \. on input line 131.
 LaTeX Info: Redefining \% on input line 131.
- [41]
+ [43]
 Ap\'{e}ndice B.
-(./elementos/apendices/apendice2.tex) [42
+(./elementos/apendices/apendice2.tex) [44
 
 ]
 
 Package caption Warning: Unused \captionsetup[table] on input line 21.
 See the caption package documentation for explanation.
 
-[43] (build/tfgMates.aux
+[45] (build/tfgMates.aux
 LaTeX Info: Redefining \sptext on input line 26.
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
@@ -1250,18 +1256,18 @@ Package logreq Info: Writing requests to 'tfgMates.run.xml'.
 ### semi simple group (level 1) entered at line 87 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 34090 strings out of 478287
- 641988 string characters out of 5849289
- 1405983 words of memory out of 5000000
- 51439 multiletter control sequences out of 15000+600000
+ 34096 strings out of 478287
+ 642065 string characters out of 5849289
+ 1406152 words of memory out of 5000000
+ 51442 multiletter control sequences out of 15000+600000
  481378 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,12n,92p,790b,2095s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/tfgMates.pdf (53 pages, 487995 bytes).
+Output written on build/tfgMates.pdf (55 pages, 492009 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 464 compressed objects within 5 object streams
- 146 named destinations out of 1000 (max. 500000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 149 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

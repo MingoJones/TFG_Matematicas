@@ -13,11 +13,11 @@
     \textit{Paso 1. } Sea $f\equiv1$,
     \[
         \frac{1}{N} \sum_{n=1}^{N} f(n\alpha) = 1
-        \qquad
+        \quad \text{ y } \quad
         \int_0^1 f(x)\,dx = 1
     \]
 
-    \textit{Paso 2. } Consideremos $f(x)=e^{2\pi i k x}$ con $k\in\mathbb{Z}$.
+    \textit{Paso 2. } Sea $f(x)=e^{2\pi i k x}$ con $k\in\mathbb{Z}$.
     
     Si $k=0$ estamos en el paso 1, por lo tanto, sea $k\neq 0$ y sea $r=e^{2\pi i k \alpha}$,
     \[
@@ -45,7 +45,7 @@
     \]
     obtenemos que se cumple el lema para las exponenciales complejas.
 
-    \textit{Paso 3. } Sea $P \in \mathcal{P}(\mathbb{T})$ un polinomio trigonométrico,
+    \textit{Paso 3. } Sea $P \in \mathcal{P}(\mathbb{T})$ un polinomio trigonométrico, 
     $P=\sum_{k=-M}^M c_k e^{2\pi i k x}$ con $c_k \in \mathbb{C}$ y $M \in \mathbb{N}$. 
     Veamos que se cumple el lema para $P$,
     \begin{align*}
@@ -64,8 +64,12 @@
     \end{align*}
     se cumple el lema para polinomios trigonométricos.
 
-    \textit{Paso 4. } Sea $f\in C(\mathbb{T})$, sea $\varepsilon > 0$, por el teorema de Weierstrass, % \cite{}
-    existe un polinomio trigonométrico $P$ tal que $\sup_{x \in \mathbb{T}} |f(x)-P(x)| \leq \varepsilon$.
+    \textit{Paso 4. } Sea $f\in C(\mathbb{T})$, sea $\varepsilon > 0$, por el teorema 
+    de Weierstrass, \ref{ap:weierstrass}, existe un polinomio trigonométrico 
+    $P$ tal que 
+    \[
+        \sup_{x \in \mathbb{T}} |f(x)-P(x)| \leq \varepsilon
+    \]
     
     Por el paso 3, sabemos que para ese $\varepsilon > 0$, existe $N_0 \in \mathbb{N}$ tal que 
     para todo $N \geq N_0$ se cumple que 

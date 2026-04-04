@@ -17,7 +17,7 @@
     \[
         A_1, \ A_2, \ A_3, \ A_4, \ A_5, \ \dots
     \]
-    Sea $(a,b)\subset \mathbb{T}$ con $a,b \notin \mathbb{Q}$, sea $k$ fijo, estudiamos cuántos elementos de $A_k$ pertenecen a $(a,b)$.
+    Sea $(a,b)$ con $a,b \notin \mathbb{Q}$, sea $k$ fijo, estudiamos cuántos elementos de $A_k$ pertenecen al intervalo,
     \[
         P_k = 
         \card \left\{ \frac{i}{k} \in A_k : \frac{i}{k} \in (a,b) \right\} =
@@ -35,25 +35,20 @@
         S_M = \sum_{k=1}^M P_k = \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right)
     \]
 
-    Queremos comprobar que, contando por conjuntos, se cumple la definición de equidistribución, es decir,
+    Veamos que, contando por conjuntos, se cumple la definición de equidistribución, es decir,
     \[
         \left|\frac{S_M}{T_M} - (b-a)\right| \longrightarrow 0 \qquad \text{cuando } M \to \infty.
     \]
 
-    Para ello, vamos a tratar de acotarlo,
+    Para ello, tratamos de acotarlo usando que $\partfrac{x} \in [0,1)$ para cada $x \in \mathbb{R}$,
     \begin{align*}
-        \left| \frac{S_M}{T_M} - (b-a) \right| &=
-        \left| \frac{S_M - T_M(b-a)}{T_M} \right| =
-        \frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right) - \sum_{k=1}^M k(b-a) \right| \\ &=
-        \frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka} - kb + ka\right) \right| \leq
-        \frac{1}{T_M} \sum_{k=1}^M \left|\partfrac{ka} - \partfrac{kb}\right| 
+        \left| \frac{S_M}{T_M} - (b-a) \right| 
+        =\left| \frac{S_M - T_M(b-a)}{T_M} \right| 
+        &=\frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right) - \sum_{k=1}^M k(b-a) \right| \\ 
+        &=\frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka} - kb + ka\right) \right| \\
+        &\leq\frac{1}{T_M} \sum_{k=1}^M \left|\partfrac{ka} - \partfrac{kb}\right| 
+        \leq\frac{1}{T_M} \sum_{k=1}^M 1 = \frac{M}{T_M}
     \end{align*}
-
-    Como $\partfrac{x} \in [0,1)$ para cada $x \in \mathbb{R}$, 
-    \[
-        \sum_{k=1}^M \left|\partfrac{ka} - \partfrac{kb}\right| \leq
-        \sum_{k=1}^M 1 = M 
-    \]
     
     Por lo tanto, 
     \[
@@ -61,16 +56,17 @@
         \frac{M}{T_M} = \frac{2}{M+1} \longrightarrow 0 \qquad \text{cuando } M \to \infty.
     \]
     
-    Esto demuestra que al contar por conjuntos, la sucesión es equidistribuida para $N = T_M$.
-    Faltaría comprobar que también lo es para cualquier $N$. 
+    Esto demuestra que, al contar por conjuntos, la sucesión es equidistribuida para $N = T_M$.
+    Falta~comprobar que también lo es para cualquier $N$. 
 
-    Sea ahora $N$ tal que $T_M \leq N \leq T_{M+1}$,
+    Sea $N$ tal que $T_M \leq N \leq T_{M+1}$,
     \[
         A_N((a,b), x) = S_M + R \qquad \text{con } 0 \leq R \leq P_{M+1}
     \]
-    Adicionalmente, tenemos las siguientes desigualdades,
+    Tenemos las siguientes desigualdades,
     \[
-        S_M \leq S_M + R \leq S_{M+1} \qquad 
+        S_M \leq S_M + R \leq S_{M+1} 
+        \quad \text{ y } \quad
         \frac{1}{T_{M+1}} \leq \frac{1}{N} \leq \frac{1}{T_M}
     \]
     Al multiplicarlas,
@@ -78,7 +74,7 @@
         \frac{S_M}{T_{M+1}} \leq \frac{S_M + R}{N} \leq \frac{S_{M+1}}{T_M}
     \]
     
-    Si $M \to \infty$, entonces $N \to \infty$, y al tomar límites, obtenemos 
+    Al tomar límites cuando $M \to \infty$, y por lo tanto $N \to \infty$, obtenemos
     \begin{align*}
         \lim_{M \to \infty} \frac{T_M}{T_{M+1}} \, \frac{S_M}{T_M} \leq
         \liminf_{N \to \infty} \frac{S_M + R}{N} &\leq
@@ -89,7 +85,7 @@
         \limsup_{N \to \infty} \frac{S_M + R}{N} \leq
         b-a
     \end{align*}
-    Por lo tanto, el limite existe y 
+    Por lo que, el límite existe y es
     \[
         \lim_{N \to \infty} \frac{A_N((a,b), x)}{N} =
         \lim_{N \to \infty} \frac{S_M + R}{N} = 

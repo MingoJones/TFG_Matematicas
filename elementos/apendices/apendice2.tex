@@ -7,6 +7,7 @@
 \end{definition}
 
 \begin{theorem}[Teorema de Aproximación de Weierstrass]
+    \label{ap:weierstrass}
     Sea $f: \mathbb{T} \to \mathbb{C}$ continua y sea $\varepsilon>0$, entonces
     existe un polinomio trigonométrico $P$ tal que
     \[
@@ -15,6 +16,7 @@
 \end{theorem}
 
 \begin{definition}
+    \label{ap:bessel}
     La función de Bessel de orden $v \in \mathbb{Z}$, denotada por $J_v(x)$, se
     define como el $v$-ésimo coeficiente de Fourier de la funcion $e^{ix\sin(\theta)}$, es decir,
     \[
@@ -23,6 +25,14 @@
 \end{definition}
 Esta función la utilizamos en el ejemplo \ref{ex:sin_noeq}, con los valores $v=0$ y $x=2\pi$.
 
+\begin{theorem}[Desigualdad de Cauchy-Schwarz]
+    \label{ap:cauchy-schwarz}
+    Sean $a_1, a_2, \ldots, a_n$ y $b_1, b_2, \ldots, b_n \in \mathbb{C}$ entonces
+    \[
+        \left(\sum_{k=1}^n a_k b_k\right) \leq \left(\sum_{k=1}^n |a_k|^2\right) \left(\sum_{k=1}^n |b_k|^2\right)
+    \]
+
+\end{theorem}
 % \begin{theorem}
 %     Sea $f:[a,b] \to \mathbb{R}$ acotada. $f$ es Riemann integrable si y solo si
 %     para cada $\varepsilon > 0$ existe $\delta > 0$ tal que para cada particion $P$ de $[a,b]$ con $|P| < \delta$ se cumple que

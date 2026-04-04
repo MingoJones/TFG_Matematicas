@@ -1,6 +1,6 @@
 \begin{lemma}[Desigualdad de Van der Corput]
     \label{lem:vandercorput}
-    Sean $H,N \in \mathbb{N}$ y $1 \leq H \leq N$ entonces,
+    Sean $H,N \in \mathbb{N}$ con $1 \leq H \leq N$ entonces,
     \begin{align}
         \left| \sum_{n=1}^N e^{2\pi i f(n)} \right|^2 \leq
         4 \, \frac{N}{H} \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} e^{2\pi i (f(n+h) - f(n))} \right|
@@ -25,7 +25,7 @@
         \sum_{p=2}^{N+H} \sum_{k=1}^{H} u_{p-k}
     \]
     
-    Ahora elevamos al cuadrado ambos lados y aplicamos la desigualdad de Cauchy-Schwarz,
+    Ahora elevamos al cuadrado ambos lados y aplicamos la desigualdad de Cauchy-Schwarz, \ref{ap:cauchy-schwarz},
     \[
         \left| H \sum_{n=1}^{N} u_n \right|^2 \leq
         (N+H-1) \sum_{p=2}^{N+H} \left| \sum_{k=1}^{H} u_{p-k} \right|^2

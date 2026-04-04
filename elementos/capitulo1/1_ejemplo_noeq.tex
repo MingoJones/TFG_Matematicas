@@ -1,5 +1,5 @@
 \begin{example}
-    Consideremos una sucesión de racionales $r=(r_n)_{n\geq1}$. Definimos la sucesión 
+    Sea $r=(r_n)_{n\geq1}$ una sucesión densa en $\mathbb{T}$. Definimos la sucesión 
     $x=(x_n)_{n\geq1}$ por
     \[
         x_n = 
@@ -8,17 +8,15 @@
             0 & \text{si $n$ es impar}
         \end{cases} 
     \]
-
     Entonces $(x_n)$ no es equidistribuida módulo $1$.
 \end{example}
 
 \begin{resolve}
-    Consideramos $[0,b) \subset \mathbb{T}$ con $b < 1/2$. Si la sucesión fuese
+    Consideramos el intervalo $[0,b)$ con $b < 1/2$. Si la sucesión fuese
     equidistribuida módulo $1$, debería cumplirse que
     \[
         \lim_{N\to\infty} \frac{A_N([0,b),x)}{N}  = b
     \]
-
     Sin embargo, para $N=2M$,
     \[
         A_{2M}([0,b),x) = M + R \qquad \text{donde } R = A_M([0,b),r) 
@@ -33,7 +31,7 @@
         \frac{M}{2M} = 
         \frac{1}{2}
     \] 
-
+    
     Debido a que $b < 1/2$, el límite anterior no puede ser igual a $b$ 
     y por tanto $(x_n)$ no es equidistribuida módulo $1$.
 \end{resolve}
