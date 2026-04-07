@@ -85,16 +85,20 @@
     \]
     Desarrollando el binomio para cada $j=1,...,m$,
     \[
-        (x+h)^j - x^j = \sum_{i=1}^j \binom{j}{i} x^{j-i} h^i
+        (x+h)^j - x^j = \sum_{\bl i=0}^{\bl{j-1}} \binom{j}{i} x^{\bl i} h^{\bl {j-i}}
     \]
+    \gu{Es un poco m\'as claro as\'i}
+    
     Bajamos un grado a cada término, entonces
     \[
         p_h(x) = 
-        \sum_{j=1}^m \sum_{i=1}^j c_j \binom{j}{i} x^{j-i} h^i =
-        \sum_{j=0}^{m-1} \alpha_j x^j
+        \sum_{j=1}^m \sum_{\bl{i=0} }^{\bl{j-1}} c_j \binom{j}{i} x^{\bl i} h^{\bl{j-i}} =
+        \bl{
+        \sum_{i=0}^{m-1} \Big(\sum_{j=i+1}^m c_j \binom{j}{i} h^{j-i}\Big) x^{i} }=
+        \sum_{\bl{i=0}}^{m-1} \alpha_i x^i
     \]
-    Los coeficientes $\alpha^{m-1}, \dots, \alpha^{s} \in \mathbb{Q}$, porque son combinaciones 
-    lineales los términos $c_m, \dots, c_{s+1}$. Sin embargo, el coeficiente de $\alpha_{s-1}$ 
+    Los coeficientes $\alpha_{s}, \dots, \alpha_{m-1} \in \mathbb{Q}$, porque son combinaciones 
+    lineales \bl{en $\mathbb{Z}$} de los términos $c_{s+1}, \dots, c_{m}$\bl{$\in\mathbb{Q}$}. Sin embargo, el coeficiente de $\alpha_{s-1}$ 
     en su combinación contiene a $c_s\notin \mathbb{Q}$, por lo que $\alpha_{s-1} \notin \mathbb{Q}$. 
     Por la hipótesis de inducción, la sucesión $(p_h(n))$ es equidistribuida módulo $1$.
     

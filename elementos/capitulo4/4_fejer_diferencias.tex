@@ -18,19 +18,28 @@
     Supongamos que el resultado es cierto para $k-1$ y sea $g$ una función que cumple
     las hipótesis del teorema para $k$.
 
-    Para cada $h=1,2,\dots,$ definimos la función $f_h(x) = g(x+h) - g(x)$. De esta forma, 
+    Para cada $h=1,2,\dots,$ definimos la función \bl{
+    \[
+    f_h(x) = g(x+h) - g(x)=\int_x^{x+h}g'(t)\,dt=\int_0^1g'(x+sh)\,h\,ds.
+    \]}
+    De esta forma, 
     $f_h$ es $k-1$-veces derivable y es continua en $[1,\infty)$ porque lo es $g^{(k)}$.
-    \[
-        f_h^{(k-1)}(x) = g^{(k-1)}(x+h) - g^{(k-1)}(x)
-    \]
     
-    Comprobemos que $f_h^{(k-1)}(x)$ es monótona para $x \geq x_0$. Para esto, basta con 
-    mostrar que su derivada es de signo constante,
+    \gu{La prueba de la monoton\'ia creo que no era correcta}
+   % \[
+   %     f_h^{(k-1)}(x) = g^{(k-1)}(x+h) - g^{(k-1)}(x)
+   % \]
+    
+    Comprobemos que $f_h^{(k-1)}(x)$ es monótona para $x \geq x_0$. Para esto, 
+    %basta con mostrar que su derivada es de signo constante. 
+    \bl{usando la 
+    expresi\'on integral anterior tenemos
     \[
-        f_h^{(k)}(x) = g^{(k)}(x+h) - g^{(k)}(x)
-    \]
-    como $g^{(k)}(x)$ es monótona para $x \geq x_0$, entonces $g^{(k)}(x+h) - g^{(k)}(x)$ 
-    es de signo constante. En~consecuencia, $f_h^{(k-1)}(x)$ es monótona para $x \geq x_0$.
+        f_h^{(k-1)}(x) = 
+        %g^{(k)}(x+h) - g^{(k)}(x)
+        \int_0^1g^{(k)}(x+sh)\,h\,ds,
+    \] y}
+    como $g^{(k)}(x)$ es monótona para $x \geq x_0$, entonces \bl{tambi\'en lo es $f_h^{(k-1)}(x)$}. En~consecuencia, $f_h^{(k-1)}(x)$ es monótona para $x \geq x_0$.
 
     Para verificar el primer límite, expresamos $f_h^{(k-1)}(x)$ de la siguiente manera, 
     \[
@@ -53,9 +62,7 @@
     
     Para la segunda condición, como $g^{(k)}(x)$ es monótona para $x \geq x_0$ y 
     $\lim_{x \to \infty} g^{(k)}(x) = 0$, entonces $g^{(k)}(x)$ es de signo constante 
-    para $x \geq x_0$. 
-    
-    Sea $x \geq x_0$.
+    para $x \geq x_0$. \bl{Por tanto,}
     \[
         \left|f_h^{(k-1)}(x)\right| = 
         \left|\int_x^{x+h} g^{(k)}(t) \, dt\right| = 
@@ -72,12 +79,12 @@
     En consecuencia,
     \[
         \lim_{x \to \infty} x \left|f_h^{(k-1)}(x)\right| \geq 
-        \lim_{x \to \infty} xh \left|g^{(k)}(x+h)\right|
+        \lim_{x \to \infty} xh \left|g^{(k)}(x+h)\right|.
     \]
-    usando las hipotesis \ref{hipo:fejer_cap4} tenemos
+    Usando las hipótesis \ref{hipo:fejer_cap4} tenemos
     \[
         \lim_{x \to \infty} xh \left|g^{(k)}(x+h)\right| = 
-        \lim_{x \to \infty} h  \left(\frac{x}{x+h}\right) \left(x+h\right)\left|g^{(k)}(x+h)\right| = \infty
+        \lim_{x \to \infty} \frac{xh}{x+h}\,\left(x+h\right)\left|g^{(k)}(x+h)\right| = h\cdot\infty=\infty.
     \]
     Por consiguiente,
     \[

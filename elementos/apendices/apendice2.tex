@@ -1,3 +1,9 @@
+
+
+
+\bl{En este Ap\'endice incluimos
+algunas definiciones o resultados auxiliares que son conocidos del grado, y que se han utilizado durante el trabajo. }
+
 \begin{definition}
     Se define un polinomio trigonométrico como una función $P:\mathbb{T} \to \mathbb{C}$ de la forma
     \[
@@ -15,21 +21,23 @@
     \]
 \end{theorem}
 
+\gu{Dar una referencia}
+
 \begin{definition}
     \label{ap:bessel}
-    La función de Bessel de orden $v \in \mathbb{Z}$, denotada por $J_v(x)$, se
-    define como el $v$-ésimo coeficiente de Fourier de la funcion $e^{ix\sin(\theta)}$, es decir,
+    La función de Bessel de orden $\bl{n} \in \mathbb{Z}$, denotada por $J_n(x)$, se
+    define como el $n$-ésimo coeficiente de Fourier de la funcion $e^{ix\sin(\theta)}$, es decir,
     \[
-        J_v(x) = \frac{1}{2\pi} \int_{0}^{2\pi} e^{ix\sin(\theta)} e^{-iv\theta} d\theta
+        J_n(x) = \frac{1}{2\pi} \int_{0}^{2\pi} e^{ix\sin(\theta)} e^{-in\theta} d\theta, \quad x\in\mathbb{R}.
     \]
 \end{definition}
-Esta función la utilizamos en el ejemplo \ref{ex:sin_noeq}, con los valores $v=0$ y $x=2\pi$.
+Esta función la utilizamos en el ejemplo \ref{ex:sin_noeq}, con los valores $n=0$ y $x=2\pi$.
 
 \begin{theorem}[Desigualdad de Cauchy-Schwarz]
     \label{ap:cauchy-schwarz}
     Sean $a_1, a_2, \ldots, a_n$ y $b_1, b_2, \ldots, b_n \in \mathbb{C}$ entonces
     \[
-        \left(\sum_{k=1}^n a_k b_k\right) \leq \left(\sum_{k=1}^n |a_k|^2\right) \left(\sum_{k=1}^n |b_k|^2\right)
+        \left(\sum_{k=1}^n a_k\overline{b_k}\right) \leq \left(\sum_{k=1}^n |a_k|^2\right) \left(\sum_{k=1}^n |b_k|^2\right)
     \]
 
 \end{theorem}
