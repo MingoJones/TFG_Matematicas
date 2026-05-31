@@ -6,7 +6,7 @@
         \sum_{n=1}^N f(n) = 
         \int_1^N f(x) \, dx + 
         \frac{f(1)+f(N)}{2} + 
-        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx
+        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx.
     \end{align}
 \end{proposition}
 
@@ -18,20 +18,21 @@
     \begin{align*} 
         \int_n^{n+1} \left(\partfrac{x} - \frac{1}{2}\right) f'(x) \, dx 
         &= \left[\left(\partfrac{x} - \frac{1}{2}\right) f(x) \right]_n^{n+1} - \int_n^{n+1} f(x) \, dx \\
-        &= \frac{1}{2} \, f(n+1) + \frac{1}{2} \, f(n) - \int_n^{n+1} f(x) \, dx
+        &= \frac{1}{2} \, f(n+1) + \frac{1}{2} \, f(n) - \int_n^{n+1} f(x) \, dx.
     \end{align*}
 
     Sumando sobre $n=1,2,\ldots,N-1$,
     \[
         \sum_{n=1}^{N-1} \int_n^{n+1} \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx =
         \sum_{n=1}^{N-1} \left(\frac{1}{2} \, f(n+1) + \frac{1}{2} \, f(n)\right) -
-        \sum_{n=1}^{N-1} \int_n^{n+1} f(x) \, dx \\
+        \sum_{n=1}^{N-1} \int_n^{n+1} f(x) \, dx.
     \]
-    luego,
+    Luego,
     \[
         \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \, f'(x) \, dx =
         \sum_{n=1}^N f(n) - \frac{1}{2} \, f(N) - \frac{1}{2} \, f(1) - 
-        \int_1^N f(x) \, dx
+        \int_1^N f(x) \, dx.
     \]
+    
     Reordenando los términos se obtiene la igualdad deseada.
 \end{proof}

@@ -21,9 +21,9 @@
     \[
         \frac{1}{N} \sum_{n=1}^N f(x_n) = 
         \frac{1}{N} \sum_{n=1}^N \sum_{i=1}^k c_i \mathbf{1}_{[a_{i-1}, a_i)}(x_n) = 
-        \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
+        \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right),
     \]
-    como $(x_n)$ es equidistribuida, por la observación~\ref{obs:equidistribucion}, 
+    como $(x_n)$ es equidistribuida, por la Observación~\ref{obs:equidistribucion}, 
     \begin{align*}
         \lim_{N \to \infty} \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
         &= \sum_{i=1}^k c_i \left(\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right) \\
@@ -36,8 +36,8 @@
     para todo $\varepsilon > 0$ existe una partición $P=\{0=a_0<\cdots<a_k=1\}$ tal que, 
     si definimos
     \[
-        L(x)=\sum_{i=1}^k m_i \mathbf{1}_{[a_{i-1},a_i)}(x) \qquad
-        U(x)=\sum_{i=1}^k M_i \mathbf{1}_{[a_{i-1},a_i)}(x)
+        L(x)=\sum_{i=1}^k m_i \mathbf{1}_{[a_{i-1},a_i)}(x), \qquad
+        U(x)=\sum_{i=1}^k M_i \mathbf{1}_{[a_{i-1},a_i)}(x),
     \]
     donde $m_i=\inf_{x\in[a_{i-1},a_i)} f(x)$ y $M_i=\sup_{x\in[a_{i-1},a_i)} f(x)$
     se tiene
@@ -45,9 +45,9 @@
         L(x)\le f(x)\le U(x), \qquad \int_0^1 U(x) \, dx - \int_0^1 L(x) \, dx \leq \varepsilon.
     \]
 
-    Sea $S_N = \sum_{n=1}^N f(x_n)$, tenemos,
+    Sea $S_N = \sum_{n=1}^N f(x_n)$. Tenemos
     \[
-        \frac{1}{N} \sum_{n=1}^N L(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N U(x_n)
+        \frac{1}{N} \sum_{n=1}^N L(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N U(x_n),
     \]
     como $L$ y $U$ son funciones escalonadas, al tomar límites,
     \[
@@ -56,9 +56,9 @@
         \leq \liminf_{N \to \infty} \frac{S_N}{N} 
         \leq \limsup_{N \to \infty} \frac{S_N}{N} 
         \leq \int_0^1 U(x) \, dx 
-        \leq \int_0^1 f(x) \, dx + \varepsilon
+        \leq \int_0^1 f(x) \, dx + \varepsilon.
     \]
-    como $\varepsilon > 0$ es arbitrario, se concluye que
+    Dado que $\varepsilon > 0$ es arbitrario, se concluye que
     \[
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x) \, dx.
     \]
@@ -66,7 +66,7 @@
     $2 \Longrightarrow 1$ \, Sea un intervalo $(a,b) \subset \mathbb{T}$ con $0<a<b<1$ y sea $f(x) = \mathbf{1}_{(a,b)}(x)$, 
     dado que $f$ es Riemann integrable,
     \[
-        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) = \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx = b-a
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) = \int_0^1 \mathbf{1}_{(a,b)}(x)\ dx = b-a,
     \]
     lo que demuestra que $(x_n)$ es equidistribuida módulo $1$.
 \end{proof}
@@ -84,7 +84,7 @@
 \end{corollary}
 
 \begin{proof}
-    $1 \Longrightarrow 2$ \, Es inmediato por el teorema~\ref{carac:riemann} ya que $C(\mathbb{T}) \subset \mathcal{R}(\mathbb{T})$.
+    $1 \Longrightarrow 2$ \, Es inmediato por el Teorema~\ref{carac:riemann} ya que $C(\mathbb{T}) \subset \mathcal{R}(\mathbb{T})$.
 
-    $2 \Longrightarrow 1$ \, La demostración es análoga a la del teorema \ref{teo:teorema_na}.
+    $2 \Longrightarrow 1$ \, La demostración es análoga a la del Teorema \ref{teo:teorema_na}.
 \end{proof}

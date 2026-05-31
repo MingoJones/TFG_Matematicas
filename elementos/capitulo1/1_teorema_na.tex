@@ -3,7 +3,7 @@
     Sea $\alpha \notin \mathbb{Q}$ entonces la sucesión $(n\alpha)_{n\ge1}$ es equidistribuida módulo $1$.
 \end{theorem}
 
-\begin{proof} La demostración se basa en la observación~\ref{obs:equidistribucion}.
+\begin{proof} La demostración se basa en la Observación~\ref{obs:equidistribucion}.
 
     Sea $(a,b) \subset \mathbb{T}$ con $0 < a < b < 1$, sea $\varepsilon > 0$ que cumpla que
     $\varepsilon < \frac{1}{2} \min\{a, 1-b, b-a\}$ y sean $f_\varepsilon^-, f_\varepsilon^+ \in C(\mathbb{T})$
@@ -15,7 +15,7 @@
        \mathbf{1}_{(a,b)} \leq 
        f_\varepsilon^+ \leq
        \mathbf{1}_{(a-\varepsilon, b+\varepsilon)} \leq
-       1
+       1.
     \]
 
     \begin{figure}
@@ -30,7 +30,7 @@
     \[
         \frac{1}{N} \sum_{n=1}^N f_\varepsilon^-(n\alpha) \leq
         \frac{S_N}{N} \leq 
-        \frac{1}{N} \sum_{n=1}^N f_\varepsilon^+(n\alpha)
+        \frac{1}{N} \sum_{n=1}^N f_\varepsilon^+(n\alpha).
     \]
     
     Tomando límites cuando $N \to \infty$, por el lema anterior, se tiene que
@@ -40,17 +40,17 @@
         \liminf_{N \to \infty} \frac{S_N}{N} \leq
         \limsup_{N \to \infty} \frac{S_N}{N} \leq
         \int_0^1 f_\varepsilon^+(x)\ dx \leq
-        b-a+2\varepsilon
+        b-a+2\varepsilon.
     \]
     Finalmente, tomando el límite cuando $\varepsilon \to 0$ se obtiene,
     \[
         b-a \leq
         \liminf_{N \to \infty} \frac{S_N}{N} \leq
         \limsup_{N \to \infty} \frac{S_N}{N} \leq
-        b-a
+        b-a.
     \]
     Por lo tanto, el límite existe y
     \[
-        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(n\alpha) = b-a
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(n\alpha) = b-a.
     \]
 \end{proof}

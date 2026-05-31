@@ -18,7 +18,8 @@ sucesión no solo es densa, sino que también es equidistribuida. Este último,
 Weyl, desarrolló una teoría general para el estudio de la distribución de 
 sucesiones en~$[0,1)$.
 
-En este capítulo, exploraremos los conceptos básicos para estudiar este tipo 
+Este capítulo se basa principalmente en el libro de Stein y Shakarchi 
+\cite[Capítulo 4, Sección 2]{stein-2003}. Exploraremos los conceptos básicos para estudiar este tipo 
 de problemas y los usaremos para demostrar el resultado Weyl, la equidistribución
 de la sucesión $\partfrac{n\alpha}$ cuando $\alpha$ es un número irracional. 
 
@@ -30,7 +31,7 @@ Ahora, en $\mathbb{R}$, consideramos la relación de equivalencia dada por $x \s
 si y solo si $x - y \in \mathbb{Z}$. Es decir, dos números son congruentes
 módulo $\mathbb{Z}$ o módulo $1$ si difieren por un número entero. Lo indicamos con
 \[
-    x \equiv y \mod \mathbb{Z} \qquad \text{ o } \qquad x \equiv y \mod 1
+    x \equiv y \mod \mathbb{Z} \qquad \text{ o } \qquad x \equiv y \mod 1.
 \]
 
 Cada clase de equivalencia tiene un representante único en el intervalo $[0,1)$ que es
@@ -42,12 +43,12 @@ A lo largo del trabajo, utilizaremos $\mathbb{T}$ para referirnos al intervalo $
 con la identificación de sus extremos. 
 
 \begin{remark}
-    Las funciones en $\mathbb{T}$ son funciones $f$ $1$-periódicas en $\mathbb{R}$. Es decir,
+    Las funciones en $\mathbb{T}$ son funciones $1$-periódicas en $\mathbb{R}$. Es decir, si $f:\mathbb{T}\to\mathbb{R}$, entonces podemos extender $f:\mathbb{R}\to\mathbb{C}$ mediante
     \[
-        f(x+1) = f(x) \quad \text{ para todo } x \in \mathbb{R}.
+        f(x+1) = f(x) \quad \text{ para todo } x \in \mathbb{R},
     \]
-    Debido a esta periodicidad, tenemos que $f(x) = f(\partfrac{x})$ para todo $x \in \mathbb{R}$,
-    por lo que podemos considerar a $f$ como una función definida en $\mathbb{T}$.
+    y viceversa. Debido a esta periodicidad, tenemos que $f(x) = f(\partfrac{x})$ para todo $x \in \mathbb{R}$,
+    por lo que podemos considerar a $f$ como una función definida en $\mathbb{T}=[0,1)$.
 \end{remark}
 
 \section{Equidistribución de sucesiones}
@@ -84,7 +85,7 @@ equidistribuida módulo $1$.
 
 Consideramos ahora el caso en el que $\alpha \notin \mathbb{Q}$. En esta situación, 
 la sucesión $(n\alpha)_{n\geq1}$ es equidistribuida módulo $1$. Para demostrar
-este resultado, utilizaremos el siguiente lema.
+este resultado, haremos uso del siguiente lema.
 
 \input{elementos/capitulo1/1_lema.tex}
 

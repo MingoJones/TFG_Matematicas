@@ -4,7 +4,7 @@
     la suma de los términos de la sucesión que caen dentro del intervalo $[a,b)$ como $S([a,b),N) = \sum_{n=1}^N x_n \, \mathbf{1}_{[a,b)}(x_n)$. Entonces, 
     la sucesión $(x_n)$ es equidistribuida módulo $1$ si y solo si para cada intervalo $[a,b) \subseteq \mathbb{T}$,
     \[
-        \lim_{N \to \infty} \frac{S([a,b),N)}{N} = \frac{1}{2}(b^2-a^2)
+        \lim_{N \to \infty} \frac{S([a,b),N)}{N} = \frac{1}{2}(b^2-a^2),
     \]
 \end{example}
 
@@ -15,7 +15,7 @@
     \[
         \lim_{N \to \infty} \frac{S([a,b),N)}{N} = 
         \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = 
-        \int_0^1 f(x)\ dx = \int_a^b x\ dx = \frac{1}{2}(b^2-a^2)
+        \int_0^1 f(x)\ dx = \int_a^b x\ dx = \frac{1}{2}(b^2-a^2).
     \]
 
     $\Longleftarrow$ \, Sea $f(x) = \sum_{i=1}^k c_i x \,\mathbf{1}_{[a_{i-1}, a_{i})}(x)$ una  
@@ -24,7 +24,7 @@
     \[
         \frac{1}{N} \sum_{n=1}^N f(x_n) = 
         \frac{1}{N} \sum_{n=1}^N \sum_{i=1}^k c_i x_n \, \mathbf{1}_{[a_{i-1}, a_i)}(x_n) = 
-        \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N x_n \,\mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right)
+        \sum_{i=1}^k c_i \left(\frac{1}{N} \sum_{n=1}^N x_n \,\mathbf{1}_{[a_{i-1}, a_i)}(x_n)\right),
     \]
     como cada término es de la forma $S([a,b),N)$, al tomar límites, 
     \begin{align*}
@@ -36,16 +36,16 @@
     \end{align*}
 
     Dado $a>0$ y $f \in \mathcal{R}(\mathbb{T})$ tal que $f(x)=0$ para $x \in [0,a)$.
-    En virtud del teorema \ref{aux:14}, para cada $\varepsilon > 0$ existen funciones lineales 
+    En virtud del Teorema \ref{aux:14}, para cada $\varepsilon > 0$ existen funciones lineales 
     a trozos $L,U$ tales que
     \[
-        L(x) \leq f(x) \leq U(x) \qquad 
-        \int_0^1 U(x) \, dx - \int_0^1 L(x) \, dx \leq \varepsilon
+        L(x) \leq f(x) \leq U(x), \qquad 
+        \int_0^1 U(x) \, dx - \int_0^1 L(x) \, dx \leq \varepsilon.
     \]
 
     Luego si $S_N = \sum_{n=1}^N f(x_n)$, entonces,
     \[
-        \frac{1}{N} \sum_{n=1}^N L(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N U(x_n)
+        \frac{1}{N} \sum_{n=1}^N L(x_n) \leq \frac{S_N}{N} \leq \frac{1}{N} \sum_{n=1}^N U(x_n),
     \]
     como $L$ y $U$ son funciones lineales a trozos de la forma anterior, al tomar límites,
     \[
@@ -54,17 +54,17 @@
         \leq \liminf_{N \to \infty} \frac{S_N}{N} 
         \leq \limsup_{N \to \infty} \frac{S_N}{N} 
         \leq \int_0^1 U(x) \, dx 
-        \leq \int_0^1 f(x) \, dx + \varepsilon
+        \leq \int_0^1 f(x) \, dx + \varepsilon.
     \]
-    como $\varepsilon > 0$ es arbitrario, se concluye que
+    Dado que $\varepsilon > 0$ es arbitrario, se concluye que
     \[
-        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x) \, dx.
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N f(x_n) = \int_0^1 f(x) \, dx
     \]
     cuando $f\in \mathcal{R}(\mathbb{T})$ y $f(x)=0$ para $x \in [0,a)$ con $a>0$.
     
     En particular, aplicando el resultado a $f(x) = \mathbf{1}_{(a,1)}(x)$, con $0<a<1$,
     \[
-        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,1)}(x_n) = \int_0^1 \mathbf{1}_{(a,1)}(x)\ dx = 1-a
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,1)}(x_n) = \int_0^1 \mathbf{1}_{(a,1)}(x)\ dx = 1-a,
     \]
-    lo que demuestra, por la proposición \ref{prop:equivalentes}, que $(x_n)$ es equidistribuida módulo $1$
+    lo que demuestra, por la Proposición \ref{prop:equivalentes}, que $(x_n)$ es equidistribuida módulo $1$
 \end{proof}

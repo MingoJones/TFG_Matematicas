@@ -11,13 +11,13 @@
         k(2hn\alpha + h^2\alpha).
     \]
 
-    Usando la estimación (\ref{lem:vandercorput}), como para $h=0$ se tiene $e^{2\pi i 0}=1$, 
+    Usando la estimación (\ref{lem:vandercorput}), y como para $h=0$ se tiene $e^{2\pi i 0}=1$, 
     \[
         \left|\sum_{n=1}^N e^{2\pi i  k n^2 \alpha}\right|^2 \leq 
         4\,\frac{N^2}{H} + 4\,\frac{N}{H} \sum_{h=1}^{H-1} \left|\sum_{n=1}^{N-h} e^{2\pi i k (2hn\alpha+h^2\alpha)}\right|.
     \]
 
-    Sabemos que $(n\alpha)$ es equidistribuida módulo $1$. Para cada $h \neq 0$, por el ejemplo 
+    Sabemos que $(n\alpha)$ es equidistribuida módulo $1$. Para cada $h \neq 0$, por el Ejemplo 
     \ref{ex:ax-b}, se tiene que $(2hn\alpha+h^2\alpha)$ es equidistribuida módulo $1$.
 
     Al dividir por $N^2$,
@@ -30,7 +30,7 @@
     \[
         \lim_{N\to\infty} \frac{1}{N-h}\sum_{n=1}^{N-h} e^{2\pi i k(2hn\alpha+h^2\alpha)} = 0.
     \] 
-    Luego,
+    Por tanto,
     \[
         \limsup_{N\to\infty} \left| \frac{1}{N} \sum_{n=1}^N e^{2\pi i k n^2 \alpha}\right|^2 \leq \frac{4}{H}.
     \]  

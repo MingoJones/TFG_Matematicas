@@ -9,32 +9,30 @@
 
     Sea $k = \floor{\sigma}+1$, la derivada $k$-ésima de $g(x)$ es
     \[
-        g^{(k)}(x) = a (x+1)^{\sigma-k} \log^{\tau-k}(x+1) \left(P(\log (x+1))\right)
+        g^{(k)}(x) = a (x+1)^{\sigma-k} \log^{\tau-k}(x+1) \left(P(\log (x+1))\right).
     \]
     donde $P(x)$ es un polinomio de grado $k$ con coeficientes que dependen de $\sigma$ y $\tau$.
 
-    Además, $\sigma - k < 0$ y como $\sigma - k + 1 = \sigma - \floor{\sigma} > 0$ se tiene que
+    Además, como $\sigma - k < 0$ y  $\sigma - k + 1 = \sigma - \floor{\sigma} > 0$, se tiene que
     \[
         \lim_{x \to \infty} g^{(k)}(x) = 0
         \qquad \text{y} \qquad
-        \lim_{x \to \infty} x \left|g^{(k)}(x)\right| = \infty
+        \lim_{x \to \infty} x \left|g^{(k)}(x)\right| = \infty.
     \]
 
-    Para la monotonia calculamos $g^{(k+1)}$
+    Para estudiar la monotonía, calculamos $g^{(k+1)}$:
     \[
-        g^{(k+1)}(x) = a (x+1)^{\sigma-k-1} \log^{\tau-k-1}(x+1) \left(Q(\log (x+1))\right)
+        g^{(k+1)}(x) = a (x+1)^{\sigma-k-1} \log^{\tau-k-1}(x+1) \left(Q(\log (x+1))\right),
     \]
     donde $Q(x)$ es un polinomio de grado $k+1$ con coeficientes que dependen de $\sigma$ y $\tau$.
 
-    Debido a que $(x+1)^{\sigma-k-1} \log^{\tau-k-1}(x+1)$ es positivo para cada $x\geq1$ y que
+    Dado que $(x+1)^{\sigma-k-1} \log^{\tau-k-1}(x+1)$ es positivo para cada $x\geq1$ y que
     \[
-        \lim_{x \to \infty} Q(x) = -\infty
+        \lim_{x \to \infty} Q(x) = -\infty,
     \]
-    porque el coeficiente del término de mayor grado es $\sigma (\sigma-1) \cdots (\sigma-k) < 0$ 
-    entonces existe $x_0 \geq 1$ tal que $Q(\log (x+1)) < 0$ para cada $x \geq x_0$. 
-    En consecuencia, $g^{(k+1)}(x)$ es de signo constante para cada $x \geq x_0$, y por tanto, 
-    $g^{(k)}(x)$ es monótona para cada $x \geq x_0$.
+    porque el coeficiente del término de mayor grado es $\sigma (\sigma-1) \cdots (\sigma-k) < 0$, 
+    existe $x_0 \geq 1$ tal que $Q(\log (x+1)) < 0$ para cada $x \geq x_0$. 
+    Por tanto, $g^{(k+1)}(x)$ es de signo constante para $x \geq x_0$ y $g^{(k)}(x)$ es monótona para cada $x \geq x_0$.
 
-    Por el teorema \ref{teo:fejer_cap4}, $(g(n))$ es equidistribuida módulo $1$ y 
-    por lo tanto, $(x_n)$ también lo es.
+    Por el Teorema \ref{teo:fejer_cap4}, $(g(n))$ es equidistribuida módulo $1$. En consecuencia, $(x_n)$ también lo es.
 \end{resolve}

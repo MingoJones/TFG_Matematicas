@@ -1,8 +1,8 @@
 
 
 
-\bl{En este Ap\'endice incluimos
-algunas definiciones o resultados auxiliares que son conocidos del grado, y que se han utilizado durante el trabajo. }
+En este Apéndice incluimos
+algunas definiciones o resultados auxiliares que son conocidos del grado, y que se han utilizado durante el trabajo. 
 
 \begin{definition}
     Se define un polinomio trigonométrico como una función $P:\mathbb{T} \to \mathbb{C}$ de la forma
@@ -21,17 +21,19 @@ algunas definiciones o resultados auxiliares que son conocidos del grado, y que 
     \]
 \end{theorem}
 
-\gu{Dar una referencia}
+La demostración y desarrollo puede leerse en \cite{korner-2022}.
 
 \begin{definition}
     \label{ap:bessel}
-    La función de Bessel de orden $\bl{n} \in \mathbb{Z}$, denotada por $J_n(x)$, se
-    define como el $n$-ésimo coeficiente de Fourier de la funcion $e^{ix\sin(\theta)}$, es decir,
+    La función de Bessel de orden $v \in \mathbb{Z}$, denotada por $J_v(x)$, se
+    define como el $v$-ésimo coeficiente de Fourier de la funcion $e^{ix\sin(\theta)}$, es decir,
     \[
-        J_n(x) = \frac{1}{2\pi} \int_{0}^{2\pi} e^{ix\sin(\theta)} e^{-in\theta} d\theta, \quad x\in\mathbb{R}.
+        J_v(x) = \frac{1}{2\pi} \int_{0}^{2\pi} e^{ix\sin(\theta)} e^{-in\theta} d\theta, \quad x\in\mathbb{R}.
     \]
 \end{definition}
-Esta función la utilizamos en el ejemplo \ref{ex:sin_noeq}, con los valores $n=0$ y $x=2\pi$.
+Esta función la utilizamos en el Ejemplo \ref{ex:sin_noeq}, con los valores $v=0$ y $x=2\pi$.
+
+Para más información sobre la función de Bessel, consultar el Apéndice B de \cite{grafakos-2014}.
 
 \begin{theorem}[Desigualdad de Cauchy-Schwarz]
     \label{ap:cauchy-schwarz}
@@ -39,7 +41,6 @@ Esta función la utilizamos en el ejemplo \ref{ex:sin_noeq}, con los valores $n=
     \[
         \left(\sum_{k=1}^n a_k\overline{b_k}\right) \leq \left(\sum_{k=1}^n |a_k|^2\right) \left(\sum_{k=1}^n |b_k|^2\right)
     \]
-
 \end{theorem}
 % \begin{theorem}
 %     Sea $f:[a,b] \to \mathbb{R}$ acotada. $f$ es Riemann integrable si y solo si

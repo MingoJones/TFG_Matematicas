@@ -6,103 +6,109 @@
 \end{theorem}
 
 \begin{proof}
-    Lo primero que haremos será comprobar el caso especial en el que $c_1 \notin \mathbb{Q}$ 
+    Primero comprobaremos el caso especial en el que $c_1 \notin \mathbb{Q}$ 
     y los demás coeficientes son racionales.
-    Sea
+    Expresamos el polinomio de la siguiente forma:
     \[
         p(x) = P(x) + c_1x + c_0
     \]
     con $P(x) = c_m x^m + c_{m-1} x^{m-1} + \dots + c_2 x^2$.
 
-    Como $c_2,\dots,c_m \in \mathbb{Q}$ se pueden escribir de la forma $c_j = p_j/q_j$ con 
-    $p_j,q_j \in \mathbb{Z}$ y $q_j > 0$ para $j=~2,\dots,m$. 
-    Sea $D = \operatorname{mcm}(q_2,\dots,q_m)$ entonces
+    Como $c_2,\dots,c_m \in \mathbb{Q}$, se pueden escribir de la forma $c_j = p_j/q_j$, 
+    con $p_j,q_j \in \mathbb{Z}$ y $q_j > 0$ para $j=~2,\dots,m$. 
+    Sea $D = \operatorname{mcm}(q_2,\dots,q_m)$, entonces
     \[
-        c_j = \frac{a_j}{D} \quad \text{con } a_j \in \mathbb{Z} \text{ para cada } j=2,\dots,m
+        c_j = \frac{a_j}{D} \quad \text{con } a_j \in \mathbb{Z} \text{ para cada } j=2,\dots,m.
     \]
 
-    Sea un $n\geq1$, podemos expresarlo como $n=Dl+d$ con $l \geq 0$ y $1 \leq d \leq D$.
-    Si comparamos $P(Dl+d)$ con $P(d)$ se tiene que
+    Sea un $n\geq1$. Podemos expresarlo como $n=Dl+d$ con $l \geq 0$ y $1 \leq d \leq D$.
+    Comparando $P(Dl+d)$ con $P(d)$, se tiene que
     \[
-        P(Dl+d)-P(d)= \sum_{j=2}^m c_j ((Dl+d)^j - d^j)
+        P(Dl+d)-P(d)= \sum_{j=2}^m c_j ((Dl+d)^j - d^j).
     \]
     Para cada $j=2,...,m$, desarrollando el binomio,
     \[
-        (Dl+d)^j - d^j = \sum_{i=1}^j \binom{j}{i} d^{j-i} (Dl)^i
+        (Dl+d)^j - d^j = \sum_{i=1}^j \binom{j}{i} d^{j-i} (Dl)^i.
     \]
     Por lo tanto,
     \begin{align*}
         P(Dl+d)-P(d) 
         &= \sum_{j=2}^m \sum_{i=1}^j c_j \binom{j}{i} d^{j-i} (Dl)^i \\
         &= \sum_{j=2}^m \sum_{i=1}^j \frac{a_j}{D} \binom{j}{i} d^{j-i} (Dl)^i \\
-        &= \sum_{j=2}^m \sum_{i=1}^j a_j \binom{j}{i} d^{j-i} D^{i-1} l^i \in \mathbb{Z}
+        &= \sum_{j=2}^m \sum_{i=1}^j a_j \binom{j}{i} d^{j-i} D^{i-1} l^i \in \mathbb{Z}.
     \end{align*}
-    Es decir, $P(Dl+d)$ y $P(d)$ difieren en un número entero, por lo que
+    Es decir, $P(Dl+d)$ y $P(d)$ difieren en un número entero. Por tanto,
     \[
         \partfrac{P(Dl+d)} = \partfrac{P(d)} 
-        \quad \text{y en consecuencia} \quad
-        e^{2\pi i P(Dl+d)} = e^{2\pi i P(d)}
+        \quad \text{y, en consecuencia,} \quad
+        e^{2\pi i P(Dl+d)} = e^{2\pi i P(d)}.
     \]
 
-    Comprobaremos que para el caso $c_1 \notin \mathbb{Q}$ la sucesión 
-    $(p(n))$ es equidistribuida módulo $1$ 
+    Veamos ahora que, para el caso $c_1 \notin \mathbb{Q}$, la sucesión 
+    $(p(n))$ es equidistribuida módulo $1$.
 
-    Por el criterio de Weyl, sea $k \in \mathbb{Z}\setminus\{0\}$, sea $N \geq 1$, 
-    entonces $N=DL+R$ con $L \geq 0$ y $1 \leq R \leq D$. Para cada $n=1,2,\dots,DL$
-    lo expresamos como $n= Dl + d$ con $0 \leq l \leq L-1$ y $1 \leq d \leq D$. Entonces
+    Por el criterio de Weyl, sea $k \in \mathbb{Z}\setminus\{0\}$. Dado $N \geq 1$, 
+    escribimos $N=DL+R$ con $L \geq 0$ y $1 \leq R \leq D$. Para cada $n=1,2,\dots,DL$
+    lo expresamos como $n= Dl + d$ con $0 \leq l \leq L-1$ y $1 \leq d \leq D$. 
+    Entonces
     \begin{align*}
         \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right|
         &= \left|\frac{1}{N}\sum_{d=1}^D \sum_{l=0}^{L-1} e^{2\pi i k(P(Dl+d) + c_1 Dl + c_0)} + \frac{1}{N}\sum_{n=DL+1}^N e^{2\pi i k p(n)} \right| \\
         &\leq \left|\frac{1}{N}\sum_{d=1}^D e^{2\pi i k(P(d) + c_0)} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{1}{N}\sum_{n=DL+1}^N \left|e^{2\pi i k p(n)}\right| \\
-        &\leq \left|\frac{D}{N} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{D}{N}
+        &\leq \left|\frac{D}{N} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{D}{N}.
     \end{align*}
-    Como $N=DL+R$ con $1 \leq R \leq D$, entonces $\frac{D}{N} \leq \frac{D}{DL} = \frac{1}{L}$, por lo que
+    Como $N=DL+R$ con $1 \leq R \leq D$, se tiene que $\frac{D}{N} \leq \frac{D}{DL} = \frac{1}{L}$. Entonces
     \[
         \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right| \leq 
-        \left|\frac{1}{L} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{1}{L}
+        \left|\frac{1}{L} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \frac{1}{L}.
     \]
 
-    Dado que $c_1 \notin \mathbb{Q}$, entonces $(c_1 Dl)$ es equidistribuida módulo $1$.
-    Al tomar el límite cuando $N \to \infty$, y por lo tanto $L \to \infty$, obtenemos
+    Como $c_1 \notin \mathbb{Q}$, la sucesión $(c_1 Dl)$ es equidistribuida módulo $1$.
+    Tomando límite cuando $N \to \infty$, y por lo tanto $L \to \infty$, obtenemos
     \[
         \lim_{N \to \infty} \left|\frac{1}{N}\sum_{n=1}^N e^{2\pi i k p(n)} \right| \leq 
-        \lim_{L \to \infty} \left|\frac{1}{L} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \lim_{L \to \infty} \frac{1}{L} = 0
+        \lim_{L \to \infty} \left|\frac{1}{L} \sum_{l=0}^{L-1} e^{2\pi i k (c_1 Dl)}\right| + \lim_{L \to \infty} \frac{1}{L} = 0.
     \]
-    Por lo tanto, por el criterio de Weyl, la sucesión $(p(n))$ es equidistribuida módulo $1$ 
-    cuando $c_1 \notin \mathbb{Q}$ y los demás coeficientes son racionales.
+    Por lo tanto, por el criterio de Weyl, la sucesión $(p(n))$ es equidistribuida módulo 
+    $1$ cuando $c_1 \notin \mathbb{Q}$ y los demás coeficientes son racionales.
 
-    Para el caso general, sea $p(x)=c_m x^m + c_{m-1} x^{m-1} + \dots + c_1 x + c_0$,
-    sea $s = \max\{j \geq 1 : c_j \notin \mathbb{Q}\}$, es decir, $s$ es el grado
+    Para el caso general, sea 
+    \[
+    p(x)=c_m x^m + c_{m-1} x^{m-1} + \dots + c_1 x + c_0,
+    \]
+    y sea $s = \max\{j \geq 1 : c_j \notin \mathbb{Q}\}$. Es decir, $s$ es el grado
     del coeficiente irracional de mayor grado.
 
-    Queremos demostrar que si $s\geq1$ entonces la sucesión $(p(n))$ es equidistribuida módulo $1$.
-    Por~inducción sobre $s$. Para $s=1$ el resultado es cierto porque lo hemos demostrado antes.
-    Supongamos que el resultado es cierto para $s-1$ y comprobemos el caso $s$.
+    Queremos demostrar que, si $s\geq1$, entonces la sucesión $(p(n))$ es equidistribuida 
+    módulo $1$. Procedemos por inducción sobre $s$. El caso $s=1$ ya ha sido demostrado.
+    Supongamos que el resultado es cierto para $s-1$ y probemos el caso $s$.
 
-    Para cada $h=1,2,\dots,$ definimos la función $p_h(x) = p(x+h) - p(x)$. De esta forma, 
+    Para cada $h=1,2,\dots$, definimos la función $p_h(x) = p(x+h) - p(x)$. De esta forma, 
     \[
-        p_h(x) = \sum_{j=1}^m c_j ((x+h)^j - x^j)
+        p_h(x) = \sum_{j=1}^m c_j ((x+h)^j - x^j).
     \]
     Desarrollando el binomio para cada $j=1,...,m$,
     \[
-        (x+h)^j - x^j = \sum_{\bl i=0}^{\bl{j-1}} \binom{j}{i} x^{\bl i} h^{\bl {j-i}}
+        (x+h)^j - x^j = \sum_{i=0}^{j-1} \binom{j}{i} x^{i} h^{j-i}.
     \]
-    \gu{Es un poco m\'as claro as\'i}
-    
+    %\gu{Es un poco m\'as claro as\'i}
     Bajamos un grado a cada término, entonces
     \[
         p_h(x) = 
-        \sum_{j=1}^m \sum_{\bl{i=0} }^{\bl{j-1}} c_j \binom{j}{i} x^{\bl i} h^{\bl{j-i}} =
-        \bl{
-        \sum_{i=0}^{m-1} \Big(\sum_{j=i+1}^m c_j \binom{j}{i} h^{j-i}\Big) x^{i} }=
-        \sum_{\bl{i=0}}^{m-1} \alpha_i x^i
+        \sum_{j=1}^m \sum_{i=0}^{j-1} c_j \binom{j}{i} x^{i} h^{j-i} =
+        \sum_{i=0}^{m-1} \Big(\sum_{j=i+1}^m c_j \binom{j}{i} h^{j-i}\Big) x^{i}=
+        \sum_{i=0}^{m-1} \alpha_i x^i.
     \]
-    Los coeficientes $\alpha_{s}, \dots, \alpha_{m-1} \in \mathbb{Q}$, porque son combinaciones 
-    lineales \bl{en $\mathbb{Z}$} de los términos $c_{s+1}, \dots, c_{m}$\bl{$\in\mathbb{Q}$}. Sin embargo, el coeficiente de $\alpha_{s-1}$ 
-    en su combinación contiene a $c_s\notin \mathbb{Q}$, por lo que $\alpha_{s-1} \notin \mathbb{Q}$. 
+    Los coeficientes $\alpha_{s}, \dots, \alpha_{m-1} \in \mathbb{Q}$, ya que son 
+    combinaciones lineales en $\mathbb{Z}$ de los términos $c_{s+1}, \dots, 
+    c_{m}\in\mathbb{Q}$. 
+    Sin embargo, la combinación lineal de $\alpha_{s-1}$ contiene a $c_s\notin \mathbb{Q}$, 
+    por lo que $\alpha_{s-1} \notin \mathbb{Q}$. 
     Por la hipótesis de inducción, la sucesión $(p_h(n))$ es equidistribuida módulo $1$.
     
-    Por el teorema \ref{teo:diferencias_weyl}, tenemos que la sucesión $(p(n))$ es 
-    equidistribuida módulo $1$ para $s\geq1$. Esto~demuestra que si existe un coeficiente irracional 
+    Aplicando el Teorema \ref{teo:diferencias_weyl}, concluimos que $(p(n))$ es 
+    equidistribuida módulo $1$ para $s\geq1$. 
+    
+    Esto demuestra que, si existe un coeficiente irracional 
     que no sea el término independiente, entonces la sucesión $(p(n))$ es equidistribuida módulo $1$.
 \end{proof}

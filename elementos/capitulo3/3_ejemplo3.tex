@@ -6,23 +6,23 @@
     Sea $x_n = an\log^\tau n$ para cada $n \geq 2$. Definimos $g(x) = a(x+1)\log^\tau (x+1)$
     en~$[1,\infty)$, entonces $g(n) = x_{n+1}$ para cada $n \geq 1$, y su derivada es 
     \[
-        g'(x) = a \log^{\tau}(x+1) + a \tau \log^{\tau-1}(x+1)
+        g'(x) = a \log^{\tau}(x+1) + a \tau \log^{\tau-1}(x+1),
     \]
-    que es continua en $[1,\infty)$ por ser composición de continuas y como $\tau < 0$, 
+    que es continua en $[1,\infty)$ por ser composición de continuas. Además, como $\tau < 0$, 
     \[
         \lim_{x \to \infty} g'(x) = 0
         \qquad \text{y} \qquad
-        \lim_{x \to \infty} x |g'(x)| = \infty
+        \lim_{x \to \infty} x |g'(x)| = \infty.
     \]
 
     Para comprobar la monotonía de $g'(x)$, calculamos su derivada,
     \[
-        g''(x) = a \tau \frac{\log^{\tau-2}(x+1)}{x+1} \left(\log(x+1) + \tau - 1\right)
+        g''(x) = a \tau \frac{\log^{\tau-2}(x+1)}{x+1} \left(\log(x+1) + \tau - 1\right).
     \]
     Como $g''(x)=0$ en $x = e^{1-\tau} - 1$, entonces para $x \geq e^{1-\tau} - 1$ 
     se tiene que $g''(x)$ es de signo constante. En consecuencia, $g'(x)$ es monótona a 
     partir de $x_0 = e^{1-\tau} - 1$.
 
-    Por el teorema \ref{teo:fejer_euler}, $(g(n))$ es equidistribuida módulo $1$ y 
+    Por el Teorema \ref{teo:fejer_euler}, $(g(n))$ es equidistribuida módulo $1$ y 
     por lo tanto, $(x_n)$ también lo es.
 \end{resolve}

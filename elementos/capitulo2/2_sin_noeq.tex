@@ -8,7 +8,7 @@
     $(\frac{n}{2\pi})$ es equidistribuida módulo $1$.
 
     Sea $f(x)=e^{2\pi i \sin(2\pi x)}$, $f\in C(\mathbb{T})$.
-    Por el corolario \ref{carac:continua} tenemos que
+    Por el Corolario \ref{carac:continua} aplicado a $x_n=\frac n{2\pi}$, tenemos que
     \[
         \lim_{N\to\infty} \frac{1}{N}\sum_{n=1}^N e^{2\pi i \sin n} = \int_0^1 e^{2\pi i \sin(2\pi x)} dx.
     \]
@@ -18,7 +18,7 @@
 
     Si $(\sin n)$ fuera equidistribuida módulo $1$, el criterio de Weyl 
     implicaría que el limite es $0$.
-
+    
     Pero al calcular la integral con el cambio de variable $t=2\pi x$ 
     obtenemos,
     %No sabia como se calculaba la integral y al meterla en Wolfram me dio eso.
@@ -27,7 +27,7 @@
         \frac{1}{2\pi} \int_0^{2\pi} e^{2\pi i \sin t} \,dt
         = J_0(2\pi) \simeq 0,22
     \]
-    donde $J_0$ es la función de Bessel $v=0$, \ref{ap:bessel}. 
+    donde $J_0$ es la función de Bessel para $v=0$. Consultar \ref{ap:bessel}. 
     
     Por lo tanto, el criterio de Weyl no se cumple para $k=1$, y $(\sin n)$
     no es equidistribuida.

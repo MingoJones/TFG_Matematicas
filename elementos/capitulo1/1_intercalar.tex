@@ -13,7 +13,7 @@
 \begin{resolve}
     Sea un intervalo $(a,b)\subset \mathbb{T}$ con $0<a<b<1$. Consideremos $2N$ términos de la sucesión $(z_n)$, 
     \[
-        A_{2N}((a,b), z) = A_N((a,b), x) + A_N((a,b), y)
+        A_{2N}((a,b), z) = A_N((a,b), x) + A_N((a,b), y).
     \]
     
     Teniendo en cuenta que $(x_n)$ e $(y_n)$ son equidistribuidas módulo $1$, al dividir por $2N$
@@ -21,19 +21,19 @@
     \[
         \lim_{N \to \infty} \frac{A_{2N}((a,b), z)}{2N} =
         \lim_{N \to \infty} \frac{1}{2} \left( \frac{A_N((a,b), x)}{N} + \frac{A_N((a,b), y)}{N} \right) =
-        b-a
+        b-a.
     \]
     
     Por otra parte, si tomamos $2N+1$ términos de la sucesión $(z_n)$, 
     \[
-        A_{2N+1}((a,b), z) = A_{2N}((a,b), z) + \mathbf{1}_{(a,b)}(x_{N+1})
+        A_{2N+1}((a,b), z) = A_{2N}((a,b), z) + \mathbf{1}_{(a,b)}(x_{N+1}).
     \]
 
     Como $0 \leq \mathbf{1}_{(a,b)}(x_{N+1}) \leq 1$, al dividir por $2N+1$ y tomando límites,
     \[
         \lim_{N \to \infty} \frac{A_{2N+1}((a,b), z)}{2N+1} =
         \lim_{N \to \infty} \left(\frac{2N}{2N+1} \frac{A_{2N}((a,b), z)}{2N} + \frac{\mathbf{1}_{(a,b)}(x_{N+1})}{2N+1} \right) =  
-        b-a
+        b-a.
     \]
 
     Por lo tanto, $(z_n)$ es equidistribuida módulo $1$.  

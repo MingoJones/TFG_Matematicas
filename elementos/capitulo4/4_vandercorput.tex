@@ -1,9 +1,9 @@
 \begin{lemma}[Desigualdad de Van der Corput]
     \label{lem:vandercorput}
-    Sean $H,N \in \mathbb{N}$ con $1 \leq H \leq N$ entonces,
+    Sean $H,N \in \mathbb{N}$ con $1 \leq H \leq N$, entonces
     \begin{align}
         \left| \sum_{n=1}^N e^{2\pi i f(n)} \right|^2 \leq
-        4 \, \frac{N}{H} \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} e^{2\pi i (f(n+h) - f(n))} \right|
+        4 \, \frac{N}{H} \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} e^{2\pi i (f(n+h) - f(n))} \right|.
     \end{align}
 \end{lemma}
 
@@ -11,69 +11,69 @@
     Sea $u_n \in \mathbb{C}$ con $n = 1, \dots, N$. Definimos $u_n = 0$ para $n > N$ y 
     para $n \leq 0$. Entonces,
     \[
-        H \sum_{n=1}^{N} u_n = \sum_{k=1}^{H} \sum_{n=1}^{N} u_n
+        H \sum_{n=1}^{N} u_n = \sum_{k=1}^{H} \sum_{n=1}^{N} u_n.
     \]
-    Sea $k$ fijo, consideramos el cambio de variable $p = n+k$ entonces $n = p-k$ y $p=1+k,\dots,N+k$
+    Sea $k$ fijo, consideramos el cambio de variable $p = n+k$. Luego, $n = p-k$ y $p=1+k,\dots,N+k$
     \[
         \sum_{k=1}^{H} \sum_{n=1}^{N} u_n =
-        \sum_{k=1}^{H} \sum_{p=k+1}^{N+k} u_{p-k}
+        \sum_{k=1}^{H} \sum_{p=k+1}^{N+k} u_{p-k}.
     \]
     Por lo tanto, gracias a la extensión de ceros de los $u_n$,
     \[
         H \sum_{n=1}^{N} u_n =
         \sum_{k=1}^{H} \sum_{p=2}^{N+H} u_{p-k} =
-        \sum_{p=2}^{N+H} \sum_{k=1}^{H} u_{p-k}
+        \sum_{p=2}^{N+H} \sum_{k=1}^{H} u_{p-k}.
     \]
     
-    Ahora elevamos al cuadrado ambos lados y aplicamos la desigualdad de Cauchy-Schwarz, \ref{ap:cauchy-schwarz},
+    Ahora, elevamos al cuadrado ambos lados y aplicamos la desigualdad de Cauchy-Schwarz, \ref{ap:cauchy-schwarz}:
     \[
         \left| H \sum_{n=1}^{N} u_n \right|^2 \leq
-        (N+H-1) \sum_{p=2}^{N+H} \left| \sum_{k=1}^{H} u_{p-k} \right|^2
+        (N+H-1) \sum_{p=2}^{N+H} \left| \sum_{k=1}^{H} u_{p-k} \right|^2.
     \]
     
-    Fijado $p$, vamos a desarrollar el sumatorio de dentro del término de la derecha,
+    Fijado $p$, desarrollamos el sumatorio de dentro del término de la derecha:
     \[
         \left|  \sum_{k=1}^{H} u_{p-k} \right|^2 =
         \left(\sum_{k=1}^{H} u_{p-k} \right)\left( \sum_{s=1}^{H} \overline{u_{p-s}} \right) =
-        \sum_{k=1}^{H} \sum_{s=1}^{H} u_{p-k} \overline{u_{p-s}}
+        \sum_{k=1}^{H} \sum_{s=1}^{H} u_{p-k} \overline{u_{p-s}}.
     \]
-    Este doble sumatorio se descompone en tres partes, la primera es la parte diagonal $k=s$,
-    la segunda es la parte inferior $k < s$ y la tercera es la parte superior $k > s$,
+    Este doble sumatorio se descompone en tres partes: la parte diagonal, correspondiente a $k=s$;
+    la parte inferior, correspondiente a $k < s$; y la parte superior $k > s$,
     \[
         \sum_{k=1}^{H} \sum_{s=1}^{H} u_{p-k} \overline{u_{p-s}} =
         \sum_{k=1}^{H} |u_{p-k}|^2 \, +
         \sum_{1 \leq k < s \leq H} u_{p-k} \overline{u_{p-s}} \, +
-        \sum_{1 \leq s < k \leq H} u_{p-k} \overline{u_{p-s}}
+        \sum_{1 \leq s < k \leq H} u_{p-k} \overline{u_{p-s}}.
     \]
     Gracias a la simetría de los sumatorios de la parte inferior e superior,
-    se pueden juntar ambos sumatorios y se obtiene,
+    se pueden juntar ambos sumatorios y se obtiene
     \[
         \sum_{k=1}^{H} \sum_{s=1}^{H} u_{p-k} \overline{u_{p-s}} =
         \sum_{k=1}^{H} |u_{p-k}|^2 \, +
-        \sum_{1 \leq k < s \leq H} 2\operatorname{Re}(u_{p-k} \overline{u_{p-s}})
+        \sum_{1 \leq k < s \leq H} 2\operatorname{Re}(u_{p-k} \overline{u_{p-s}}).
     \]
 
-    De momento tenemos la siguiente cota,
+    De momento tenemos la siguiente cota:
     \begin{align*}
         H^2 \left| \sum_{n=1}^{N} u_n \right|^2 
         &\leq (N+H-1) \sum_{p=2}^{N+H} \sum_{k=1}^{H} |u_{p-k}|^2 +
         2(N+H-1) \sum_{p=2}^{N+H} \sum_{1 \leq k < s \leq H} \operatorname{Re}(u_{p-k} \overline{u_{p-s}}) \\
         &\leq (N+H-1) H \sum_{n=1}^{N} |u_{n}|^2 +
-        2(N+H-1) \operatorname{Re}\left(\sum_{p=2}^{N+H} \sum_{1 \leq k < s \leq H} u_{p-k} \overline{u_{p-s}}\right)
+        2(N+H-1) \operatorname{Re}\left(\sum_{p=2}^{N+H} \sum_{1 \leq k < s \leq H} u_{p-k} \overline{u_{p-s}}\right).
     \end{align*}
 
-    Estudiamos sumatorio del segundo término. Hacemos el cambio de variable $n = p-s$,
+    Estudiamos el sumatorio del segundo término. Hacemos el cambio de variable $n = p-s$,
     notando que $u_n = 0$ salvo para $n=1,\dots,N$. Además, como la suma es finita podemos
     cambiar el orden de los sumatorios,
     \[
         \sum_{p=2}^{N+H} \sum_{1 \leq k < s \leq H} u_{p-k} \overline{u_{p-s}} =
-        \sum_{1 \leq k < s \leq H} \sum_{n=1}^{N} u_{n+s-k} \overline{u_n}
+        \sum_{1 \leq k < s \leq H} \sum_{n=1}^{N} u_{n+s-k} \overline{u_n}.
     \]
     Sea $k$ fijo, hacemos el cambio de variable $h = s-k$. Como $k < s$ entonces 
-    $s = k+1, \dots, H$ y $h = 1, \dots, H-k$. Obtenemos,
+    $s = k+1, \dots, H$ y $h = 1, \dots, H-k$. Obtenemos
     \[
         \sum_{1 \leq k < s \leq H} \sum_{n=1}^{N} u_{n+s-k} \overline{u_n} =
-        \sum_{k=1}^{H-1} \sum_{h=1}^{H-k} \sum_{n=1}^{N} u_{n+h} \overline{u_n}
+        \sum_{k=1}^{H-1} \sum_{h=1}^{H-k} \sum_{n=1}^{N} u_{n+h} \overline{u_n}.
     \]
     Sabemos que $1 \leq h \leq H-k$ entonces $2 \leq h+k \leq H$ y $1 \leq k \leq H-h$,
     \begin{align*}
@@ -81,28 +81,28 @@
         &=\sum_{k=1}^{H-1} \sum_{h=1}^{H-1} \mathbf{1}_{[2,H]}(h+k) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right) \\
         &=\sum_{h=1}^{H-1} \sum_{k=1}^{H-1} \mathbf{1}_{[2,H]}(h+k) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right) \\
         &=\sum_{h=1}^{H-1} \sum_{k=1}^{H-h} \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right) \\
-        &=\sum_{h=1}^{H-1} (H-h) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right)
+        &=\sum_{h=1}^{H-1} (H-h) \left(\sum_{n=1}^{N} u_{n+h} \overline{u_n} \right).
      \end{align*}
 
-     La cota que teníamos la podemos simplificar como,
+     La cota anterior se simplifica como
      \begin{align*}
         H^2 \left| \sum_{n=1}^{N} u_n \right|^2 
         &\leq (N+H-1) H \sum_{n=1}^{N} |u_{n}|^2 + 2(N+H-1) \operatorname{Re}\left(\sum_{h=1}^{H-1} (H-h) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right)\right) \\        
-        &\leq 2(N+H-1) \operatorname{Re}\left(\sum_{h=0}^{H-1} (H-h) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right)\right) 
+        &\leq 2(N+H-1) \operatorname{Re}\left(\sum_{h=0}^{H-1} (H-h) \left(\sum_{n=0}^{N} u_{n+h} \overline{u_n} \right)\right) .
     \end{align*}
 
-    Considerando las siguientes cotaciones $N+H-1 \leq 2N$, $H-h \leq H$ y 
-    $\operatorname{Re}(z) \leq |z|$ para todo $z \in \mathbb{C}$ y teniendo en cuenta
-    que $u_n=0$ salvo para $n=1,\dots,N$ obtenemos,
+    Considerando las siguientes acotaciones: $N+H-1 \leq 2N$, $H-h \leq H$ y 
+    $\operatorname{Re}(z) \leq |z|$ para todo $z \in \mathbb{C}$, y teniendo en cuenta
+    que $u_n=0$ salvo para $n=1,\dots,N$ obtenemos
     \[
         H^2 \left| \sum_{n=1}^{N} u_n \right|^2 \leq
-        4N H \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} u_{n+h} \overline{u_n} \right|
+        4N H \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} u_{n+h} \overline{u_n} \right|.
     \]
 
-    Finalmente, dividiendo ambos lados por $H^2$ y aplicando $u_n = e^{2\pi i f(n)}$ 
-    obtenemos la fórmula deseada,
+    Finalmente, dividiendo ambos lados por $H^2$ y aplicando $u_n = e^{2\pi i f(n)}$,
+    obtenemos la fórmula deseada
     \[
         \left| \sum_{n=1}^N e^{2\pi i f(n)} \right|^2 \leq
-        4 \, \frac{N}{H} \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} e^{2\pi i (f(n+h) - f(n))} \right|
+        4 \, \frac{N}{H} \sum_{h=0}^{H-1} \left| \sum_{n=1}^{N-h} e^{2\pi i (f(n+h) - f(n))} \right|.
     \]
 \end{proof}

@@ -6,7 +6,7 @@
         \label{hipo:fejer_euler}
         \lim_{x \to \infty} g'(x) = 0
         \qquad \text{y} \qquad
-        \lim_{x \to \infty} {x \left|g'(x)\right|} = \infty 
+        \lim_{x \to \infty} {x \left|g'(x)\right|} = \infty,
     \end{align}
     entonces la sucesión $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
 \end{theorem}
@@ -18,18 +18,18 @@
         \sum_{n=1}^N e^{2\pi i k g(n)}
         = \int_1^N e^{2\pi i k g(x)} \, dx 
         + \frac{1}{2} \left(e^{2\pi i k g(N)} + e^{2\pi i k g(1)}\right)
-        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx
+        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx.
     \]
     La primera integral la separamos en los dos intervalos $[1,x_0]$ y $[x_0,N]$,
     \[
         \int_1^N e^{2\pi i k g(x)} \,dx = 
         \int_1^{x_0} e^{2\pi i k g(x)} \, dx + 
-        \int_{x_0}^N e^{2\pi i k g(x)} \, dx
+        \int_{x_0}^N e^{2\pi i k g(x)} \, dx.
     \]
     % Aqui puedo salvar esta parte de la monotonia y solo necesitar que sea monotona en x>=x_0
     El primer intervalo se acota por
     \[
-        \left|\int_1^{x_0} e^{2\pi i k g(x)} \, dx\right| \leq x_0 - 1
+        \left|\int_1^{x_0} e^{2\pi i k g(x)} \, dx\right| \leq x_0 - 1,
     \]
     y al dividir por $N$, se anula cuando $N \to \infty$.
     
@@ -39,23 +39,23 @@
         = \int_{x_0}^N \frac{\left(e^{2\pi i k g(x)}\right)'}{2\pi i k g'(x)} \, dx
         &= \frac{1}{2 \pi i k} \int_{x_0}^N \frac{\left(e^{2\pi i k g(x)}\right)'}{g'(x)} \, dx \\
         &= \frac{1}{2 \pi i k} \left(\left[\frac{e^{2\pi i k g(x)}}{g'(x)}\right]_{x_0}^N - 
-        \int_{x_0}^N e^{2\pi i k g(x)} \left(\frac{1}{g'(x)}\right)' \, dx \right)
+        \int_{x_0}^N e^{2\pi i k g(x)} \left(\frac{1}{g'(x)}\right)' \, dx \right).
     \end{align*}
     % El primer termino no tiene problema con la monotonia.
     Vamos a acotar cada uno de los sumandos. En el primero,
     \[
         \left|\frac{e^{2\pi i k g(N)}}{g'(N)} - \frac{e^{2\pi i k g(x_0)}}{g'(x_0)}\right|
-        \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|} 
+        \leq \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|}.
     \]
     Dividiendo por $N$ y usando la hipótesis (\ref{hipo:fejer_euler}), se tiene que
     \[
-        \frac{1}{N |g'(N)|} + \frac{1}{N |g'(x_0)|} \longrightarrow 0 \qquad \text{cuando} \ N \to \infty
+        \frac{1}{N |g'(N)|} + \frac{1}{N |g'(x_0)|} \longrightarrow 0 \qquad \text{cuando} \ N \to \infty.
     \]
     
     Para el segundo, tenemos
     \[
         \left|\int_{x_0}^N e^{2\pi i k g(x)}\left(\frac{1}{g'(x)}\right)' \, dx\right|
-        \leq \int_{x_0}^N \left|\left(\frac{1}{g'(x)}\right)'\right| \, dx
+        \leq \int_{x_0}^N \left|\left(\frac{1}{g'(x)}\right)'\right| \, dx.
     \]
     % Aqui hay problemas con g' 
     Como $g'(x)$ es monótona a partir de $x_0$ y $\lim_{x \to \infty} g'(x) = 0$, 
@@ -69,18 +69,18 @@
         \int_{x_0}^N \left|\left(\frac{1}{g'(x)}\right)'\right| \, dx =
         \left|\int_{x_0}^N \left(\frac{1}{g'(x)}\right)' \, dx\right| =
         \left|\frac{1}{g'(N)} - \frac{1}{g'(x_0)} \right| \leq 
-        \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|}
+        \frac{1}{|g'(N)|} + \frac{1}{|g'(x_0)|},
     \]
     y al igual que antes, al dividir por $N$ se anula cuando $N \to \infty$.
 
     Todo esto muestra que,
     \[
-        \lim_{N \to \infty} \frac{1}{N} \int_1^N e^{2\pi i k g(x)} \, dx = 0
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N e^{2\pi i k g(x)} \, dx = 0.
     \]
 
     El término central se acota por
     \[
-        \left|\frac{1}{2} \left(e^{2\pi i k g(N)} + e^{2\pi i k g(1)}\right)\right| \leq 1
+        \left|\frac{1}{2} \left(e^{2\pi i k g(N)} + e^{2\pi i k g(1)}\right)\right| \leq 1,
     \]
     por lo que, tras dividir por $N$, támbien tiende a $0$.
 
@@ -88,7 +88,7 @@
     y que $|e^{2\pi i k g(x)}| = 1$, se tiene
     \[
         \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx\right|
-        \leq \pi |k| \int_1^N  |g'(x)| \, dx
+        \leq \pi |k| \int_1^N  |g'(x)| \, dx.
     \]
     % Aqui habria que transformar esto para ponerlo en funcion de g' para usar lim g' = 0
     Como $\lim_{x \to \infty} g'(x) = 0$, entonces para cada $\varepsilon > 0$ 
@@ -102,20 +102,20 @@
         \int_1^N |g'(x)| \, dx = 
         \int_1^{x_1} |g'(x)| \, dx + \int_{x_1}^N |g'(x)| \, dx \leq 
         M + \varepsilon (N - x_1) \leq
-        M + N \varepsilon
+        M + N \varepsilon.
     \]
-    luego,
+    Luego,
     \[
-        \limsup_{N \to \infty} \frac{1}{N} \int_1^N |g'(x)| \, dx \leq \varepsilon
+        \limsup_{N \to \infty} \frac{1}{N} \int_1^N |g'(x)| \, dx \leq \varepsilon.
     \]
 
     Dado que $\varepsilon > 0$ es arbitrario, y que el integrando es positivo, se concluye que
     \[
-        \lim_{N \to \infty} \frac{1}{N} \int_1^N |g'(x)| \, dx = 0
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N |g'(x)| \, dx = 0,
     \]
     y por lo tanto,
     \[
-        \lim_{N \to \infty} \frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx = 0
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i k g'(x) \, e^{2\pi i k g(x)} \, dx = 0.
     \]
 
     Todos los términos divididos por $N$ tienden a $0$ cuando $N \to \infty$, por lo tanto se cumple el 

@@ -18,7 +18,7 @@
         \sum_{n=1}^N e^{2\pi i \, b n^\sigma}
         = \int_1^N e^{2\pi i b x^\sigma} \, dx 
         + \frac{1}{2} \left(e^{2\pi i \, b N^\sigma} + e^{2\pi i b}\right)
-        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx 
+        + \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx .
     \]
 
     Calculamos la primera integral usando integración por partes,
@@ -26,38 +26,38 @@
         \int_1^N e^{2\pi i b x^\sigma} \, dx 
         = \int_1^N \frac{\left(e^{2\pi i b x^\sigma}\right)'}{2\pi i b \sigma x^{\sigma-1}} \, dx
         &= \frac{1}{2 \pi i b \sigma} \int_1^N \left(e^{2\pi i b x^\sigma}\right)'x^{1-\sigma} \, dx \\
-        &= \frac{1}{2 \pi i b \sigma} \left(\left[e^{2\pi i b x^\sigma}x^{1-\sigma}\right]_1^N - (1-\sigma) \int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx \right)
+        &= \frac{1}{2 \pi i b \sigma} \left(\left[e^{2\pi i b x^\sigma}x^{1-\sigma}\right]_1^N - (1-\sigma) \int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx \right).
     \end{align*}  
     
     Acotando cada uno de los términos anteriores,
     \begin{align*}
         \left| e^{2\pi i b N^\sigma}N^{1-\sigma} - e^{2\pi i b}\right|
-        &\leq N^{1-\sigma} + 1 \\
+        &\leq N^{1-\sigma} + 1, \\
         \left|\int_1^N e^{2\pi i b x^\sigma} x^{-\sigma} \, dx\right|
         &\leq \int_1^N x^{-\sigma} \, dx
-        = \frac{N^{1-\sigma} - 1}{1-\sigma}
+        = \frac{N^{1-\sigma} - 1}{1-\sigma}.
     \end{align*}
     Ambos crecen del orden de $N^{1-\sigma}$, por lo que la primera integral es $O(N^{1-\sigma})$.
 
     El término central se acota por
     \[
-        \left|\frac{1}{2} \left(e^{2\pi i b N^\sigma} + e^{2\pi i b}\right)\right| \leq 1
+        \left|\frac{1}{2} \left(e^{2\pi i b N^\sigma} + e^{2\pi i b}\right)\right| \leq 1,
     \]
-    luego es $O(1)$.
+    por lo que es $O(1)$.
 
     Para la segunda integral, usando que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$,
     y que $|e^{2\pi i b x^\sigma}| = 1$, se tiene
     \[
         \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx\right|
         \leq \pi |b| \int_1^N \sigma x^{\sigma-1} \, dx  
-        = \pi |b| (N^\sigma - 1)
+        = \pi |b| (N^\sigma - 1),
     \]
     por lo que esta integral es $O(N^\sigma)$.
     
     Reuniendo las estimaciones anteriores, y teniendo en cuenta que 
     $\sigma \in (0,1)$, se obtiene
     \[
-        \sum_{n=1}^N e^{2\pi i \, b n^\sigma} = O(N^{1-\sigma}) + O(1) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N)
+        \sum_{n=1}^N e^{2\pi i \, b n^\sigma} = O(N^{1-\sigma}) + O(1) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N).
     \]
     De este modo,
     \[

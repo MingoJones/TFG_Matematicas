@@ -21,18 +21,18 @@
     \[
         P_k = 
         \card \left\{ \frac{i}{k} \in A_k : \frac{i}{k} \in (a,b) \right\} =
-        \card \left\{ \frac{i}{k} \in A_k : i \in (ka,kb)\right\}
+        \card \left\{ \frac{i}{k} \in A_k : i \in (ka,kb)\right\}.
     \]
     Contando el número de enteros en el intervalo $(ka,kb)$, obtenemos que 
     \[
-        P_k = \floor{kb} - \floor{ka+1} + 1 = \floor{kb} - \floor{ka}
+        P_k = \floor{kb} - \floor{ka+1} + 1 = \floor{kb} - \floor{ka}.
     \]
 
     Tomando la sucesión hasta el conjunto $A_M$, inclusive. El número de total de términos y la cantidad
     de términos que están en el intervalo $(a,b)$ es
     \[
-        T_M = \sum_{k=1}^M k = \frac{M(M+1)}{2} \qquad 
-        S_M = \sum_{k=1}^M P_k = \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right)
+        T_M = \sum_{k=1}^M k = \frac{M(M+1)}{2}, \qquad 
+        S_M = \sum_{k=1}^M P_k = \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right).
     \]
 
     Veamos que, contando por conjuntos, se cumple la definición de equidistribución, es decir,
@@ -47,7 +47,7 @@
         &=\frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka}\right) - \sum_{k=1}^M k(b-a) \right| \\ 
         &=\frac{1}{T_M}\left| \sum_{k=1}^M \left(\floor{kb} - \floor{ka} - kb + ka\right) \right| \\
         &\leq\frac{1}{T_M} \sum_{k=1}^M \left|\partfrac{ka} - \partfrac{kb}\right| 
-        \leq\frac{1}{T_M} \sum_{k=1}^M 1 = \frac{M}{T_M}
+        \leq\frac{1}{T_M} \sum_{k=1}^M 1 = \frac{M}{T_M}.
     \end{align*}
     
     Por lo tanto, 
@@ -61,17 +61,17 @@
 
     Sea $N$ tal que $T_M \leq N \leq T_{M+1}$,
     \[
-        A_N((a,b), x) = S_M + R \qquad \text{con } 0 \leq R \leq P_{M+1}
+        A_N((a,b), x) = S_M + R \qquad \text{con } 0 \leq R \leq P_{M+1}.
     \]
     Tenemos las siguientes desigualdades,
     \[
         S_M \leq S_M + R \leq S_{M+1} 
         \quad \text{ y } \quad
-        \frac{1}{T_{M+1}} \leq \frac{1}{N} \leq \frac{1}{T_M}
+        \frac{1}{T_{M+1}} \leq \frac{1}{N} \leq \frac{1}{T_M}.
     \]
     Al multiplicarlas,
     \[
-        \frac{S_M}{T_{M+1}} \leq \frac{S_M + R}{N} \leq \frac{S_{M+1}}{T_M}
+        \frac{S_M}{T_{M+1}} \leq \frac{S_M + R}{N} \leq \frac{S_{M+1}}{T_M}.
     \]
     
     Al tomar límites cuando $M \to \infty$, y por lo tanto $N \to \infty$, obtenemos
@@ -83,12 +83,12 @@
         b-a \leq
         \liminf_{N \to \infty} \frac{S_M + R}{N} &\leq
         \limsup_{N \to \infty} \frac{S_M + R}{N} \leq
-        b-a
+        b-a.
     \end{align*}
     Por lo que, el límite existe y es
     \[
         \lim_{N \to \infty} \frac{A_N((a,b), x)}{N} =
         \lim_{N \to \infty} \frac{S_M + R}{N} = 
-        b-a
+        b-a.
     \]
 \end{resolve}

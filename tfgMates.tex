@@ -22,46 +22,58 @@
 %	PORTADA
 %-------------------------------------------------------------------
 \pagestyle{empty}
-\input{./elementos/resto/Z-portada.tex}
-\newpage 
-\ % pagina ne blanco
-\newpage
 % CONTRAPORTADA con nombres de directoras
 \input{./elementos/resto/Z-portada-interior.tex}
-%\newpage
+\newpage
+\ %Incluir pagina en blanco
+\onehalfspace
+\chapter*{Declaración de originalidad}
+\thispagestyle{empty}
+\input{elementos/resto/Z-declaracion-originalidad.tex}
+\newpage
+\ %Incluir pagina en blanco
 
 %-------------------------------------------------------------------
 %	Frase Culterana
 %-------------------------------------------------------------------
 %\pagestyle{empty}
-\frontmatter
-\chapter*{}
-\input{./elementos/resto/Z-fraseculterana.tex}
+%\frontmatter
+%\chapter*{}
+%\input{./elementos/resto/Z-fraseculterana.tex}
 %-------------------------------------------------------------------
 %	DEDICATORIA
 %-------------------------------------------------------------------
 %\pagestyle{empty}
-\frontmatter
+%ESTO VAN A SER LOS AGRADECIMIENTOS
 \chapter*{}
+\thispagestyle{empty}
 \input{./elementos/resto/Z-dedicatoria.tex}
+\newpage
+\ %Incluir pagina en blanco
 %-------------------------------------------------------------------
 %	AGRADECIMIENTOS
 %-------------------------------------------------------------------
-\chapter*{Agradecimientos}
+%\chapter*{Agradecimientos}
 %\markboth{AGRADECIMIENTOS23}{AGRADECIMIENTOS} % encabezado 
-\input{./elementos/resto/Z-agradecimientos.tex}
+%\input{./elementos/resto/Z-agradecimientos.tex}
 
 %-------------------------------------------------------------------
 %	PREFACIO
 %-------------------------------------------------------------------
-\chapter*{Prefacio}
-\input{./elementos/resto/Z-prefacio.tex}
+%\chapter*{Prefacio}
+%\input{./elementos/resto/Z-prefacio.tex}
 
 %-------------------------------------------------------------------
 %	RESUMEN y SUMMARY para la versión oficial
 %-------------------------------------------------------------------
-\chapter*{Resumen y Summary}
-\input{./elementos/resto/Z-resumenYsummary.tex}
+\frontmatter
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{./elementos/resto/Z-abstract.tex}
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\input{./elementos/resto/Z-resumen.tex}
+
 
 %-------------------------------------------------------------------
 %	TABLA DE CONTENIDOS
@@ -99,7 +111,6 @@
 
 \def\tablename{Tabla}% para que denomine tabla a las tablas y no "cuadro"
 %\doublespacing
-\onehalfspace
 %\singlespace
 %\spacing{1.5}	
 %\setlength{\parskip}{3mm}% separación entre párrafo
@@ -131,13 +142,13 @@
 
 %\bibliographystyle{plainnat}
 \nocite{*}
-\printbibliography 
+\printbibliography[heading=bibintoc]
 
 %-------------------------------------------------------------------
 %	APÉNDICES
 %-------------------------------------------------------------------
 
-\addtocontents{toc}{\vspace{2em}} % Agrega espacios en la toc
+\addtocontents{toc}{\vspace{1em}} % Agrega espacios en la toc
 \appendix % Los siguientes capítulos son apéndices
 
 \chapter{Demostraciones técnicas}\label{Apendice_A}
@@ -156,7 +167,7 @@
 \thispagestyle{empty} % empty
 \mbox{}
 
-\addtocontents{toc}{\vspace{2em}} % Agrega espacio en la toc
+\addtocontents{toc}{\vspace{1em}} % Agrega espacio en la toc
 \end{document}
 
 

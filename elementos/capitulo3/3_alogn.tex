@@ -8,7 +8,7 @@
     Supongamos que $a \neq 0$. Verificaremos que no se cumple el criterio de Weyl para $k=1$. 
     Es decir,
     \[
-        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i a \log n} \neq 0
+        \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i a \log n} \neq 0.
     \]   
     
     Sea $f(x) = e^{2\pi i a \log x}$. Aplicando la fórmula (\ref{prop:formula_euler})
@@ -16,7 +16,7 @@
         \sum_{n=1}^N e^{2\pi i \, a \log n} =
         \int_1^N e^{2\pi i a \log x} \, dx +
         \frac{1}{2} \left(e^{2\pi i \, a \log N} + 1\right) +
-        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \frac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx 
+        \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \frac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx .
     \]
     
     Calculamos la primera integral mediante el cambio de variable $u = \log x$,
@@ -26,35 +26,36 @@
         = \int_0^{\log N} e^{(2\pi i a + 1) u} \, du 
         &= \left[\frac{e^{(2\pi i a + 1) u}}{2\pi i a + 1}\right]_0^{\log N} \\ 
         &= \frac{e^{(2\pi i a + 1) \log N} - 1}{2\pi i a + 1} 
-        = \frac{N e^{2\pi i a \log N} - 1}{2\pi i a + 1}
+        = \frac{N e^{2\pi i a \log N} - 1}{2\pi i a + 1}.
     \end{align*}
         
     Dividiendo por $N$, 
     \[
         \frac{N e^{2\pi i a \log N} - 1}{N(2\pi i a + 1)}
-        = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}
+        = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}.
     \]
 
     Cuando $N \to \infty$, el segundo término se anula, mientras que el primero 
     no puede converger a $0$, ya que oscila sobre una circunferencia de radio positivo.
 
-    El término central se puede acotar
+    El término central se puede acotar por
     \[
-        \left|\frac{1}{2} \left(e^{2\pi i a \log N} + 1\right)\right| \leq 1
+        \left|\frac{1}{2} \left(e^{2\pi i a \log N} + 1\right)\right| \leq 1,
     \]
-    por lo que, tras dividir por $N$, támbien tiende a $0$.
+    luego, tras dividir por $N$, támbien tiende a $0$.
 
     Para la segunda integral, usamos que $|\partfrac{x} - \frac{1}{2}| \leq \frac{1}{2}$ y que $|e^{2\pi i a \log x}| = 1$,
     \[
         \left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx\right|
         \leq \pi |a| \int_1^N \frac{1}{x} \, dx
-        = \pi |a| \log N
+        = \pi |a| \log N.
     \]
     En consecuencia,
     \[
-        \lim_{N \to \infty} \frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx = 0
+        \lim_{N \to \infty} \frac{1}{N} \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx = 0.
     \]
 
     Como la primera integral no converge a $0$, no se verifica el criterio de Weyl para $k=1$.
+    
     Por tanto, la sucesión $(a\log n)$ no es equidistribuida módulo $1$.   
 \end{resolve}
