@@ -1,0 +1,77 @@
+\documentclass[11pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+
+\AtBeginSubsection[]
+{
+\begin{frame}{Outline}
+\tableofcontents[
+currentsection,
+currentsubsection
+]
+\end{frame}
+}
+
+\AtBeginSection[]
+{
+\begin{frame}{Outline}
+\tableofcontents[
+currentsection,
+currentsubsection
+]
+\end{frame}
+}
+
+% Colores
+% \definecolor{UMGranate}{RGB}{120,0,40}
+
+% \setbeamercolor{structure}{fg=UMGranate}
+% \setbeamercolor{frametitle}{bg=UMGranate,fg=white}
+
+% \setbeamercolor{block title}{bg=UMGranate,fg=white}
+% \setbeamercolor{block body}{bg=gray!10}
+
+% \setbeamercolor{block title alerted}{bg=UMGranate,fg=white}
+% \setbeamercolor{block body alerted}{bg=gray!10}
+
+\title[TFG]
+{\Large El teorema de equidistribución de Weyl \\ [0.1cm] 
+\small Trabajo de fin de grado}
+
+\author[D. A. Manzanares Sánchez]
+{\textbf{Domingo Antonio Manzanares Sánchez} \\ [0.3cm]
+\small{Tutor: \textbf{Gustavo Adolfo Garrigós Aniorte}}}
+
+\institute[UM]{Universidad de Murcia}
+\date{Junio de 2022}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Abstract}
+
+\section{Uniform distribution mod 1}
+\input{capsPresentacion/capitulo1.tex}
+\section{Caracterizaciones de la equidistribución}
+\input{capsPresentacion/capitulo2.tex}
+\section{Método de Euler}
+\input{capsPresentacion/capitulo3.tex}
+\section{Método de Van der Corput}
+\input{capsPresentacion/capitulo4.tex}
+\end{document}

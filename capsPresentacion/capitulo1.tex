@@ -1,0 +1,391 @@
+
+
+
+\begin{frame}
+\frametitle{Definición de W}
+\end{frame}
+
+\begin{frame}{Números reales módulo 1}
+
+\begin{block}{Parte fraccionaria}
+Para $x\in\mathbb R$ definimos
+\[\langle x\rangle=x-\lfloor x\rfloor.\]
+Por tanto,
+$\langle x\rangle\in[0,1).$
+\end{block}
+\pause
+\begin{block}{Congruencia módulo 1}
+Dos números reales son equivalentes si difieren en un entero:
+\[
+x\equiv y \pmod 1
+\quad\Longleftrightarrow\quad
+x-y\in\mathbb Z.
+\]
+\end{block}
+\pause
+Cada clase de equivalencia tiene un representante único en $[0,1)$.
+\end{frame}
+
+\subsection{AAAAAAAAAAA}
+
+\begin{frame}{El toro unidimensional}
+\[
+\mathbb T=\mathbb R/\mathbb Z
+\]
+\vspace{0.4cm}
+
+\begin{itemize}
+\item Identificamos los puntos $0$ y $1$.
+\item El intervalo $[0,1)$ se convierte en una circunferencia.
+\item Las funciones en $\mathbb T$ son exactamente las funciones
+      periódicas de periodo $1$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{center}
+\Large
+$0 \equiv 1$
+\end{center}
+\end{frame}
+
+\begin{frame}{Equidistribución módulo 1}
+
+\begin{block}{Definición}
+Una sucesión $(x_n)$ es equidistribuida módulo $1$ si para todo intervalo
+$(a,b)\subset [0,1)$,
+
+\[
+\lim_{N\to\infty}
+\frac{A_N((a,b),x)}{N}
+=
+b-a.
+\]
+\end{block}
+
+\pause
+
+donde
+
+\[
+A_N((a,b),x)
+=
+\#\{1\le n\le N:\langle x_n\rangle\in(a,b)\}.
+\]
+
+\pause
+
+\begin{alertblock}{Interpretación}
+La proporción de términos que cae en un intervalo coincide con
+la longitud del intervalo.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Ejemplos}
+
+\textbf{No equidistribuida}
+
+\[
+0,\;0,\;\frac12,\;0,\;\frac13,\;\frac23,\ldots
+\]
+
+Los términos se concentran excesivamente cerca de ciertos puntos.
+
+\pause
+
+\vspace{0.4cm}
+
+\textbf{Equidistribuida}
+
+\[
+0,\;
+0,\frac12,\;
+0,\frac13,\frac23,\;
+0,\frac14,\frac24,\frac34,\ldots
+\]
+
+La distribución se vuelve cada vez más uniforme.
+
+\pause
+
+\vspace{0.4cm}
+
+\textbf{Idea clave}
+
+\[
+\text{Densidad}
+\neq
+\text{Equidistribución}.
+\]
+
+\end{frame}
+
+\begin{frame}{La sucesión $n\alpha$}
+
+\[
+\langle \alpha\rangle,
+\langle 2\alpha\rangle,
+\langle 3\alpha\rangle,
+\dots
+\]
+
+\pause
+
+\begin{block}{Caso racional}
+Si
+
+\[
+\alpha=\frac pq,
+\]
+
+la sucesión es periódica y toma un número finito de valores.
+\end{block}
+
+\pause
+
+\begin{block}{Caso irracional}
+Si
+
+\[
+\alpha\notin\mathbb Q,
+\]
+
+los valores nunca se repiten y se distribuyen uniformemente en
+$\mathbb T$.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Teorema de Weyl}
+\begin{alertblock}{Teorema de Weyl}
+Si $\alpha$ es irracional, entonces
+
+\[
+(n\alpha)_{n\ge1}
+\]
+
+es equidistribuida módulo $1$.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Números reales módulo 1}
+
+\begin{block}{Parte fraccionaria}
+\[
+\langle x\rangle = x-\lfloor x\rfloor,
+\qquad
+\langle x\rangle\in[0,1).
+\]
+\end{block}
+
+\vspace{0.2cm}
+
+\begin{block}{Relación de equivalencia}
+\[
+x\equiv y \pmod 1
+\quad \Longleftrightarrow \quad
+x-y\in\mathbb Z.
+\]
+\end{block}
+
+\vspace{0.2cm}
+
+\begin{exampleblock}{Ejemplos}
+\[
+0.3 \equiv 1.3 \equiv 2.3 \pmod 1
+\]
+
+\[
+-0.7 \equiv 0.3 \pmod 1
+\]
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{El toro unidimensional}
+
+\begin{block}{Espacio cociente}
+\[
+\mathbb T=\mathbb R/\mathbb Z.
+\]
+\end{block}
+
+\begin{itemize}
+\item Cada clase tiene un único representante en $[0,1)$.
+\item Identificamos los extremos:
+\[
+0 \equiv 1.
+\]
+\item La recta real se enrolla sobre la circunferencia unidad.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{center}
+% Dibujo o imagen del toro
+% \includegraphics[width=.6\textwidth]{toro.pdf}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Funciones sobre $\mathbb T$}
+
+\begin{block}{Observación}
+Una función sobre $\mathbb T$ es equivalente a una función
+$1$-periódica sobre $\mathbb R$.
+\end{block}
+
+\[
+f(x+1)=f(x).
+\]
+
+\vspace{0.3cm}
+
+\[
+f(x)=f(\langle x\rangle).
+\]
+
+\vspace{0.3cm}
+
+\begin{center}
+% \includegraphics[width=.7\textwidth]{periodica.pdf}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Equidistribución módulo 1}
+
+\begin{block}{Definición}
+Una sucesión $(x_n)$ es equidistribuida módulo $1$ si
+
+\[
+\lim_{N\to\infty}
+\frac{A_N((a,b),x)}{N}
+=
+b-a
+\]
+
+para todo intervalo $(a,b)\subset\mathbb T$.
+\end{block}
+
+\vspace{0.2cm}
+
+\[
+A_N((a,b),x)
+=
+\#\{1\le n\le N:\langle x_n\rangle\in(a,b)\}.
+\]
+
+\vspace{0.3cm}
+
+\begin{alertblock}{Interpretación}
+La proporción de términos que cae en un intervalo coincide
+con la longitud del intervalo.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Propiedades y ejemplos}
+
+\begin{columns}
+
+\column{0.48\textwidth}
+
+\begin{block}{Propiedades}
+\begin{itemize}
+\item Eliminar un número finito de términos.
+\item Invarianza por traslaciones.
+\item Intercalación de sucesiones equidistribuidas.
+\end{itemize}
+\end{block}
+
+\column{0.48\textwidth}
+
+\begin{exampleblock}{Ejemplos}
+\begin{itemize}
+\item Sucesiones equidistribuidas.
+\item Sucesiones no equidistribuidas.
+\end{itemize}
+\end{exampleblock}
+
+\end{columns}
+
+\vspace{0.3cm}
+
+\begin{center}
+% Dibujos de puntos sobre [0,1)
+% \includegraphics[width=.8\textwidth]{ejemplos.pdf}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{La sucesión $n\alpha$}
+
+\begin{block}{Proposición}
+Sea $\alpha\in\mathbb R$.
+\begin{itemize}
+\item Si $\alpha\in\mathbb Q$, la sucesión
+$(\langle n\alpha\rangle)$ es periódica.
+\item Si $\alpha\notin\mathbb Q$, posee infinitos términos distintos.
+\end{itemize}
+\end{block}
+
+\vspace{0.2cm}
+
+\begin{columns}
+
+\column{0.48\textwidth}
+
+\centering
+\textbf{$\alpha=\frac13$}
+
+\vspace{0.2cm}
+
+% \includegraphics[width=\textwidth]{alpha_racional.pdf}
+
+\column{0.48\textwidth}
+
+\centering
+\textbf{$\alpha=\sqrt2$}
+
+\vspace{0.2cm}
+
+% \includegraphics[width=\textwidth]{alpha_irracional.pdf}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Teorema de Weyl}
+
+\begin{alertblock}{Teorema de Weyl}
+Si $\alpha\notin\mathbb Q$, entonces
+
+\[
+(\langle n\alpha\rangle)_{n\ge1}
+\]
+
+es equidistribuida módulo $1$.
+\end{alertblock}
+
+\vspace{0.3cm}
+
+\begin{block}{Idea de la demostración}
+\begin{enumerate}
+\item Se prueba el resultado para exponenciales
+      $e^{2\pi ikx}$.
+\item Se extiende a polinomios trigonométricos.
+\item Se aproxima la función característica mediante
+      funciones continuas.
+\end{enumerate}
+\end{block}
+
+\vspace{0.2cm}
+
+\begin{center}
+% \includegraphics[width=.55\textwidth]{aproximacion.pdf}
+\end{center}
+
+\end{frame}

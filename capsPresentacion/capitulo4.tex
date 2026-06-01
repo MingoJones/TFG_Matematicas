@@ -1,0 +1,297 @@
+\begin{frame}{Desigualdad de Van der Corput}
+
+\begin{block}{Lema}
+Sean $H,N\in\mathbb N$ con $1\le H\le N$. Entonces
+
+\[
+\left|
+\sum_{n=1}^{N}
+e^{2\pi i f(n)}
+\right|^2
+\le
+\frac{4N}{H}
+\sum_{h=0}^{H-1}
+\left|
+\sum_{n=1}^{N-h}
+e^{2\pi i(f(n+h)-f(n))}
+\right|.
+\]
+\end{block}
+
+
+\begin{alertblock}{Idea}
+La suma exponencial asociada a $f(n)$ puede controlarse
+mediante sumas exponenciales asociadas a las diferencias
+
+\[
+f(n+h)-f(n).
+\]
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}{Primer ejemplo: la sucesión $(n^2\alpha)$}
+
+Sea
+
+\[
+f(n)=kn^2\alpha.
+\]
+
+Entonces
+
+\[
+f(n+h)-f(n)
+=
+k(2hn\alpha+h^2\alpha).
+\]
+
+
+Como $(n\alpha)$ es equidistribuida para
+$\alpha\notin\mathbb Q$,
+
+\[
+(2hn\alpha+h^2\alpha)
+\]
+
+también lo es para cada $h\neq 0$.
+
+
+
+Aplicando la desigualdad de Van der Corput y el criterio de Weyl,
+
+\[
+(n^2\alpha)
+\]
+
+es equidistribuida módulo $1$.
+
+\end{frame}
+
+\begin{frame}{Primer ejemplo: la sucesión $(n^2\alpha)$}
+
+Sea
+
+\[
+f(n)=kn^2\alpha.
+\]
+
+Entonces
+
+\[
+f(n+h)-f(n)
+=
+k(2hn\alpha+h^2\alpha).
+\]
+
+Como $(n\alpha)$ es equidistribuida para
+$\alpha\notin\mathbb Q$,
+
+\[
+(2hn\alpha+h^2\alpha)
+\]
+
+también lo es para cada $h\neq 0$.
+
+
+Aplicando la desigualdad de Van der Corput y el criterio de Weyl,
+
+\[
+(n^2\alpha)
+\]
+
+es equidistribuida módulo $1$.
+
+\end{frame}
+
+\begin{frame}{Teorema de las diferencias de Van der Corput}
+
+\begin{block}{Teorema}
+Sea $(x_n)$ una sucesión de números reales.
+
+Si para todo entero positivo $h$
+
+\[
+(x_{n+h}-x_n)
+\]
+
+es equidistribuida módulo $1$,
+
+entonces
+
+\[
+(x_n)
+\]
+
+también es equidistribuida módulo $1$.
+\end{block}
+
+
+\begin{alertblock}{Importancia}
+El resultado permite sustituir una sucesión complicada
+por sus sucesiones de diferencias.
+
+Cada aplicación reduce el orden de crecimiento
+del problema.
+\end{alertblock}
+
+\[
+x_n
+\longrightarrow
+x_{n+h}-x_n
+\]
+
+\end{frame}
+
+\begin{frame}{Polinomios con coeficientes irracionales}
+
+\begin{block}{Teorema}
+Sea
+
+\[
+P(x)=c_mx^m+\cdots+c_1x+c_0.
+\]
+
+Si al menos uno de los coeficientes
+
+\[
+c_1,\ldots,c_m
+\]
+
+es irracional, entonces
+
+\[
+(P(n))
+\]
+
+es equidistribuida módulo $1$.
+\end{block}
+
+
+
+\begin{alertblock}{Idea de la demostración}
+Las diferencias
+
+\[
+P(n+h)-P(n)
+\]
+
+son polinomios de grado menor.
+
+Aplicando repetidamente el teorema de las diferencias,
+se reduce el problema al caso lineal
+
+\[
+n\alpha,
+\]
+
+que ya conocemos por el teorema de Weyl.
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}{Teorema de Fejér Generalizado}
+
+\begin{block}{Teorema}
+Sea $g:[1,\infty)\to\mathbb R$ una función $k$ veces derivable.
+
+Supongamos que
+
+\[
+g^{(k)}(x)\to 0,
+\]
+
+\[
+x\,|g^{(k)}(x)|\to\infty,
+\]
+
+y que $g^{(k)}$ es monótona para $x$
+suficientemente grande.
+
+Entonces
+
+\[
+(g(n))
+\]
+
+es equidistribuida módulo $1$.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Idea de la demostración}
+
+\[
+g(n)
+\]
+
+\[
+\Downarrow
+\]
+
+\[
+g(n+h)-g(n)
+\]
+
+\[
+\Downarrow
+\]
+
+Derivadas de orden inferior
+
+\[
+\Downarrow
+\]
+
+Teorema de Fejér
+\[
+(k=1)
+\]
+
+
+\begin{alertblock}{Idea clave}
+El método de Van der Corput permite descender
+desde la derivada $k$-ésima hasta el caso tratado
+por el teorema de Fejér.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Aplicaciones}
+
+\begin{block}{Consecuencias}
+Son equidistribuidas módulo $1$ las sucesiones
+\end{block}
+
+\[
+(an^\sigma\log^\tau n),
+\qquad
+0<\sigma<1,
+\quad
+\tau\in\mathbb R.
+\]
+
+
+\[
+(a\log^\tau n),
+\qquad
+\tau>1.
+\]
+
+
+\[
+(an\log^\tau n),
+\qquad
+\tau<0.
+\]
+
+
+\begin{alertblock}{Conclusión}
+El método de Van der Corput extiende el alcance
+del teorema de Fejér a familias mucho más amplias
+de sucesiones.
+\end{alertblock}
+
+\end{frame}

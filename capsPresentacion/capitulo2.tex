@@ -1,0 +1,134 @@
+\begin{frame}{¿Cómo verificar la equidistribución?}
+
+\begin{block}{Problema}
+La definición exige comprobar que
+\[
+\lim_{N\to\infty}\frac{A_N((a,b),x)}{N}=b-a
+\]
+para todo intervalo $(a,b)\subset\mathbb T$.
+\end{block}
+
+\pause
+
+\begin{alertblock}{Objetivo}
+Buscar criterios más prácticos para demostrar
+que una sucesión es equidistribuida.
+\end{alertblock}
+
+\vspace{0.3cm}
+
+En este capítulo presentamos dos herramientas:
+\begin{enumerate}
+\item Caracterización funcional.
+\item Criterio de Weyl.
+\end{enumerate}
+
+\end{frame}
+
+% Caracterización funcional
+\begin{frame}{Caracterización funcional}
+
+\begin{block}{Teorema}
+Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item $(x_n)$ es equidistribuida módulo $1$.
+\item Para toda función Riemann integrable
+$f:\mathbb T\to\mathbb R$,
+\[
+\lim_{N\to\infty}\frac{1}{N}\sum_{n=1}^{N}f(x_n)=\int_0^1 f(x)\,dx.
+\]
+\end{enumerate}
+\end{block}
+
+\begin{alertblock}{Interpretación}
+La media discreta sobre la sucesión coincide
+con la media continua sobre el toro.
+\end{alertblock}
+
+\end{frame}
+
+% Idea de geometrica
+\begin{frame}{Interpretación geométrica}
+
+\[
+\frac1N\sum_{n=1}^{N}f(x_n)
+\]
+
+aproxima
+
+\[
+\int_0^1 f(x)\,dx.
+\]
+
+\vspace{0.4cm}
+
+\begin{center}
+% \includegraphics[width=.7\textwidth]{media_integral.pdf}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{alertblock}{Idea}
+Una sucesión equidistribuida se comporta como una
+muestra uniforme del intervalo $[0,1)$.
+\end{alertblock}
+
+\end{frame}
+
+% Criterio de Weyl
+\begin{frame}{Criterio de Weyl}
+
+\begin{block}{Teorema}
+Las siguientes afirmaciones son equivalentes:
+
+\begin{enumerate}
+\item $(x_n)$ es equidistribuida módulo $1$.
+\item Para todo $k\in\mathbb Z\setminus\{0\}$,
+
+\[
+\frac1N
+\sum_{n=1}^{N}
+e^{2\pi i k x_n}
+\longrightarrow 0.
+\]
+
+\end{enumerate}
+\end{block}
+
+\pause
+
+\begin{alertblock}{Ventaja}
+El problema se reduce al estudio de sumas
+de exponenciales complejas.
+\end{alertblock}
+
+\pause
+
+\[
+\text{Equidistribución}
+\quad \Longrightarrow \quad
+\text{Análisis de Fourier}
+\]
+
+\end{frame}
+
+% Aplicación del criterio de Weyl
+\begin{frame}{Aplicación: la sucesión $n\alpha$}
+
+\begin{block}{Resultado}
+Si $\alpha\notin\mathbb Q$, entonces $(n\alpha)_{n\geq1}$
+es equidistribuida módulo $1$.
+\end{block}
+
+Por el criterio de Weyl basta estudiar
+\[\frac{1}{N}\sum_{n=1}^{N}e^{2\pi i k n\alpha}.\]
+
+Esta suma es geométrica y satisface
+\[
+\left|\frac{1}{N}\sum_{n=1}^{N} e^{2\pi i k n\alpha}\right|
+\le\frac{2}{N|e^{2\pi i k\alpha}-1|}.
+\]
+
+Por tanto,
+\[\lim_{N\to\infty}\frac{1}{N}\sum_{n=1}^{N}e^{2\pi i k n\alpha}=0.\]
+\end{frame}
