@@ -10,9 +10,12 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 
+\usepackage[backend=biber]{biblatex}
+\addbibresource{./bibliografia.bib}
+
 \AtBeginSubsection[]
 {
-\begin{frame}{Outline}
+\begin{frame}{Índice de contenidos}
 \tableofcontents[
 currentsection,
 currentsubsection
@@ -22,13 +25,16 @@ currentsubsection
 
 \AtBeginSection[]
 {
-\begin{frame}{Outline}
+\begin{frame}{Índice de contenidos}
 \tableofcontents[
 currentsection,
 currentsubsection
 ]
 \end{frame}
 }
+
+\newenvironment{demostracion}
+{\par\noindent\textbf{Dem.}\ }
 
 % Colores
 % \definecolor{UMGranate}{RGB}{120,0,40}
@@ -60,13 +66,13 @@ currentsubsection
 \end{frame}
 
 \begin{frame}
-\frametitle{Outline}
+\frametitle{Índice de contenidos}
 \tableofcontents
 \end{frame}
 
-\section{Abstract}
+\section{Introducción}
 
-\section{Uniform distribution mod 1}
+\section{Equidistribución módulo 1}
 \input{capsPresentacion/capitulo1.tex}
 \section{Caracterizaciones de la equidistribución}
 \input{capsPresentacion/capitulo2.tex}
@@ -74,4 +80,25 @@ currentsubsection
 \input{capsPresentacion/capitulo3.tex}
 \section{Método de Van der Corput}
 \input{capsPresentacion/capitulo4.tex}
+
+\begin{frame}[allowframebreaks]{Bibliografía}
+\nocite{*}
+\printbibliography
+\end{frame}
+
+\begin{frame}
+    \vspace{0.5cm}
+    \begin{center}
+        \Large{\bf Fin}
+
+        \vspace{0.5cm}
+
+        \large{Gracias por su atención}
+    \end{center}
+    \vspace{0.5cm}
+    \begin{center}
+        \includegraphics[scale=0.29]{./pics/institucional/logos.png}
+    \end{center}
+\end{frame}
+
 \end{document}

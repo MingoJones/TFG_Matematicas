@@ -1,0 +1,14 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'build/presentacionMates.blg'
+[55] biber:340> INFO - === lun jun  1, 2026, 22:47:09
+[67] Biber.pm:419> INFO - Reading 'build/presentacionMates.bcf'
+[114] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[126] Biber.pm:4419> INFO - Processing section 0
+[134] Biber.pm:4610> INFO - Looking for bibtex file './bibliografia.bib' for section 0
+[135] bibtex.pm:1713> INFO - LaTeX decoding ...
+[139] bibtex.pm:1519> INFO - Found BibTeX data source './bibliografia.bib'
+[187] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[187] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[187] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'es-ES'
+[193] bbl.pm:660> INFO - Writing 'build/presentacionMates.bbl' with encoding 'UTF-8'
+[194] bbl.pm:763> INFO - Output to build/presentacionMates.bbl

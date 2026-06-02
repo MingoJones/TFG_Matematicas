@@ -1,27 +1,18 @@
+\subsection{Fórmula de Euler y teorema de Fejér}
+
 \begin{frame}{Método de Euler}
 
-\begin{block}{Problema}
+\begin{alertblock}{Problema}
 Por el criterio de Weyl, para demostrar que una sucesión es
 equidistribuida debemos estudiar sumas de la forma
-\[\sum_{n=1}^{N} e^{2\pi i f(n)}.\]
-\end{block}
-
-\begin{alertblock}{Idea}
-Transformar sumas discretas en integrales que puedan
-estimarse con precisión.
+\[\sum_{n=1}^{N} e^{2\pi i k f(n)}.\]
 \end{alertblock}
-\vspace{0.3cm}
-Herramienta principal:
-\[
-\boxed{\text{Fórmula de sumación de Euler}}
-\]
-\end{frame}
 
-\begin{frame}{Fórmula de sumación de Euler}
+\vspace{0.2cm}
+\pause
 
-\begin{block}{Proposición}
-Sea $f:[1,N]\to\mathbb C$ con $f'\in C([1,N])$.
-
+\begin{block}{Fórmula de sumación de Euler}
+Sea $N\in\mathbb{N}$ y sea $f:[1,N]\to\mathbb C$ con $f'\in C([1,N])$.
 Entonces
 \[
 \sum_{n=1}^{N}f(n)=
@@ -29,161 +20,108 @@ Entonces
 \int_1^N\left(\langle x\rangle-\frac12\right)f'(x)\,dx.
 \]
 \end{block}
-
-\begin{alertblock}{Interpretación}
-La suma discreta se expresa mediante integrales
-más fáciles de estimar.
-\end{alertblock}
-
 \end{frame}
 
-\begin{frame}{Ejemplo: la sucesión $a\log n$}
+
+% Sucesión (alogn)
+\begin{frame}{Sucesión $(a\log n)$}
 
 \begin{block}{Resultado}
 La sucesión $(a\log n)$ no es equidistribuida módulo $1$.
 \end{block}
 
-Aplicando la fórmula de Euler a
-\[
-f(x)=e^{2\pi i a\log x}
-\]
-obtenemos una estimación de la suma exponencial asociada.
-
-\begin{alertblock}{Conclusión}
-El criterio de Weyl falla para $k=1$.
-Por tanto, $(a\log n)$ no es equidistribuida.
-\end{alertblock}
-
-\end{frame}
-
-\begin{frame}{Ejemplo: la sucesión $an^\sigma$}
-
-\begin{block}{Hipótesis}
-\[
-a\neq 0,
-\qquad
-0<\sigma<1.
-\]
-\end{block}
-
-Aplicando nuevamente la fórmula de Euler a
-
-\[
-f(x)=e^{2\pi i a x^\sigma}
-\]
-
-se obtiene
-
-\[
-\sum_{n=1}^{N}
-e^{2\pi i a n^\sigma}
-=
-o(N).
-\]
-
-
-\begin{alertblock}{Por el criterio de Weyl}
-\[
-(an^\sigma)
-\]
-
-es equidistribuida módulo $1$.
-\end{alertblock}
-
-\end{frame}
-
-\begin{frame}{Hacia el teorema de Fejér}
-
-Los ejemplos anteriores sugieren que la equidistribución
-depende del comportamiento de la derivada.
-
-\vspace{0.3cm}
-
-\begin{center}
-
-\[
-g(x)=\log x
-\]
-
-\[
-g(x)=x^\sigma
-\]
-
-\end{center}
-
-\vspace{0.3cm}
-
+\vspace{0.2cm}
 \pause
 
-\begin{alertblock}{Pregunta}
-¿Qué condiciones sobre una función $g$
-garantizan que $(g(n))$ sea equidistribuida?
+Utilizamos la fórmula de Euler a $f(x)=e^{2\pi i a\log x}$ y dividimos
+por $N$. Para la primera integral se obtiene:
+
+\[
+    \frac{1}{N}\int_1^N e^{2\pi i a \log x} \, dx 
+    = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}.
+\]
+
+\vspace{0.1cm}
+
+El término principal no se anula cuando $N\to\infty$. Por otro lado, 
+los demás términos, si los calculamos, tienden a $0$. 
+
+\vspace{0.2cm}
+\pause
+
+\begin{alertblock}{Conclusión}
+El criterio de Weyl no se cumple para $k=1$, por tanto, $(a\log n)$ no es
+equidistribuida módulo $1$.
 \end{alertblock}
 
 \end{frame}
 
 
+% Sucesión (an^sigma)
+\begin{frame}{Sucesión $(an^\sigma)$}
+
+\begin{block}{Resultado}
+La sucesión $(an^\sigma)_{n\geq1}$ con $a\neq 0$ y $\sigma\in(0,1)$ es equidistribuida módulo $1$.
+\end{block}
+
+\vspace{0.2cm}
+\pause
+
+Sea $k\in\mathbb{Z}\setminus\{0\}$, utilizando la fórmula de Euler para 
+$f(x)=e^{2\pi i k a x^\sigma}$. 
+
+Estimando las integrales que aparecen, se obtiene que:
+\[
+    \sum_{n=1}^N e^{2\pi i \, k a n^\sigma} = O(N^{1-\sigma}) + O(1) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N).
+\]
+
+\vspace{0.2cm}
+\pause
+
+\begin{exampleblock}{Conclusión}
+Por el criterio de Weyl, $(an^\sigma)$ es equidistribuida módulo $1$.
+\end{exampleblock}
+\end{frame}
+
+
+% FEJER
 \begin{frame}{Teorema de Fejér}
 
 \begin{block}{Teorema}
-Sea $g:[1,\infty)\to\mathbb R$ derivable.
-
-Si
-
+Sea $g:[1,\infty) \to \mathbb{R}$ derivable tal que $g'\in C([1,\infty))$ y 
+$g'(x)$ es monótona para $x$ suficientemente grande. Si se satisface
 \[
-g'(x)\to 0,
+\lim_{x\to\infty} g'(x)=0\,
+\quad y \quad
+\lim_{x\to\infty} x|g'(x)|=\infty,
 \]
-
-\[
-x|g'(x)|\to\infty,
-\]
-
-y $g'(x)$ es monótona para $x$ suficientemente grande,
-
-entonces
-
-\[
-(g(n))
-\]
-
-es equidistribuida módulo $1$.
+entonces $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
 \end{block}
+
+\pause 
+
+\begin{demostracion}
+Aplicamos la fórmula de Euler a $f(x)=e^{2\pi i k g(x)}.$
+Acotando las integrales que aparecen y utilizando las hipótesis sobre $g'$, se obtiene que
+\[
+\lim_{N \to \infty} \frac1N\sum_{n=1}^{N} e^{2\pi i k g(n)}= 0
+\]
+Por el criterio de Weyl, $(g(n))$ es equidistribuida.
+\end{demostracion}
 
 \end{frame}
 
+% EJEMPLOS FEJER
 \begin{frame}{Aplicaciones del teorema de Fejér}
-
-\begin{block}{Consecuencias}
-Las siguientes sucesiones son equidistribuidas módulo $1$:
-\end{block}
-
-\[
-(an^\sigma),
-\qquad
-0<\sigma<1.
-\]
-
-\[
-(an^\sigma \log^\tau n).
-\]
-
-\[
-(a\log^\tau n),
-\qquad
-\tau>1.
-\]
-
-\[
-(an\log^\tau n),
-\qquad
-\tau<0.
-\]
-
-\pause
-
-\begin{alertblock}{Idea principal}
-El método de Euler proporciona una herramienta
-eficaz para estimar sumas exponenciales.
-\end{alertblock}
+    
+\begin{exampleblock}{Ejemplo 1}
+La sucesión $(a\log^\tau n)_{n\geq1}$ con $a\neq 0$, $\tau>1$ es equidistribuida módulo $1$.
+\end{exampleblock}
+\begin{exampleblock}{Ejemplo 2}
+La sucesión $(an\log^\tau n)_{n\geq2}$ con $a\neq 0$, $\tau<0$ es equidistribuida módulo $1$.
+\end{exampleblock}
+\begin{exampleblock}{Ejemplo 3}
+La sucesión $(an^\sigma\log^\tau n)_{n\geq2}$ con $a\neq 0$, $\tau\in\mathbb R$, $0<\sigma<1$ es equidistribuida módulo $1$.
+\end{exampleblock}
 
 \end{frame}
