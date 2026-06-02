@@ -17,7 +17,7 @@ Entonces
 \[
 \sum_{n=1}^{N}f(n)=
 \int_1^N f(x)\,dx + \frac{f(1)+f(N)}{2} +
-\int_1^N\left(\langle x\rangle-\frac12\right)f'(x)\,dx.
+\int_1^N\left(\partfrac{x}-\frac12\right)f'(x)\,dx.
 \]
 \end{block}
 \end{frame}
@@ -61,7 +61,7 @@ equidistribuida módulo $1$.
 \begin{frame}{Sucesión $(an^\sigma)$}
 
 \begin{block}{Resultado}
-La sucesión $(an^\sigma)_{n\geq1}$ con $a\neq 0$ y $\sigma\in(0,1)$ es equidistribuida módulo $1$.
+La sucesión $(an^\sigma)$ con $a\neq 0$ y $\sigma\in(0,1)$ es equidistribuida módulo $1$.
 \end{block}
 
 \vspace{0.2cm}
@@ -104,7 +104,7 @@ entonces $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
 Aplicamos la fórmula de Euler a $f(x)=e^{2\pi i k g(x)}.$
 Acotando las integrales que aparecen y utilizando las hipótesis sobre $g'$, se obtiene que
 \[
-\lim_{N \to \infty} \frac1N\sum_{n=1}^{N} e^{2\pi i k g(n)}= 0
+\lim_{N \to \infty} \frac1N\sum_{n=1}^{N} e^{2\pi i k g(n)}= 0.
 \]
 Por el criterio de Weyl, $(g(n))$ es equidistribuida.
 \end{demostracion}

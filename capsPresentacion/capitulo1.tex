@@ -1,386 +1,184 @@
 \subsection{Números reales módulo 1}
 \begin{frame}{Números reales módulo 1}
-
+      
 \begin{block}{Parte fraccionaria}
-Para $x\in\mathbb R$ definimos
-\[\langle x\rangle=x-\lfloor x\rfloor.\]
-Por tanto,
-$\langle x\rangle\in[0,1).$
-\end{block}
-\pause
-\begin{block}{Congruencia módulo 1}
-Dos números reales son equivalentes si difieren en un entero:
+Sea $x\in \mathbb{R}$, definimos la parte fraccionaria de $x$ como
 \[
-x\equiv y \pmod 1
-\quad\Longleftrightarrow\quad
-x-y\in\mathbb Z.
+\partfrac{x} = x - \floor{x}.
 \]
-\end{block}
-\pause
-Cada clase de equivalencia tiene un representante único en $[0,1)$.
-\end{frame}
-
-\subsection{Equidistribución de sucesiones}
-
-\begin{frame}{El toro unidimensional}
-\[
-\mathbb T=\mathbb R/\mathbb Z
-\]
-\vspace{0.4cm}
-
-\begin{itemize}
-\item Identificamos los puntos $0$ y $1$.
-\item El intervalo $[0,1)$ se convierte en una circunferencia.
-\item Las funciones en $\mathbb T$ son exactamente las funciones
-      periódicas de periodo $1$.
-\end{itemize}
-
-\vspace{0.3cm}
-
-\begin{center}
-\Large
-$0 \equiv 1$
-\end{center}
-\end{frame}
-
-\begin{frame}{Equidistribución módulo 1}
-
-\begin{block}{Definición}
-Una sucesión $(x_n)$ es equidistribuida módulo $1$ si para todo intervalo
-$(a,b)\subset [0,1)$,
-
-\[
-\lim_{N\to\infty}
-\frac{A_N((a,b),x)}{N}
-=
-b-a.
-\]
+Observamos que $\partfrac{x} \in [0,1)$ para todo $x \in \mathbb{R}$.
 \end{block}
 
 \pause
 
-donde
-
+\begin{block}{Módulo 1}
+Consideramos la relación de equivalencia en $\mathbb{R}$ dada por
 \[
-A_N((a,b),x)
-=
-\#\{1\le n\le N:\langle x_n\rangle\in(a,b)\}.
+x \sim y \iff x-y \in \mathbb{Z}.
 \]
-
-\pause
-
-\begin{alertblock}{Interpretación}
-La proporción de términos que cae en un intervalo coincide con
-la longitud del intervalo.
-\end{alertblock}
-
-\end{frame}
-
-\begin{frame}{Ejemplos}
-
-\textbf{No equidistribuida}
-
-\[
-0,\;0,\;\frac12,\;0,\;\frac13,\;\frac23,\ldots
-\]
-
-Los términos se concentran excesivamente cerca de ciertos puntos.
-
-\pause
-
-\vspace{0.4cm}
-
-\textbf{Equidistribuida}
-
-\[
-0,\;
-0,\frac12,\;
-0,\frac13,\frac23,\;
-0,\frac14,\frac24,\frac34,\ldots
-\]
-
-La distribución se vuelve cada vez más uniforme.
-
-\pause
-
-\vspace{0.4cm}
-
-\textbf{Idea clave}
-
-\[
-\text{Densidad}
-\neq
-\text{Equidistribución}.
-\]
-
-\end{frame}
-
-\begin{frame}{La sucesión $n\alpha$}
-
-\[
-\langle \alpha\rangle,
-\langle 2\alpha\rangle,
-\langle 3\alpha\rangle,
-\dots
-\]
-
-\pause
-
-\begin{block}{Caso racional}
-Si
-
-\[
-\alpha=\frac pq,
-\]
-
-la sucesión es periódica y toma un número finito de valores.
-\end{block}
-
-\pause
-
-\begin{block}{Caso irracional}
-Si
-
-\[
-\alpha\notin\mathbb Q,
-\]
-
-los valores nunca se repiten y se distribuyen uniformemente en
-$\mathbb T$.
+Dos números $x$ e $y$ son equivalentes si coinciden en su parte fraccionaria.
 \end{block}
 
 \end{frame}
 
-\begin{frame}{Teorema de Weyl}
-\begin{alertblock}{Teorema de Weyl}
-Si $\alpha$ es irracional, entonces
-
-\[
-(n\alpha)_{n\ge1}
-\]
-
-es equidistribuida módulo $1$.
-\end{alertblock}
-
-\end{frame}
 
 \begin{frame}{Números reales módulo 1}
+El espacio creado por la relación de equivalencia se denota por 
+$\mathbb{T} \simeq \mathbb{R}/\mathbb{Z}$.
 
-\begin{block}{Parte fraccionaria}
+\pause
+
+\begin{center}
+\includegraphics[width=0.9\textwidth, height=0.35\textheight, keepaspectratio]{pics/toro.png}
+\end{center}
+
+\pause
+
+\begin{exampleblock}{Observación}
+Las funciones en $\mathbb{T}$ se identifican con las funciones 
+$1$-periódicas en $\mathbb{R}$:
 \[
-\langle x\rangle = x-\lfloor x\rfloor,
-\qquad
-\langle x\rangle\in[0,1).
+f(x+1) = f(x) \qquad x \in \mathbb{R}.
+\]
+Por lo que $f(x) = f(\partfrac{x})$ para todo $x \in \mathbb{R}$.
+\end{exampleblock}
+
+\end{frame}
+
+
+\subsection{Equidistribución de sucesiones}
+\begin{frame}{Equidistribución de sucesiones}
+
+\begin{block}{Definición}
+Sea $x=(x_n)_{n\geq1}$ una sucesión de números reales. 
+Decimos que $(x_n)$ es equidistribuida módulo $1$ si para cada
+intervalo $(a,b) \subset \mathbb{T}$ se cumple que
+\[
+\label{def:equidistribucion}
+\lim_{N\to\infty} \frac{A_N((a,b), x)}{N} = b-a
+\]
+donde 
+\[
+A_N((a,b), x) = 
+\card \left\{1\le n\le N : \partfrac{x_n} \in (a,b)\right\}.
 \]
 \end{block}
 
-\vspace{0.2cm}
+\pause
 
-\begin{block}{Relación de equivalencia}
+\begin{exampleblock}{Observación}
+Si consideramos $\mathbf{1}_{(a,b)}$ en $\mathbb{T}$, la
+definición se puede reescribir como
 \[
-x\equiv y \pmod 1
-\quad \Longleftrightarrow \quad
-x-y\in\mathbb Z.
-\]
-\end{block}
-
-\vspace{0.2cm}
-
-\begin{exampleblock}{Ejemplos}
-\[
-0.3 \equiv 1.3 \equiv 2.3 \pmod 1
-\]
-
-\[
--0.7 \equiv 0.3 \pmod 1
+\lim_{N\to\infty} \frac{1}{N} \sum_{n=1}^N \mathbf{1}_{(a,b)}(x_n) =
+\int_0^1 \mathbf{1}_{(a,b)}(x)\ dx = 
+b-a.
 \]
 \end{exampleblock}
 
 \end{frame}
 
-\begin{frame}{El toro unidimensional}
-
-\begin{block}{Espacio cociente}
-\[
-\mathbb T=\mathbb R/\mathbb Z.
-\]
-\end{block}
-
-\begin{itemize}
-\item Cada clase tiene un único representante en $[0,1)$.
-\item Identificamos los extremos:
-\[
-0 \equiv 1.
-\]
-\item La recta real se enrolla sobre la circunferencia unidad.
-\end{itemize}
-
-\vspace{0.3cm}
-
-\begin{center}
-% Dibujo o imagen del toro
-% \includegraphics[width=.6\textwidth]{toro.pdf}
-\end{center}
-
-\end{frame}
-
-\begin{frame}{Funciones sobre $\mathbb T$}
-
-\begin{block}{Observación}
-Una función sobre $\mathbb T$ es equivalente a una función
-$1$-periódica sobre $\mathbb R$.
-\end{block}
-
-\[
-f(x+1)=f(x).
-\]
-
-\vspace{0.3cm}
-
-\[
-f(x)=f(\langle x\rangle).
-\]
-
-\vspace{0.3cm}
-
-\begin{center}
-% \includegraphics[width=.7\textwidth]{periodica.pdf}
-\end{center}
-
-\end{frame}
-
-\begin{frame}{Equidistribución módulo 1}
-
-\begin{block}{Definición}
-Una sucesión $(x_n)$ es equidistribuida módulo $1$ si
-
-\[
-\lim_{N\to\infty}
-\frac{A_N((a,b),x)}{N}
-=
-b-a
-\]
-
-para todo intervalo $(a,b)\subset\mathbb T$.
-\end{block}
-
-\vspace{0.2cm}
-
-\[
-A_N((a,b),x)
-=
-\#\{1\le n\le N:\langle x_n\rangle\in(a,b)\}.
-\]
-
-\vspace{0.3cm}
-
-\begin{alertblock}{Interpretación}
-La proporción de términos que cae en un intervalo coincide
-con la longitud del intervalo.
-\end{alertblock}
-
-\end{frame}
 
 \begin{frame}{Propiedades y ejemplos}
 
-\begin{columns}
-
-\column{0.48\textwidth}
-
 \begin{block}{Propiedades}
 \begin{itemize}
-\item Eliminar un número finito de términos.
-\item Invarianza por traslaciones.
-\item Intercalación de sucesiones equidistribuidas.
+\item Sea $\alpha \in \mathbb{R}$ y $(x_n)$ equidistribuida, entonces $(x_n+\alpha)$ también lo es.
+\item Modificar un número finito de términos no altera la equidistribución.
 \end{itemize}
 \end{block}
 
-\column{0.48\textwidth}
+\vspace{0.2cm}
+\pause
 
 \begin{exampleblock}{Ejemplos}
-\begin{itemize}
-\item Sucesiones equidistribuidas.
-\item Sucesiones no equidistribuidas.
-\end{itemize}
+La siguiente sucesión es equidistribuida:
+\[
+0, \ 
+0, \ \frac{1}{2}, \ 
+0, \ \frac{1}{3}, \ \frac{2}{3}, \ 
+0, \ \frac{1}{4}, \ \frac{2}{4}, \ \frac{3}{4}, \ 
+0, \ \dots 
+\]
 \end{exampleblock}
 
-\end{columns}
-
-\vspace{0.3cm}
-
-\begin{center}
-% Dibujos de puntos sobre [0,1)
-% \includegraphics[width=.8\textwidth]{ejemplos.pdf}
-\end{center}
-
 \end{frame}
+
 
 \subsection{Sucesión $n\alpha$}
-\begin{frame}{La sucesión $n\alpha$}
+\begin{frame}{Sucesión $(n\alpha)$}
 
 \begin{block}{Proposición}
-Sea $\alpha\in\mathbb R$.
+
 \begin{itemize}
-\item Si $\alpha\in\mathbb Q$, la sucesión
-$(\langle n\alpha\rangle)$ es periódica.
-\item Si $\alpha\notin\mathbb Q$, posee infinitos términos distintos.
+\item Si $\alpha\in\mathbb Q$, la sucesión $(n\alpha)$ es periódica y tiene un número finito de términos distintos.
+\item Si $\alpha\notin\mathbb Q$, la sucesión $(n\alpha)$ tiene infinitos términos distintos.
 \end{itemize}
+
 \end{block}
 
-\vspace{0.2cm}
+\pause
 
-\begin{columns}
+$\  \alpha = 1/5$:
+\begin{center}
+\includegraphics[width=0.9\textwidth, height=0.18\textheight, keepaspectratio]{pics/alpha_1_5.png}
+\end{center}
 
-\column{0.48\textwidth}
+\pause
 
-\centering
-\textbf{$\alpha=\frac13$}
-
-\vspace{0.2cm}
-
-% \includegraphics[width=\textwidth]{alpha_racional.pdf}
-
-\column{0.48\textwidth}
-
-\centering
-\textbf{$\alpha=\sqrt2$}
-
-\vspace{0.2cm}
-
-% \includegraphics[width=\textwidth]{alpha_irracional.pdf}
-
-\end{columns}
+$\  \alpha = \sqrt{2}$:
+\begin{center}
+\includegraphics[width=0.9\textwidth, height=0.18\textheight, keepaspectratio]{pics/alpha_sqrt2.png}
+\end{center}
 
 \end{frame}
 
-\begin{frame}{Teorema de Weyl}
 
-\begin{alertblock}{Teorema de Weyl}
-Si $\alpha\notin\mathbb Q$, entonces
+\begin{frame}{Sucesión $(n\alpha)$}
 
-\[
-(\langle n\alpha\rangle)_{n\ge1}
-\]
-
-es equidistribuida módulo $1$.
-\end{alertblock}
-
-\vspace{0.3cm}
-
-\begin{block}{Idea de la demostración}
-\begin{enumerate}
-\item Se prueba el resultado para exponenciales
-      $e^{2\pi ikx}$.
-\item Se extiende a polinomios trigonométricos.
-\item Se aproxima la función característica mediante
-      funciones continuas.
-\end{enumerate}
+\begin{block}{Teorema de Weyl}
+Si $\alpha\notin\mathbb Q$, la sucesión $(n\alpha)$ es equidistribuida módulo $1$.
 \end{block}
 
 \vspace{0.2cm}
+\pause
+
+\begin{block}{Lema}
+Sea $f \in C(\mathbb{T})$ y sea $\alpha \notin \mathbb{Q}$. Entonces, 
+\[
+      \frac{1}{N} \sum_{n=1}^{N} f(n\alpha) \longrightarrow \int_0^1 f(x)\ dx
+      \qquad \text{cuando } N \to \infty .
+\] 
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Sucesión $(n\alpha)$}
+
+\bf{Idea de la demostración}
+\[
+f_\varepsilon^- \leq \mathbf 1_{(a,b)} \leq f_\varepsilon^+,
+\qquad
+S_N = \sum_{n=1}^N \mathbf 1_{(a,b)}(n\alpha)
+\]
+
+\pause
 
 \begin{center}
-% \includegraphics[width=.55\textwidth]{aproximacion.pdf}
+\includegraphics[width=0.9\textwidth, height=0.3\textheight]{pics/grafico_1_teorema_na.png}
 \end{center}
+
+\pause
+
+\[
+b-a-2\varepsilon \le
+\liminf_{N\to\infty}\frac{S_N}{N} \le
+\limsup_{N\to\infty}\frac{S_N}{N} \le
+b-a+2\varepsilon,
+\]
+
+\[
+\lim_{N\to\infty}\frac{S_N}{N} = b-a.
+\]
 
 \end{frame}

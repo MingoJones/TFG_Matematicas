@@ -6,12 +6,20 @@
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{./bibliografia.bib}
+
+\newcommand{\card}{\operatorname{Card}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\partfrac}[1]{\langle #1 \rangle}
 
 \AtBeginSubsection[]
 {
@@ -50,13 +58,15 @@ currentsubsection
 
 \title[TFG]
 {\Large El teorema de equidistribución de Weyl \\ [0.1cm] 
-\small Trabajo de fin de grado}
+\small Trabajo de Fin de Grado}
 
 \author[D. A. Manzanares Sánchez]
 {\textbf{Domingo Antonio Manzanares Sánchez} \\ [0.3cm]
-\small{Tutor: \textbf{Gustavo Adolfo Garrigós Aniorte}}}
+Tutor: Gustavo Adolfo Garrigós Aniorte}
 
-\institute[UM]{Universidad de Murcia}
+\institute[UM]{Facultad de Matemáticas \\
+Universidad de Murcia}
+
 \date{Junio de 2022}
 
 \begin{document}
@@ -71,6 +81,35 @@ currentsubsection
 \end{frame}
 
 \section{Introducción}
+
+\begin{frame}{Introducción}
+
+Una de las sucesiones más estudiadas en teoría de números es
+\[
+  \partfrac{\alpha}, \, 
+  \partfrac{2\alpha}, \, 
+  \partfrac{3\alpha}, \, 
+  \ldots, \, 
+  \partfrac{n\alpha}, \, 
+  \ldots
+\]
+donde $\partfrac{ x }$ denota la parte fraccionaria de $x$.
+
+\vspace{0.3cm}
+
+\begin{itemize}
+\item Si $\alpha$ es racional, la sucesión es periódica.
+\item Si $\alpha$ es irracional, la sucesión tiene infinitos términos distintos.
+\end{itemize}
+
+\vspace{0.3cm}
+\pause
+
+\begin{block}{Pregunta}
+¿Cómo se distribuyen estos valores sobre el intervalo $[0,1)$?
+\end{block}
+
+\end{frame}
 
 \section{Equidistribución módulo 1}
 \input{capsPresentacion/capitulo1.tex}
