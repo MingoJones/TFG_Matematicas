@@ -1,4 +1,4 @@
-\subsection{Desigualdad de Vander Corput}
+\subsection{Desigualdad de Van der Corput}
 \begin{frame}{Desigualdad de Van der Corput}
 
 \begin{block}{Desigualdad de Van der Corput}
@@ -31,29 +31,70 @@ f(n+h)-f(n).
 \begin{block}{Resultado}
 La sucesión $(n^2\alpha)$ con $\alpha\notin\mathbb Q$ es equidistribuida módulo $1$.
 \end{block}
+
+\pause 
+
 Sea
 \[
-f(n)=kn^2\alpha \quad \text{con } k\neq 0.
+f(n)=kn^2\alpha \quad \text{con } k \in \mathbb{Z} \setminus \{0\}.
 \]
 Entonces
 \[
 f(n+h)-f(n)=k(2hn\alpha+h^2\alpha).
 \]
 
-Como $(n\alpha)$ es equidistribuida, también lo es
+\pause
+
+Sabemos que $(n\alpha)$ es equidistribuida módulo $1$. 
+Entonces 
 \[
-(2hn\alpha+h^2\alpha).
+(2hn\alpha+h^2\alpha)
+\] 
+es equidistribuida módulo $1$ para cada $h \neq 0$.
+
+\end{frame}
+
+\begin{frame}{Sucesión $(n^2\alpha)$}
+
+Aplicando la desigualdad de Van der Corput y el criterio
+de Weyl, se obtiene,
+
+\[
+\limsup_{N\to\infty}
+\left|
+\frac1N
+\sum_{n=1}^{N}
+e^{2\pi ikn^2\alpha}
+\right|^2
+\le
+\frac4H.
 \]
 
-Aplicando la desigualdad de Van der Corput y el criterio de Weyl,
-se obtiene que $(n^2\alpha)$ es equidistribuida módulo $1$.
+\vspace{0.3cm}
+\pause
+
+
+Haciendo $H\to\infty$ se concluye que
+
+\[
+\lim_{N\to\infty}
+\frac1N
+\sum_{n=1}^{N}
+e^{2\pi ikn^2\alpha}
+=0.
+\]
+
+\begin{block}{Conclusión}
+Por el criterio de Weyl, $(n^2\alpha)$ es equidistribuida módulo $1$.
+\end{block}
+
 \end{frame}
 
 
 \begin{frame}{Teorema de las diferencias de Van der Corput}
 \begin{block}{Teorema de las diferencias de Van der Corput}
 Sea $(x_n)$ una sucesión de números reales.
-Si para todo entero positivo$h$, $(x_{n+h}-x_n)$ es equidistribuida 
+Si para todo entero positivo $h$, $(x_{n+h}-x_n)$ es equidistribuida 
 módulo $1$, entonces
 \[
 (x_n)
@@ -80,12 +121,12 @@ Sea $p(x)=c_mx^m+\cdots+c_1x+c_0$ un polinomio con coeficientes reales.
 
 Si al menos uno de los coeficientes
 $c_1,\ldots,c_m$ es irracional, entonces
-
 \[
 (p(n))
 \]
 es equidistribuida módulo $1$.
 \end{block}
+
 \pause
 
 \begin{demostracion}
@@ -94,14 +135,11 @@ es equidistribuida módulo $1$.
 c_1\notin\mathbb Q,
 \qquad
 c_2,\ldots,c_m\in\mathbb Q.
-\quad \Rightarrow \quad
-p(x) = P(x) + c_1x + c_0.
 \]
-
-Descomponiendo $n = Dl + d$, las sumas exponenciales se
-reducen al estudio de 
+Tomando $D$ como un denominador común de $c_2, \ldots, c_m$ y escribiendo $n = Dl + d$, 
+las sumas exponenciales se reducen al estudio de 
 \[
-(c_1Dl)_{l\geq1}.
+(c_1Dl)_{l\geq0}
 \]
 Como $(c_1Dl)$ es equidistribuida módulo $1$, $(p(n))$ también lo es.
 
@@ -114,7 +152,7 @@ Como $(c_1Dl)$ es equidistribuida módulo $1$, $(p(n))$ también lo es.
 
 \vspace{0.2cm}
 
-Por inducción, sea $s$ el mayor índice tal que $c_s\notin\mathbb Q$.
+Por inducción, sea $s$ el mayor grado tal que $c_s\notin\mathbb Q$.
 Consideramos las diferencias
 \[
 p_h(x)=p(x+h)-p(x).
@@ -158,9 +196,9 @@ $g^{(k)}\in C([1,\infty))$ y $g^{(k)}$ monótona para $x$
 suficientemente grande. Si se satisfacen
 
 \[
-\lim_{x\to\infty}g^{(k)}(x)\to 0
+\lim_{x\to\infty}g^{(k)}(x)=0
 \quad \text{y} \quad
-\lim_{x\to\infty}x\,|g^{(k)}(x)|\to\infty,
+\lim_{x\to\infty}x\,|g^{(k)}(x)|=\infty,
 \]
 
 entonces $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
@@ -174,7 +212,7 @@ Por inducción sobre $k$. El caso $k=1$ es el teorema de Fejér.
 
 \vspace{0.15cm}
 
-Para $k>1$, comprobamos que las diferencias $g(n+h)-g(n)$ cumplen
+Sea $k>1$, comprobamos que las diferencias $g(n+h)-g(n)$ cumplen
 las hipótesis del teorema para $k-1$. 
 
 \vspace{0.15cm}
@@ -190,11 +228,13 @@ se concluye que $(g(n))$ es equidistribuida módulo $1$.
 \begin{exampleblock}{Ejemplo 1}
 La sucesión $(an^\sigma)_{n\geq1}$ con $a\neq 0$, $\sigma > 0,\, \sigma\notin\mathbb{Z}$ es equidistribuida módulo~$1$.
 \end{exampleblock}
+\pause
 \begin{exampleblock}{Ejemplo 2}
-La sucesión $(\alpha n^\sigma \log^\tau n)_{n\geq2}$  con $\alpha\neq 0$,  $\tau\in\mathbb R$, $\sigma > 0,\, \sigma\notin\mathbb{Z}$  es equidistribuida módulo $1$.
+La sucesión $(a n^\sigma \log^\tau n)_{n\geq2}$  con $a\neq 0$,  $\tau\in\mathbb R$, $\sigma > 0,\, \sigma\notin\mathbb{Z}$  es equidistribuida módulo $1$.
 \end{exampleblock}
+\pause
 \begin{exampleblock}{Ejemplo 3}
-La sucesión $(\alpha n^k \log^\tau n)_{n\geq2}$  con $\alpha\neq 0$, $\tau<0$, $ k\geq1,\, k\in\mathbb Z$  es equidistribuida módulo $1$.
+La sucesión $(a n^k \log^\tau n)_{n\geq2}$  con $a\neq 0$, $\tau<0$, $ k\geq1,\, k\in\mathbb Z$  es equidistribuida módulo $1$.
 \end{exampleblock}
 
 \end{frame}

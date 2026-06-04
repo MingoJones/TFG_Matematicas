@@ -81,11 +81,12 @@ es equidistribuida módulo $1$.
 \end{block}
 
 \vspace{0.1cm}
+\pause
 
 Por el criterio de Weyl, basta demostrar que
 \[
 \lim_{N\to\infty}\frac{1}{N}\sum_{n=1}^{N}e^{2\pi i k n\alpha}=0
-\qquad (k \neq 0).
+\qquad k \in \mathbb{Z} \setminus \{0\}.
 \]
 
 \pause
@@ -96,7 +97,7 @@ La suma es geométrica y satisface
 \le\frac{2}{N|e^{2\pi i k\alpha}-1|}.
 \]
 
-Por tanto, el limite es $0$ y $(n\alpha)$ es equidistribuida.
+Por tanto, el límite es $0$ y $(n\alpha)$ es equidistribuida.
 \end{frame}
 
 
@@ -114,13 +115,18 @@ Observamos que $\frac{1}{2\pi}\notin\mathbb Q,$
 por lo que $\left(\frac{n}{2\pi}\right)$ es equidistribuida módulo $1$.
 Aplicando la caracterización funcional a
 \[
-f(x)=e^{2\pi i\sin(2\pi x)},
+f(x)=e^{2\pi i\sin(2\pi x)}.
 \]
-obtenemos
+
+\pause
+
+Obtenemos
 \[
 \lim_{N\to\infty} \frac1N \sum_{n=1}^{N} e^{2\pi i\sin n}
 = \int_0^1 e^{2\pi i\sin(2\pi x)}\,dx = J_0(2\pi) \approx 0.22 \neq 0.
 \]
+
+\pause
 
 \begin{alertblock}{Conclusión}
 El criterio de Weyl falla para $k=1$, por lo tanto, $(\sin n)$ no es equidistribuida módulo $1$.

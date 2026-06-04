@@ -27,33 +27,51 @@ Entonces
 \begin{frame}{Sucesión $(a\log n)$}
 
 \begin{block}{Resultado}
-La sucesión $(a\log n)$ no es equidistribuida módulo $1$.
+La sucesión $(a\log n)$ con $a\in\mathbb{R}$ no es equidistribuida módulo $1$.
 \end{block}
 
 \vspace{0.2cm}
 \pause
-
-Utilizamos la fórmula de Euler a $f(x)=e^{2\pi i a\log x}$ y dividimos
-por $N$. Para la primera integral se obtiene:
+Aplicamos la fórmula de Euler a
 
 \[
-    \frac{1}{N}\int_1^N e^{2\pi i a \log x} \, dx 
-    = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}.
+f(x)=e^{2\pi ia\log x}.
 \]
 
-\vspace{0.1cm}
+\pause
 
-El término principal no se anula cuando $N\to\infty$. Por otro lado, 
-los demás términos, si los calculamos, tienden a $0$. 
+Al dividir por \(N\), se obtiene que
+\begin{align*}
+\frac{1}{N}\sum_{n=1}^N e^{2\pi i \, a \log n} =
+\frac{1}{N}\int_1^N &e^{2\pi i a \log x} \, dx + 
+\frac{1}{2N} \left(e^{2\pi i \, a \log N} + 1\right) \\ &+
+\frac{1}{N}\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \frac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx .
+\end{align*}
 
-\vspace{0.2cm}
+El término central tiende a \(0\) cuando \(N \to \infty\). 
+\end{frame}
+
+\begin{frame}{Sucesión $(a\log n)$}
+La segunda integral se puede acotar por
+\[
+\frac{1}{N}\left|\int_1^N \left(\partfrac{x} - \frac{1}{2}\right) \dfrac{2\pi i a}{x} \, e^{2\pi i a \log x} \, dx\right|
+\leq \frac{\pi |a|}{N} \log N.
+\]
+También tiende a \(0\) cuando \(N \to \infty\).
+
+\pause
+
+Sin embargo, calculando la primera integral obtenemos:
+\[
+\frac{1}{N}\int_1^N e^{2\pi i a \log x} \, dx = \frac{e^{2\pi i a \log N}}{2\pi i a + 1} - \frac{1}{N(2\pi i a + 1)}.
+\]
+El primer término oscila sobre una circunferencia de radio positivo.
+
 \pause
 
 \begin{alertblock}{Conclusión}
-El criterio de Weyl no se cumple para $k=1$, por tanto, $(a\log n)$ no es
-equidistribuida módulo $1$.
+No se cumple el criterio de Weyl para $k=1$, $(a\log n)$ no es equidistribuida módulo $1$.
 \end{alertblock}
-
 \end{frame}
 
 
@@ -68,21 +86,39 @@ La sucesión $(an^\sigma)$ con $a\neq 0$ y $\sigma\in(0,1)$ es equidistribuida m
 \pause
 
 Sea $k\in\mathbb{Z}\setminus\{0\}$, utilizando la fórmula de Euler para 
-$f(x)=e^{2\pi i k a x^\sigma}$. 
-
-Estimando las integrales que aparecen, se obtiene que:
 \[
-    \sum_{n=1}^N e^{2\pi i \, k a n^\sigma} = O(N^{1-\sigma}) + O(1) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N).
+f(x)=e^{2\pi i k a x^\sigma}.
 \]
 
-\vspace{0.2cm}
+\pause 
+
+Obtenemos
+\begin{align*}
+\sum_{n=1}^N e^{2\pi i \, b n^\sigma}
+= \int_1^N &e^{2\pi i b x^\sigma} \, dx 
++ \frac{1}{2} \left(e^{2\pi i \, b N^\sigma} + e^{2\pi i b}\right) \\
+&+ \int_1^N \left(\partfrac{x} - \frac{1}{2}\right) 2\pi i b \sigma x^{\sigma-1} \, e^{2\pi i b x^\sigma} \, dx .
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Sucesión $(an^\sigma)$}
+Estimando cada uno de los términos anteriores, se obtiene que
+\[
+\sum_{n=1}^N e^{2\pi i \, ka n^\sigma} = O(N^{1-\sigma}) + O(1) + O(N^\sigma) = O(N^{\max\{\sigma, 1-\sigma\}}) = o(N).
+\]
+
 \pause
+
+Luego
+\[
+\lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N e^{2\pi i k a n^\sigma} = 0.
+\]
 
 \begin{exampleblock}{Conclusión}
 Por el criterio de Weyl, $(an^\sigma)$ es equidistribuida módulo $1$.
 \end{exampleblock}
 \end{frame}
-
 
 % FEJER
 \begin{frame}{Teorema de Fejér}
@@ -101,27 +137,34 @@ entonces $(g(n))_{n\geq1}$ es equidistribuida módulo $1$.
 \pause 
 
 \begin{demostracion}
-Aplicamos la fórmula de Euler a $f(x)=e^{2\pi i k g(x)}.$
-Acotando las integrales que aparecen y utilizando las hipótesis sobre $g'$, se obtiene que
+Aplicamos la fórmula de Euler a
 \[
-\lim_{N \to \infty} \frac1N\sum_{n=1}^{N} e^{2\pi i k g(n)}= 0.
+f(x)=e^{2\pi i k g(x)}.
 \]
-Por el criterio de Weyl, $(g(n))$ es equidistribuida.
+Las hipótesis sobre \(g'\) permiten estimar las 
+integrales que aparecen y obtener
+\[
+\lim_{N\to\infty}
+\frac1N \sum_{n=1}^{N} e^{2\pi i k g(n)}=0.
+\]
+Por el criterio de Weyl, \((g(n))\) es equidistribuida.
 \end{demostracion}
 
 \end{frame}
 
 % EJEMPLOS FEJER
-\begin{frame}{Aplicaciones del teorema de Fejér}
+\begin{frame}{Teorema de Fejér}
     
 \begin{exampleblock}{Ejemplo 1}
 La sucesión $(a\log^\tau n)_{n\geq1}$ con $a\neq 0$, $\tau>1$ es equidistribuida módulo $1$.
 \end{exampleblock}
+\pause
 \begin{exampleblock}{Ejemplo 2}
 La sucesión $(an\log^\tau n)_{n\geq2}$ con $a\neq 0$, $\tau<0$ es equidistribuida módulo $1$.
 \end{exampleblock}
+\pause
 \begin{exampleblock}{Ejemplo 3}
-La sucesión $(an^\sigma\log^\tau n)_{n\geq2}$ con $a\neq 0$, $\tau\in\mathbb R$, $0<\sigma<1$ es equidistribuida módulo $1$.
+La sucesión $(an^\sigma\log^\tau n)_{n\geq2}$ con $a\neq 0$, $\tau\in\mathbb R$, $\sigma\in(0,1)$ es equidistribuida módulo $1$.
 \end{exampleblock}
 
 \end{frame}
